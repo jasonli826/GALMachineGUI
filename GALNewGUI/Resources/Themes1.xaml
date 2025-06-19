@@ -3,11 +3,11 @@
     <Style TargetType="GroupBox">
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="BorderBrush" Value="#007ACC"/>
+        <Setter Property="BorderBrush" Value="LightYellow"/>
         <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect Color="Gray" BlurRadius="10" ShadowDepth="5"/>
+                <DropShadowEffect Color="LightGoldenrodYellow"  BlurRadius="10" ShadowDepth="5"/>
             </Setter.Value>
         </Setter>
 
@@ -15,19 +15,19 @@
         <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="FontSize" Value="22"/>
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Foreground" Value="#007ACC"/>
+            <Setter Property="Foreground" Value="LightYellow"/>
     </Style>
     <LinearGradientBrush x:Key="menuitembackground" StartPoint="0,0" EndPoint="0,1" >
-        <GradientStop Color="DodgerBlue" Offset="0"></GradientStop>
-        <GradientStop Color="DodgerBlue" Offset="1"></GradientStop>
+        <GradientStop Color="LightGoldenrodYellow"  Offset="0"></GradientStop>
+        <GradientStop Color="LightYellow" Offset="1"></GradientStop>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="menubackground" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="DodgerBlue" Offset="0"></GradientStop>
-        <GradientStop Color="Blue" Offset="1"></GradientStop>
+        <GradientStop Color="LightYellow" Offset="0"></GradientStop>
+        <GradientStop Color="Yellow" Offset="1"></GradientStop>
     </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="linearGradientBrushVerticalIvory2PaleGreen" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Offset="0" Color="Ivory"></GradientStop>        
+        <GradientStop Offset="0" Color="Yellow"></GradientStop>
         <GradientStop Offset="1" Color="PaleGreen"></GradientStop>
     </LinearGradientBrush>
     <Style TargetType="TextBox">
@@ -381,35 +381,5 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
-    <!-- For Login UI  -->
-    <SolidColorBrush x:Key="PrimaryColorForLogin" Color="#007ACC" />
-
-    <Style TargetType="PasswordBox">
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="Height" Value="40" />
-        <Setter Property="Padding" Value="10,5" />
-        <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorForLogin}" />
-        <Setter Property="BorderThickness" Value="1.5" />
-        <Setter Property="Foreground" Value="#333" />
-    </Style>
-
-    <Style TargetType="Button">
-        <Setter Property="Background" Value="{StaticResource PrimaryColorForLogin}" />
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorForLogin}" />
-        <Setter Property="Height" Value="45" />
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="FontFamily" Value="Segoe UI Semibold" />
-        <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Margin" Value="0,20,0,0" />
-    </Style>
-
-    <Style TargetType="TextBlock">
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="Foreground" Value="#444" />
-        <Setter Property="FontFamily" Value="Segoe UI" />
-        <Setter Property="Margin" Value="0,0,0,5" />
     </Style>
 </ResourceDictionary>

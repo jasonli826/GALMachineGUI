@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALNewGUI\GALNewGUI\obj\Debug\
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\GALNewGUI\obj\Debug\
 GALNewGUI
 none
 false
 DEBUG;TRACE
-D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALNewGUI\GALNewGUI\App.xaml
-2680918982
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\GALNewGUI\App.xaml
+5-2129621415
 
-51579654133
+785717284
 13-38814620
-MainWindow.xaml;Resources\Themes.xaml;
+MainWindow.xaml;Resources\Themes.xaml;Resources\Themes1.xaml;UserManagement\Login.xaml;UserManagement\ManageUser.xaml;
 
 False
 

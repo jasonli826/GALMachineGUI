@@ -8,9 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btnrun.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/btnstop.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/roboticconnected.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/roboticnotconnected.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/themes.png")]
 
 

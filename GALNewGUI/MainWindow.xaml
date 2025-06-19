@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GALNewGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="2000" Width="1600">
+        Title="MainWindow" Height="1000" Width="1600"  Loaded="Window_Loaded">
     <Window.Resources>
         <!-- Define Beautiful Styles -->
         <ResourceDictionary>
@@ -15,231 +15,355 @@
         </ResourceDictionary>
 
     </Window.Resources>
-
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <!-- Navigation Menu -->
-            <ColumnDefinition Width="*"/>
-            <!-- Main Content -->
-        </Grid.ColumnDefinitions>
-
-        <!-- Left Column: Vertical Navigation Menu -->
-        <!--<StackPanel Background="#333" Width="180" Grid.Column="0">
-
-         -->
-        <!-- Vertical Menu -->
-        <!--
-         <Menu Background="#333" Foreground="White" VerticalAlignment="Top">
-             <MenuItem Header="Product" Style="{StaticResource SubMenuStyle}">
-                 <MenuItem Header="Load Product" Style="{StaticResource SubMenuStyle}"/>
-             </MenuItem>
-
-             <MenuItem Header="User Management" Style="{StaticResource SubMenuStyle}">
-                 <MenuItem Header="Login" Style="{StaticResource SubMenuStyle}"/>
-                 <MenuItem Header="Logout" Style="{StaticResource SubMenuStyle}"/>
-             </MenuItem>
-
-             <MenuItem Header="Help" Style="{StaticResource SubMenuStyle}">
-                 <MenuItem Header="About" Style="{StaticResource SubMenuStyle}"/>
-                 <MenuItem Header="User Manual" Style="{StaticResource SubMenuStyle}"/>
-             </MenuItem>
-         </Menu>
-     </StackPanel>-->
-
-        <!-- Right Column: Main Content -->
-        <Grid Grid.Column="1" Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <!-- First Row: Two GroupBoxes -->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="6*"/>
-                </Grid.ColumnDefinitions>
-
-                <GroupBox Header="Machine Operation" Grid.Column="0">
-                    <GroupBox.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Offset="0" Color="PowderBlue"></GradientStop>
-                            <GradientStop Offset="1" Color="Cornsilk"></GradientStop>
-                        </LinearGradientBrush>
-                    </GroupBox.Background>
-                    <StackPanel>
-                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                            <!--<Label Name="labelRobotConnection1" Content="Robot 1 Disconnected" Margin="5" Background="WhiteSmoke" Foreground="Red" FontSize="16" FontWeight="Bold" Width="210" Height="32" HorizontalContentAlignment="Center"></Label>-->
-                            <Image Name="connectionStatusImage" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible" Width="100" Height="80">
-                                <Image.Source>
-                                    <BitmapImage UriSource="Images/RoboticNotConnected.png" />
-                                </Image.Source>
-                            </Image>
-                            <Label Name="labelRobotConnection1" Content="Robot 1 Disconnected" Margin="5" Background="WhiteSmoke" Foreground="Red" FontSize="16" FontWeight="Bold" Width="210" Height="32" HorizontalContentAlignment="Center">
-                            </Label>
-                        </WrapPanel>
-                        <WrapPanel Name="wrapMachineOperations">
-                            <Button Name="buttonRun"  Style="{StaticResource ModernButton}" Margin="8" IsEnabled="True" ToolTip="Run">
-                                <Image Source="Images/btnRun.png" Stretch="Fill"/>
-                            </Button>
-                            <Button Name="buttonStop" Style="{StaticResource stopButton}" Margin="8" IsEnabled="True">
-                                <Image Source="Images/btnStop.png" Stretch="Fill"/>
-                            </Button>
-                            <Button Name="buttonLoadBatch" Style="{StaticResource ModernButton}"  Margin="8" Width="100">Load Batch</Button>
-                            <CheckBox Name="checkboxDryRun" Margin="5" Background="WhiteSmoke" Foreground="Chocolate" FontSize="16" FontWeight="Bold" Width="100" VerticalAlignment="Center"  IsChecked="{Binding Path=IsDryRun}" Visibility="Collapsed">Dry Run</CheckBox>
-                            <CheckBox Name="checkboxSelfRun" Margin="5" Background="WhiteSmoke" Foreground="Chocolate" FontSize="16" FontWeight="Bold" Width="100" VerticalAlignment="Center"  IsChecked="{Binding Path=IsSelfRun}" Visibility="Collapsed">Self Run</CheckBox>
-                            <StackPanel Name="sp_sliderRobotSpeed" Orientation="Horizontal" Background="WhiteSmoke" Margin="5" Visibility="Collapsed">
-                                <TextBlock VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Chocolate" Margin="5">Robot Speed (%)</TextBlock>
-                                <Slider Name="sliderRobotSpeed" VerticalAlignment="Center" Maximum="100" Minimum="10" TickPlacement="BottomRight" TickFrequency="10" Width="200" IsSnapToTickEnabled="True"  Value="{Binding Path=RobotSpeed}"></Slider>
-                                <TextBox Text="{Binding ElementName=sliderRobotSpeed, Path=Value}" VerticalAlignment="Center" Margin="5"></TextBox>
-                            </StackPanel>
-                        </WrapPanel>
-                        <WrapPanel>
-                            <Label Name="labelproductfile" Content="Product File:" Margin="5,5,0,5" Background="WhiteSmoke" Foreground="Green" FontSize="16" FontWeight="Bold" Width="110" Height="32" HorizontalContentAlignment="Center"></Label>
-                            <Label Name="txtProductName"  Content="C:\GAL\Product Files\NewProduct.xml" Margin="0,5,5,5" Background="WhiteSmoke" Foreground="Green" FontSize="16" FontWeight="Bold" Width="Auto" Height="32" HorizontalContentAlignment="Center">
-
-                            </Label>
-                        </WrapPanel>
+    <DockPanel>
+        <Menu IsMainMenu="True" Name="mainMenu"  DockPanel.Dock="Top">
+            <MenuItem  Name="menuProduct">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="70" Width="180" Margin="3">
+                        <Image Source="Images/Product.png" Height="60" Width="60" Margin="5,0"/>
+                        <TextBlock Text="Product" VerticalAlignment="Center" Foreground="White"
+                       FontSize="28" FontWeight="Bold" Margin="0,0,0,0"/>
                     </StackPanel>
-                </GroupBox>
-                <GroupBox Header="SECS/GEM Operations" Grid.Column="1">
-                    <GroupBox.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Offset="0" Color="PowderBlue"/>
-                            <GradientStop Offset="1" Color="Cornsilk"/>
-                        </LinearGradientBrush>
-                    </GroupBox.Background>
-
-                    <Grid Margin="10">
-                        <!-- Define 4 Rows -->
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
-                        <!-- Define 4 Columns -->
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <!-- Row 1: Connection Status -->
-                        <Label Content="Socket Status:" Grid.Row="0" Grid.Column="0" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Path=SocketStatus}" Grid.Row="0" Grid.Column="1" Foreground="Green" FontSize="16" FontWeight="Bold"/>
-
-                        <Label Content="Host Comm Status:" Grid.Row="0" Grid.Column="2" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Path=CommStatus}" Grid.Row="0" Grid.Column="3" Foreground="Green" FontSize="16" FontWeight="Bold"/>
-
-                        <!-- Row 2: Equipment Control -->
-                        <Label Content="Control Status:" Grid.Row="1" Grid.Column="0" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Path=ControlStatus}" Grid.Row="1" Grid.Column="1" Foreground="Green" FontSize="16" FontWeight="Bold"/>
-
-                        <Label Content="Process State:" Grid.Row="1" Grid.Column="2" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Path=ProcessState}" Grid.Row="1" Grid.Column="3" Foreground="Green" FontSize="16" FontWeight="Bold"/>
-
-                        <!-- Row 3: PJ Status -->
-                        <Label Content="PJ Status:" Grid.Row="2" Grid.Column="0" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Path=PJJobStatus}" Grid.Row="2" Grid.Column="1" Foreground="Green" FontSize="16" FontWeight="Bold"/>
-
-                        <Label Content="PJ ID:" Grid.Row="2" Grid.Column="2" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Path=PJJobStatus}" Grid.Row="2" Grid.Column="3" Foreground="Green" FontSize="16" FontWeight="Bold"/>
-
-                        <!-- Row 4: Buttons -->
-                        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Button Name="buttonEqConnect" Style="{StaticResource ModernButton}" IsEnabled="{Binding Path=IsConnected}" Margin="5">Connect</Button>
-                            <Button Name="buttonEqDisconnect" Style="{StaticResource stopButton}" Margin="5">Disconnect</Button>
-                            <Button Name="buttonEqRemote" Style="{StaticResource stopButton}" IsEnabled="{Binding Path=IsRemote}" Margin="5">Remote</Button>
-                            <Button Name="buttonEqLocal" Style="{StaticResource ModernButton}" IsEnabled="{Binding Path=IsLocal}" Margin="5">Local</Button>
-                        </StackPanel>
+                </MenuItem.Header>
+                <MenuItem Header="Load Product"
+                  Name="menuLoadProduct"></MenuItem>
+                <MenuItem Header="Edit Product"
+                  Name="menuEditProduct"></MenuItem>
+                <MenuItem Header="New Product"
+                  Name="menuNewProduct"></MenuItem>
+            </MenuItem>
+            <MenuItem Name="menuUtilities" >
+                <!--<MenuItem.Header>
+                    <Grid Width="120" Height="50">
+                        <Image Source="Images/Utility.png" Stretch="Fill" />
+                        <TextBlock Text="Utility" Foreground="White"  FontSize="26" FontWeight="Bold" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"/>
                     </Grid>
-                </GroupBox>
+                </MenuItem.Header>-->
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="70" Width="180" Margin="3">
+                        <Image Source="Images/Utility.png" Height="60" Width="60" Margin="5,0"/>
+                        <TextBlock Text="Utility" VerticalAlignment="Center" Foreground="White"
+                       FontSize="28" FontWeight="Bold" Margin="0,0,0,0"/>
+                    </StackPanel>
+                </MenuItem.Header>
+                <MenuItem Header="Manual Utility"
+                  Name="menuManualUtility"></MenuItem>
+                <MenuItem Header="IO Utility"
+                  Name="menuIo_load"></MenuItem>
+            </MenuItem>
+            <MenuItem Name="menuUserMgmt">
+                <!--<MenuItem.Header>
+                    <Grid Width="120" Height="50">
+                        <Image Source="Images/password.png" Stretch="Fill" />
+                        <TextBlock Text="User" Foreground="White"  FontSize="26" FontWeight="Bold" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"/>
+                    </Grid>
+                </MenuItem.Header>-->
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="70" Width="180" Margin="3">
+                        <Image Source="Images/Password.png" Height="60" Width="60" Margin="5,0"/>
+                        <TextBlock Text="User" VerticalAlignment="Center" Foreground="White"
+                        FontSize="28" FontWeight="Bold" Margin="0,0,0,0"/>
+                    </StackPanel>
+                </MenuItem.Header>
+                <MenuItem Header="Login"
+                  Name="menuLogin"  Click="menuUserMgmt_Click"></MenuItem>
+                <MenuItem Header="Logout"
+                  Name="menuLogout"></MenuItem>
+                <MenuItem Header="Manage User"
+                  Name="menuManageUser" Click="menuManageUser_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Name="menuService">
+                <!--<MenuItem.Header>
+                    <Grid Width="120" Height="50">
+                        <Image Source="Images/Service.png" Stretch="Fill" />
+                        <TextBlock Text="Service" Foreground="White"  FontSize="26" FontWeight="Bold" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"/>
+                    </Grid>
+                </MenuItem.Header>-->
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="50" Width="165" Margin="3">
+                        <Image Source="Images/Service.png" Height="60" Width="60" Margin="5,0"/>
+                        <TextBlock Text="Service" VerticalAlignment="Center" Foreground="White"
+                    FontSize="28" FontWeight="Bold" Margin="0,0,0,0"/>
+                    </StackPanel>
+                </MenuItem.Header>
+                <MenuItem Header="Robot Teach Utility"
+                  Name="menuRobotTeachUtil"></MenuItem>
+                <MenuItem Header="Service Drive Utility"
+                  Name="ServoDriveUtil"></MenuItem>
+                <MenuItem Header="ToolTip Calibration Utility"
+                  Name="TooltipCaliUtil"></MenuItem>
+                <MenuItem Header="Machine Settings"
+                  Name="MachineSettings"></MenuItem>
+            </MenuItem>
+            <MenuItem Name="menuHelp">
+                <!--<MenuItem.Header>
+                    <Grid Width="120" Height="50">
+                        <Image Source="Images/Help.png" Stretch="Fill" />
+                        <TextBlock Text="Help" Foreground="White"  FontSize="26" FontWeight="Bold" 
+                                HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"/>
+                    </Grid>
+                </MenuItem.Header>-->
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="50" Width="150" Margin="3">
+                        <Image Source="Images/Help.png" Height="50" Width="50" Margin="5,0"/>
+                        <TextBlock Text="Help" VerticalAlignment="Center" Foreground="White"
+                     FontSize="28" FontWeight="Bold" Margin="0,0,0,0"/>
+                    </StackPanel>
+                </MenuItem.Header>
+                <MenuItem Header="About"
+                  Name="menuAbout"></MenuItem>
+                <MenuItem Header="User Manuals"
+                  Name="menuManual"></MenuItem>
+            </MenuItem>
+            <!--<MenuItem Name="menuThemes">
+                <MenuItem.Header>
+                    <Grid Width="120" Height="50">
+                        <Image Source="Images/Themes.png" Stretch="Fill" />
+                        <TextBlock Text="Themes" Foreground="White"  FontSize="26" FontWeight="Bold" 
+                                HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"/>
+                    </Grid>
+                </MenuItem.Header>
+                <MenuItem Header="Themes 1"
+                  Name="menuThemes1"></MenuItem>
+            </MenuItem>-->
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0"/>
+                <!-- Navigation Menu -->
+                <ColumnDefinition Width="*"/>
+                <!-- Main Content -->
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Grid.Column="1" Margin="10" VerticalScrollBarVisibility="Auto">
+                <Grid Grid.Column="1" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-            </Grid>
-
-            <!-- Second Row: Input Section & Log Display -->
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="6*"/>
-                </Grid.ColumnDefinitions>
-
-                <Grid.RowDefinitions>
-                    <!-- Ensures equal row heights for both sections -->
-                    <RowDefinition Height="auto"/>
-                    <!-- This row will automatically take equal height -->
-                </Grid.RowDefinitions>
-
-                <GroupBox Header="Batch Parameter" Grid.Column="0" Grid.Row="0">
-                    <GroupBox.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Offset="0" Color="LightCyan"/>
-                            <!-- Microsoft Blue -->
-                            <GradientStop Offset="1" Color="Silver"/>
-                            <!-- Soft Metallic Touch -->
-                        </LinearGradientBrush>
-                    </GroupBox.Background>
+                    <!-- First Row: Two GroupBoxes -->
                     <Grid>
-                        <!-- Define the Grid structure: 5 rows and 4 columns -->
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4.8*"/>
+                            <ColumnDefinition Width="5.2*"/>
                         </Grid.ColumnDefinitions>
 
-                        <!-- Row 1 -->
-                        <Label Content="Reser No:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
-                        <TextBox Grid.Row="0" Grid.Column="1" Width="150" Text="107005074"/>
-                        <Label Content="Batch No:" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center"/>
-                        <TextBox Grid.Row="0" Grid.Column="3" Width="150" Text="CBNGF2Q001"/>
+                        <GroupBox Header="Machine Operation" Grid.Column="0">
+                            <GroupBox.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="PowderBlue"></GradientStop>
+                                    <GradientStop Offset="1" Color="Cornsilk"></GradientStop>
+                                </LinearGradientBrush>
+                            </GroupBox.Background>
+                            <StackPanel>
+                                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <!--<Label Name="labelRobotConnection1" Content="Robot 1 Disconnected" Margin="5" Background="WhiteSmoke" Foreground="Red" FontSize="16" FontWeight="Bold" Width="210" Height="32" HorizontalContentAlignment="Center"></Label>-->
+                                    <Image Name="connectionStatusImage" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible" Width="100" Height="80">
+                                        <Image.Source>
+                                            <BitmapImage UriSource="Images/RoboticConnected.png" />
+                                        </Image.Source>
+                                    </Image>
+                                    <Label Name="labelRobotConnection1" Content="Robot 1 Connected" Margin="5" Background="WhiteSmoke" Foreground="Green" FontSize="16" FontWeight="Bold" Width="210" Height="32" HorizontalContentAlignment="Center">
+                                    </Label>
+                                </WrapPanel>
+                                <WrapPanel Name="wrapMachineOperations">
+                                    <Button Name="buttonRun"  Style="{StaticResource ModernButton}" Margin="18" IsEnabled="True" ToolTip="Run" Width="80" >
+                                        <Image Source="Images/btnRun.png" Stretch="Fill"/>
+                                    </Button>
+                                    <Button Name="buttonStop" Style="{StaticResource stopButton}" Margin="18" IsEnabled="True" Width="80" ToolTip="Stop">
+                                        <Image Source="Images/btnStop.png" Stretch="Fill"/>
+                                    </Button>
+                                    <Button Name="buttonLoadBatch" Style="{StaticResource ModernButton}"  Margin="18" Width="80" ToolTip="Batch Load">
+                                        <Image Source="Images/LoadBatch.png" Stretch="Fill"/>
+                                    </Button>
+                                    <CheckBox Name="checkboxDryRun" Margin="5" Background="WhiteSmoke" Foreground="Chocolate" FontSize="16" FontWeight="Bold" Width="100" VerticalAlignment="Center"  IsChecked="{Binding Path=IsDryRun}" Visibility="Visible">Dry Run</CheckBox>
+                                    <CheckBox Name="checkboxSelfRun" Margin="5" Background="WhiteSmoke" Foreground="Chocolate" FontSize="16" FontWeight="Bold" Width="100" VerticalAlignment="Center"  IsChecked="{Binding Path=IsSelfRun}" Visibility="Visible">Self Run</CheckBox>
+                                    <StackPanel Name="sp_sliderRobotSpeed" Orientation="Horizontal" Background="WhiteSmoke" Margin="5" Visibility="Visible">
+                                        <TextBlock VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Chocolate" Margin="0">Robot Speed (%)</TextBlock>
+                                        <Slider Name="sliderRobotSpeed" VerticalAlignment="Center" Maximum="100" Minimum="10" TickPlacement="BottomRight" TickFrequency="10" Width="180" IsSnapToTickEnabled="True"  Value="100"></Slider>
+                                        <TextBlock Text="{Binding ElementName=sliderRobotSpeed, Path=Value}" VerticalAlignment="Center" Margin="10"></TextBlock>
+                                    </StackPanel>
+                                </WrapPanel>
+                                <WrapPanel>
+                                    <Label Name="labelproductfile" Content="Product File:" Margin="0,5,0,5" Background="WhiteSmoke" Foreground="Green" FontSize="16" FontWeight="Bold" Width="110" Height="32" HorizontalContentAlignment="Center"></Label>
+                                    <Label Name="txtProductName"  Content="C:\GAL\Product Files\NewProduct.xml" Margin="0,5,5,5" Background="WhiteSmoke" Foreground="Green" FontSize="16" FontWeight="Bold" Width="Auto" Height="32" HorizontalContentAlignment="Center">
 
-                        <!-- Row 2 -->
-                        <Label Content="Module:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
-                        <TextBox Grid.Row="1" Grid.Column="1" Width="200" Text="New Product"/>
-                        <Label Content="Prod Name:" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"/>
-                        <TextBox Grid.Row="1" Grid.Column="3" Width="200" Text="M5"/>
+                                    </Label>
+                                </WrapPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="SECS/GEM Operations" Grid.Column="1">
+                            <GroupBox.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="PowderBlue"/>
+                                    <GradientStop Offset="1" Color="Cornsilk"/>
+                                </LinearGradientBrush>
+                            </GroupBox.Background>
 
-                        <!-- Row 3 -->
-                        <Label Content="Prod Height:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
-                        <TextBox Grid.Row="2" Grid.Column="1" Width="150" Text="2.15"/>
-                        <Label Content="Prod Length:" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
-                        <TextBox Grid.Row="2" Grid.Column="3" Width="150" Text="2"/>
+                            <Grid Margin="10">
+                                <!-- Define 4 Rows -->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-                        <!-- Row 4 -->
-                        <Label Content="Prod Width:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
-                        <TextBox Grid.Row="3" Grid.Column="1" Width="150" Text="2"/>
+                                <!-- Define 4 Columns -->
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
+                                <!-- Row 1: Connection Status -->
+                                <Label Content="Socket Status:" Grid.Row="0" Grid.Column="0" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Path=SocketStatus}" Grid.Row="0" Grid.Column="1" Foreground="Green" FontSize="16" FontWeight="Bold"/>
+
+                                <Label Content="Host Comm Status:" Grid.Row="0" Grid.Column="2" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Path=CommStatus}" Grid.Row="0" Grid.Column="3" Foreground="Green" FontSize="16" FontWeight="Bold"/>
+
+                                <!-- Row 2: Equipment Control -->
+                                <Label Content="Control Status:" Grid.Row="1" Grid.Column="0" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Path=ControlStatus}" Grid.Row="1" Grid.Column="1" Foreground="Green" FontSize="16" FontWeight="Bold"/>
+
+                                <Label Content="Process State:" Grid.Row="1" Grid.Column="2" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Path=ProcessState}" Grid.Row="1" Grid.Column="3" Foreground="Green" FontSize="16" FontWeight="Bold"/>
+
+                                <!-- Row 3: PJ Status -->
+                                <Label Content="PJ Status:" Grid.Row="2" Grid.Column="0" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Path=PJJobStatus}" Grid.Row="2" Grid.Column="1" Foreground="Green" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="3"/>
+
+                                <Label Content="PJ ID:" Grid.Row="3" Grid.Column="0" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Path=PJJobStatus}" Grid.Row="3" Grid.Column="1" Foreground="Green" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="3"/>
+
+                                <!-- Row 4: Buttons -->
+                                <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Name="buttonEqConnect" Style="{StaticResource ModernButton}" IsEnabled="{Binding Path=IsConnected}" Margin="10">Connect</Button>
+                                    <Button Name="buttonEqDisconnect" Style="{StaticResource stopButton}" Margin="10">Disconnect</Button>
+                                    <Button Name="buttonEqRemote" Style="{StaticResource stopButton}" IsEnabled="{Binding Path=IsRemote}" Margin="10">Remote</Button>
+                                    <Button Name="buttonEqLocal" Style="{StaticResource ModernButton}" IsEnabled="{Binding Path=IsLocal}" Margin="10">Local</Button>
+                                </StackPanel>
+                            </Grid>
+                        </GroupBox>
 
                     </Grid>
-                </GroupBox>
+
+                    <!-- Second Row: Input Section & Log Display -->
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7.2*"/>
+                            <ColumnDefinition Width="2.8*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <!-- Ensures equal row heights for both sections -->
+                            <RowDefinition Height="auto"/>
+                            <!-- This row will automatically take equal height -->
+                        </Grid.RowDefinitions>
+
+                        <GroupBox Header="Batch Parameter" Grid.Column="1" Grid.Row="0">
+                            <GroupBox.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="LightCyan"/>
+                                    <!-- Microsoft Blue -->
+                                    <GradientStop Offset="1" Color="Silver"/>
+                                    <!-- Soft Metallic Touch -->
+                                </LinearGradientBrush>
+                            </GroupBox.Background>
+                            <Grid>
+                                <!-- Define the Grid structure: 5 rows and 4 columns -->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Row 1 -->
+                                <Label Content="Reservation No:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Width="150" Text="107005074"/>
+                                <!-- Row 2 -->
+                                <Label Content="Batch No:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Width="150" Text="CBNGF2Q001"/>
+
+                                <!-- Row 3 -->
+                                <Label Content="Module From Factor:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="2" Grid.Column="1"  Text="New Product" Width="150" />
+
+                                <!-- Row 4 -->
+                                <Label Content="Prod Name:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="3" Grid.Column="1"  Text="M5"  Width="150" />
+
+                                <!-- Row 5 -->
+                                <Label Content="Prod Height:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Width="150" Text="2.15"/>
+                                <!-- Row 6 -->
+                                <Label Content="Prod Length:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" Width="150" Text="2"/>
+
+                                <!-- Row 7 -->
+                                <Label Content="Prod Width:" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="6" Grid.Column="1" Width="150" Text="2"/>
 
 
-                <!-- Logs Section -->
-                <GroupBox Header="Logs" Grid.Column="1" Grid.Row="0" Height="400">
-                    <GroupBox.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Offset="0" Color="AliceBlue"></GradientStop>
+                            </Grid>
+                        </GroupBox>
 
-                            <GradientStop Offset="1" Color="LemonChiffon"></GradientStop>
-                        </LinearGradientBrush>
-                    </GroupBox.Background>
-                    <ScrollViewer VerticalScrollBarVisibility="Auto">
-                        <TextBlock Text="Log details go here..."/>
-                    </ScrollViewer>
-                </GroupBox>
-            </Grid>
+
+                        <GroupBox Header="Logs" Grid.Column="0" Grid.Row="0"
+                         HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <GroupBox.Content>
+                                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5"/>
+                                        <!-- Vertical Bar -->
+                                        <ColumnDefinition Width="*"/>
+                                        <!-- TextBox -->
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Vertical Bar -->
+                                    <Border Grid.Column="0" Background="Transparent" VerticalAlignment="Stretch"/>
+
+                                    <!-- TextBox -->
+                                    <TextBox Name="textboxLog"
+                                         Grid.Column="1"
+                                         Margin="0"
+                                         Height="500"
+                                         VerticalContentAlignment="Top"
+                                         HorizontalAlignment="Stretch"
+                                         VerticalAlignment="Stretch" 
+                                         TextWrapping="Wrap"
+                                          IsReadOnly="True"
+                                         VerticalScrollBarVisibility="Auto">
+                                        <TextBox.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                <GradientStop Offset="0" Color="AntiqueWhite"></GradientStop>
+                                                <GradientStop Offset="1" Color="GreenYellow"></GradientStop>
+                                            </LinearGradientBrush>
+                                        </TextBox.Background>
+                                    </TextBox>
+
+                                </Grid>
+                            </GroupBox.Content>
+                        </GroupBox>
+
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
         </Grid>
-    </Grid>
+    </DockPanel>
 </Window>

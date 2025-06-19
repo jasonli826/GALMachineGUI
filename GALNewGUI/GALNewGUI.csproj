@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UserManagement\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\ManageUser.xaml.cs">
+      <DependentUpon>ManageUser.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,6 +76,18 @@
     <Page Include="Resources\Themes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserManagement\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserManagement\ManageUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -99,10 +117,35 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\btnRun.png" />
-    <Resource Include="Images\btnStop.png" />
-    <Resource Include="Images\RoboticConnected.png" />
-    <Resource Include="Images\RoboticNotConnected.png" />
+    <Resource Include="Images\btnRun.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\btnStop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\RoboticConnected.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\RoboticNotConnected.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoadBatch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Utility.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\help.png" />
+    <Resource Include="Images\password.png" />
+    <Resource Include="Images\Service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Themes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
