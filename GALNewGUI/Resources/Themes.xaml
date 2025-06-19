@@ -7,13 +7,13 @@
         <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect Color="Gray" BlurRadius="10" ShadowDepth="5"/>
+                <DropShadowEffect Color="Transparent"  BlurRadius="10" ShadowDepth="5"/>
             </Setter.Value>
         </Setter>
 
         <!-- Header font adjustments -->
         <Setter Property="FontFamily" Value="Segoe UI"/>
-        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="#007ACC"/>
     </Style>
@@ -31,16 +31,16 @@
         <GradientStop Offset="1" Color="PaleGreen"></GradientStop>
     </LinearGradientBrush>
     <Style TargetType="TextBox">
-        <Setter Property="Margin" Value="5"/>
-        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Padding" Value="3"/>
         <Setter Property="BorderBrush" Value="#007ACC"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Foreground" Value="#007ACC"/>
     </Style>
     <Style TargetType="Label">
-        <Setter Property="FontSize" Value="16"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="3"/>
         <Setter Property="Foreground" Value="#007ACC"/>
         <!-- Ensures white text -->
         <!-- Optional: Set background -->
@@ -412,4 +412,93 @@
         <Setter Property="FontFamily" Value="Segoe UI" />
         <Setter Property="Margin" Value="0,0,0,5" />
     </Style>
+
+    <!-- TabItem Style -->
+    <Style TargetType="TabItem">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="12,6"/>
+        <Setter Property="Margin" Value="4,2,4,0"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border Name="Border"
+                         CornerRadius="10,10,0,0"
+                         BorderBrush="Transparent"
+                         BorderThickness="1"
+                         Margin="2"
+                         Padding="10,6">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#7F00FF" Offset="0"/>
+                                <GradientStop Color="#E100FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <ContentPresenter x:Name="ContentSite"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       ContentSource="Header"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <!-- Selected Tab -->
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#00C6FF" Offset="0"/>
+                                        <GradientStop Color="#0072FF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6EC6"/>
+                        </Trigger>
+
+                        <!-- Mouse Hover -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#FF512F" Offset="0"/>
+                                        <GradientStop Color="#DD2476" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- TabControl Style -->
+    <Style TargetType="TabControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid>
+                        <DockPanel>
+                            <TabPanel Name="HeaderPanel"
+                                   DockPanel.Dock="Top"
+                                   IsItemsHost="True"
+                                   Margin="4,4,4,0"
+                                   Background="Transparent"/>
+                            <Border BorderThickness="2"
+                                 CornerRadius="0,0,10,10"
+                                 BorderBrush="#CCCCCC"
+                                 Background="White"
+                                 Margin="4">
+                                <ContentPresenter Name="ContentSite"
+                                               Margin="10"
+                                               ContentSource="SelectedContent"/>
+                            </Border>
+                        </DockPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

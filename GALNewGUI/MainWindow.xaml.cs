@@ -37,6 +37,13 @@ namespace GALNewGUI
 
 
         }
+        private void MenuEditProduct_Click(object sender, RoutedEventArgs e)
+        {
+            var EditProductWindow = new GALNewGUI.Product.EditProduct(); // Use the correct namespace if needed
+            EditProductWindow.Owner = this;
+            EditProductWindow.ShowDialog(); // Or use Show() if you don’t want modal
+
+        }
         private void menuManageUser_Click(object sender, RoutedEventArgs e)
         {
             var manageUserWindow = new GALNewGUI.UserManagement.ManageUser(); // Use the correct namespace if needed

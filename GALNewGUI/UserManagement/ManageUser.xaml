@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GALNewGUI.UserManagement"
         mc:Ignorable="d"
-        Title="ManageUser" Height="520" Width="600">
+        Title="ManageUser" Height="410" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True">
         <Window.Background>
         <!-- Colorful Gradient Background -->
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -25,11 +25,16 @@
 
     <Grid>
         <TabControl Margin="20"
+                    Foreground="{StaticResource PrimaryColorForLogin}"
                     Background="Transparent"
-                    BorderThickness="0">
-            <TabItem Header="Add New User">
+                    FontFamily="Segoe UI"
+                    BorderThickness="1">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="➕ Add New User" FontSize="14" ToolTip="Add User"/>
+                </TabItem.Header>
                 <Grid Background="#FFE4B5">
-                    <Border CornerRadius="12" Background="White" Padding="20" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <Border CornerRadius="12" Background="White" Padding="10" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Center">
                         <Grid Width="320">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -46,46 +51,156 @@
                             </Grid.ColumnDefinitions>
 
                             <!-- Title -->
-                            <TextBlock Text="Add New User" FontSize="22" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0,0,20"/>
+                            <TextBlock Text="Add New User" FontSize="20" FontWeight="Bold" FontFamily="Segoe UI" Foreground="{StaticResource PrimaryColorForLogin}" HorizontalAlignment="Center" Margin="0,0,0,30" />
 
                             <!-- Username -->
                             <Label Content="Username:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,10"/>
-                            <TextBox Grid.Row="1" Grid.Column="1" Height="30" Background="#F0F0F0" Padding="5" Margin="0,0,0,10"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Height="25" Background="#F0F0F0" Padding="5" Margin="0,0,0,10"/>
 
                             <!-- Password -->
                             <Label Content="Password:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,10"/>
-                            <PasswordBox Grid.Row="2" Grid.Column="1" Height="30" Background="#F0F0F0" Padding="5" Margin="0,0,0,10"/>
-
-                            <!-- Access Level -->
-                            <Label Content="Access Level:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,10"/>
-                            <ComboBox Grid.Row="3" Grid.Column="1" Height="30" Background="#F0F0F0" Padding="4" Margin="0,0,0,10">
+                            <PasswordBox Grid.Row="2" Grid.Column="1" Height="25" Background="#F0F0F0" Padding="5" Margin="0,0,0,10"/>
+                           
+                                <!-- Access Level -->
+                                <Label Content="Access Level:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,10"/>
+                            <ComboBox Grid.Row="3" Grid.Column="1"
+                                  Margin="0,0,0,10"
+                                  Background="#F0F0F0"
+                                  Height="25"
+                                  Padding="2"
+                                  FontSize="14"
+                                  FontFamily="Segoe UI"
+                                  Foreground="{StaticResource PrimaryColorForLogin}"
+                                  BorderThickness="1"
+                                  BorderBrush="{StaticResource PrimaryColorForLogin}">
                                 <ComboBoxItem Content="Administrator"/>
                                 <ComboBoxItem Content="Engineer"/>
                                 <ComboBoxItem Content="Technician"/>
                                 <ComboBoxItem Content="Operator"/>
                             </ComboBox>
-
                             <!-- Button -->
-                            <Button Content="Add New User" Grid.Row="4" Grid.ColumnSpan="2" Height="35" Margin="0,10,0,0"
-                        Background="#2D89EF" Foreground="White" FontWeight="Bold"
-                        BorderBrush="#1A5DB3" BorderThickness="1"/>
+                            <Button Content="Add" Grid.Row="4" Grid.ColumnSpan="2"  Style="{StaticResource ModernButton}" />
                         </Grid>
                     </Border>
                 </Grid>
             </TabItem>
 
 
-            <TabItem Header="Delete User">
+            <!--<TabItem Header="Delete User">
                 <Grid Background="#FFB6C1">
                     <TextBlock Text="Delete User Page" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 </Grid>
-            </TabItem>
+            </TabItem>-->
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text=" 🗑 Delete User" FontSize="14" ToolTip="Add User"/>
+                </TabItem.Header>
+                <Grid Background="#FFB6C1">
+                    <Border CornerRadius="12" Background="White" Padding="20" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Center">
+                        <Grid Width="320">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="Auto"/>
+                                <!-- Delete Button row -->
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Delete User" FontSize="24" FontWeight="Bold" FontFamily="Segoe UI" Foreground="{StaticResource PrimaryColorForLogin}" HorizontalAlignment="Center" Margin="0,0,0,30" />
 
-            <TabItem Header="Change Password">
+                            <!-- Username Label and ComboBox -->
+                            <Label Content="Username:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <ComboBox Grid.Row="1" Grid.Column="1"
+                          Height="30"
+                          Background="#F0F0F0"
+                          Padding="2"
+                          FontSize="14"
+                          FontFamily="Segoe UI"
+                          Foreground="{StaticResource PrimaryColorForLogin}"
+                          BorderThickness="1"
+                          BorderBrush="{StaticResource PrimaryColorForLogin}">
+                                <ComboBoxItem Content="Administrator"/>
+                                <ComboBoxItem Content="Engineer"/>
+                                <ComboBoxItem Content="Technician"/>
+                                <ComboBoxItem Content="Operator"/>
+                            </ComboBox>
+
+                            <!-- Delete Button -->
+                            <Button Content="Delete"
+                        Grid.Row="3" Grid.ColumnSpan="2"
+                        Style="{StaticResource stopButton}"
+                        HorizontalAlignment="Center"
+                        Width="100"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text=" 🔒 Change Password " FontSize="14" ToolTip=" Change Password "/>
+                </TabItem.Header>
                 <Grid Background="#AFEEEE">
-                    <TextBlock Text="Change Password Page" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                    <Border CornerRadius="12" Background="White" Padding="20" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Center">
+                        <Grid Width="320">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="Auto"/>
+                                <!-- Delete Button row -->
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Change Password" FontSize="26" FontWeight="Bold" FontFamily="Segoe UI" Foreground="{StaticResource PrimaryColorForLogin}" HorizontalAlignment="Center" Margin="0,0,0,30" />
+
+                            <!-- Username Label and ComboBox -->
+                            <Label Content="Username:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <ComboBox Grid.Row="1" Grid.Column="1"
+                              Height="20"
+                              Background="#F0F0F0"
+                              Padding="2"
+                              FontSize="14"
+                              FontFamily="Segoe UI"
+                              Foreground="{StaticResource PrimaryColorForLogin}"
+                              BorderThickness="1"
+                              BorderBrush="{StaticResource PrimaryColorForLogin}">
+                                <ComboBoxItem Content="Administrator"/>
+                                <ComboBoxItem Content="Engineer"/>
+                                <ComboBoxItem Content="Technician"/>
+                                <ComboBoxItem Content="Operator"/>
+                            </ComboBox>
+                            <Label Content="Password:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <PasswordBox x:Name="PasswordBox" Grid.Row="3" Grid.Column="1" Height="25" />
+                            <!-- Update Button -->
+                            <Button Content="Update"
+                            Grid.Row="5" Grid.ColumnSpan="2"
+                            Style="{StaticResource ModernButton}"
+                            HorizontalAlignment="Center"
+                            Width="100"/>
+                        </Grid>
+                    </Border>
                 </Grid>
             </TabItem>
         </TabControl>
+        <Button Content="✕"
+        Width="30" Height="30"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Top"
+        Margin="0,10,10,0"
+        Background="Transparent"
+        Foreground="{StaticResource PrimaryColorForLogin}"
+        BorderBrush="Transparent"
+        FontWeight="Bold"
+        FontSize="14"
+        Cursor="Hand"
+        Click="CloseButton_Click"/>
     </Grid>
+
 </Window>

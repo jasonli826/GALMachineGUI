@@ -3,15 +3,23 @@
   "WorkspaceRootPath": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\galnewgui\\resources\\themes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|solutionrelative:galnewgui\\resources\\themes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|d:\\project\\projects\\machinegui\\gal machine gui 3\\newgalmachineguiv2\\galmachinegui\\galnewgui\\product\\editproduct.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|solutionrelative:galnewgui\\product\\editproduct.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|d:\\project\\projects\\machinegui\\gal machine gui 3\\newgalmachineguiv2\\galmachinegui\\galnewgui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|solutionrelative:galnewgui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|d:\\project\\projects\\machinegui\\gal machine gui 3\\newgalmachineguiv2\\galmachinegui\\galnewgui\\usermanagement\\manageuser.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|solutionrelative:galnewgui\\usermanagement\\manageuser.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|d:\\project\\projects\\machinegui\\gal machine gui 3\\newgalmachineguiv2\\galmachinegui\\galnewgui\\product\\editproduct.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|solutionrelative:galnewgui\\product\\editproduct.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|d:\\project\\projects\\machinegui\\gal machine gui 3\\newgalmachineguiv2\\galmachinegui\\galnewgui\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\galnewgui\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|solutionrelative:galnewgui\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
@@ -19,12 +27,12 @@
       "RelativeMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|solutionrelative:galnewgui\\usermanagement\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|d:\\project\\projects\\machinegui\\gal machine gui 3\\newgalmachineguiv2\\galmachinegui\\galnewgui\\usermanagement\\manageuser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\galnewgui\\usermanagement\\manageuser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|solutionrelative:galnewgui\\usermanagement\\manageuser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\galnewgui\\resources\\themes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|solutionrelative:galnewgui\\resources\\themes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\galnewgui\\usermanagement\\manageuser.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|solutionrelative:galnewgui\\usermanagement\\manageuser.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}|GALNewGUI\\GALNewGUI.csproj|D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\galnewgui\\usermanagement\\login.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
@@ -38,24 +46,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "GALNewGUI\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\MainWindow.xaml.cs",
-              "RelativeToolTip": "GALNewGUI\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T07:59:54.118Z",
+              "DocumentIndex": 5,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\UserManagement\\Login.xaml",
+              "RelativeDocumentMoniker": "GALNewGUI\\UserManagement\\Login.xaml",
+              "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\UserManagement\\Login.xaml",
+              "RelativeToolTip": "GALNewGUI\\UserManagement\\Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-18T03:12:43.163Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "GALNewGUI\\MainWindow.xaml",
+              "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\MainWindow.xaml",
+              "RelativeToolTip": "GALNewGUI\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-18T05:43:12.757Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EditProduct.xaml.cs",
+              "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\Product\\EditProduct.xaml.cs",
+              "RelativeDocumentMoniker": "GALNewGUI\\Product\\EditProduct.xaml.cs",
+              "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\Product\\EditProduct.xaml.cs",
+              "RelativeToolTip": "GALNewGUI\\Product\\EditProduct.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T08:01:29.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditProduct.xaml",
+              "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\Product\\EditProduct.xaml",
+              "RelativeDocumentMoniker": "GALNewGUI\\Product\\EditProduct.xaml",
+              "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\Product\\EditProduct.xaml",
+              "RelativeToolTip": "GALNewGUI\\Product\\EditProduct.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-19T02:30:38.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ManageUser.xaml",
               "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\UserManagement\\ManageUser.xaml",
               "RelativeDocumentMoniker": "GALNewGUI\\UserManagement\\ManageUser.xaml",
@@ -67,64 +113,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.xaml",
-              "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\UserManagement\\Login.xaml",
-              "RelativeDocumentMoniker": "GALNewGUI\\UserManagement\\Login.xaml",
-              "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\UserManagement\\Login.xaml",
-              "RelativeToolTip": "GALNewGUI\\UserManagement\\Login.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-18T03:12:43.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "GALNewGUI\\MainWindow.xaml",
-              "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\MainWindow.xaml",
-              "RelativeToolTip": "GALNewGUI\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-18T05:43:12.757Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "ManageUser.xaml.cs",
               "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\UserManagement\\ManageUser.xaml.cs",
               "RelativeDocumentMoniker": "GALNewGUI\\UserManagement\\ManageUser.xaml.cs",
               "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\UserManagement\\ManageUser.xaml.cs",
               "RelativeToolTip": "GALNewGUI\\UserManagement\\ManageUser.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T07:59:05.937Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "GALNewGUI\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\MainWindow.xaml.cs",
+              "RelativeToolTip": "GALNewGUI\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwDoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T07:59:54.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Themes.xaml",
               "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\Resources\\Themes.xaml",
               "RelativeDocumentMoniker": "GALNewGUI\\Resources\\Themes.xaml",
-              "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\Resources\\Themes.xaml",
-              "RelativeToolTip": "GALNewGUI\\Resources\\Themes.xaml",
+              "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\Resources\\Themes.xaml*",
+              "RelativeToolTip": "GALNewGUI\\Resources\\Themes.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-06-18T03:36:52.505Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Login.xaml.cs",
               "DocumentMoniker": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\UserManagement\\Login.xaml.cs",
               "RelativeDocumentMoniker": "GALNewGUI\\UserManagement\\Login.xaml.cs",
               "ToolTip": "D:\\Project\\Projects\\MachineGUI\\GAL MACHINE GUI 3\\NewGALMachineGUIV2\\GALMachineGUI\\GALNewGUI\\UserManagement\\Login.xaml.cs",
               "RelativeToolTip": "GALNewGUI\\UserManagement\\Login.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:25:09.68Z"
+              "WhenOpened": "2025-06-18T03:25:09.68Z",
+              "EditorCaption": ""
             }
           ]
         }

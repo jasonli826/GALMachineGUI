@@ -28,9 +28,10 @@
 
         <Border Background="#ffffffEE" CornerRadius="16" Padding="30" Margin="30" BorderBrush="#cccccc" BorderThickness="1" >
             <StackPanel>
-                <TextBlock Text="🔐 Welcome Back" FontSize="26" FontWeight="Bold" FontFamily="Segoe UI" Foreground="{StaticResource PrimaryColorForLogin}" HorizontalAlignment="Center" Margin="0,0,0,30" />
+                <TextBlock Text="🔐 Welcome" FontSize="26" FontWeight="Bold" FontFamily="Segoe UI" Foreground="{StaticResource PrimaryColorForLogin}" HorizontalAlignment="Center" Margin="0,0,0,30" />
 
                 <TextBlock Text="Username" />
+                
                 <Border CornerRadius="5" BorderBrush="{StaticResource PrimaryColorForLogin}" BorderThickness="1" Padding="0">
                     <ComboBox x:Name="UsernameBox" IsEditable="True"
                               FontSize="16" FontFamily="Segoe UI Semibold" Height="40" Padding="10,5"
@@ -45,8 +46,18 @@
 
                 <TextBlock Text="Password" Margin="0,20,0,0" />
                 <PasswordBox x:Name="PasswordBox" />
+                <Grid Margin="0,20,0,0" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="20"/>
+                        <!-- spacing -->
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-                <Button Content="Login" Click="Login_Click" />
+                    <Button Grid.Column="0" Content="Login" Click="Login_Click" Style="{StaticResource ModernButton}" Margin="10" />
+
+                    <Button Grid.Column="2" Content="Cancel" Width="100" Click="Cancel_Click" Style="{StaticResource stopButton}" Margin="10" />
+                </Grid>
             </StackPanel>
         </Border>
 

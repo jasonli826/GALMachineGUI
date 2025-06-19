@@ -19,16 +19,16 @@
         <Menu IsMainMenu="True" Name="mainMenu"  DockPanel.Dock="Top">
             <MenuItem  Name="menuProduct">
                 <MenuItem.Header>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="70" Width="180" Margin="3">
-                        <Image Source="Images/Product.png" Height="60" Width="60" Margin="5,0"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="35" Width="160" Margin="2">
+                        <Image Source="Images/Product.png" Height="35" Width="60" Margin="5,0"/>
                         <TextBlock Text="Product" VerticalAlignment="Center" Foreground="White"
-                       FontSize="28" FontWeight="Bold" Margin="0,0,0,0"/>
+                       FontSize="22" FontWeight="Bold" Margin="0,0,0,0"/>
                     </StackPanel>
                 </MenuItem.Header>
                 <MenuItem Header="Load Product"
                   Name="menuLoadProduct"></MenuItem>
                 <MenuItem Header="Edit Product"
-                  Name="menuEditProduct"></MenuItem>
+                  Name="menuEditProduct" Click="MenuEditProduct_Click"></MenuItem>
                 <MenuItem Header="New Product"
                   Name="menuNewProduct"></MenuItem>
             </MenuItem>
@@ -41,10 +41,10 @@
                     </Grid>
                 </MenuItem.Header>-->
                 <MenuItem.Header>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="70" Width="180" Margin="3">
-                        <Image Source="Images/Utility.png" Height="60" Width="60" Margin="5,0"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="35" Width="160" Margin="2">
+                        <Image Source="Images/Utility.png" Height="35" Width="60" Margin="5,0"/>
                         <TextBlock Text="Utility" VerticalAlignment="Center" Foreground="White"
-                       FontSize="28" FontWeight="Bold" Margin="0,0,0,0"/>
+                       FontSize="22" FontWeight="Bold" Margin="0,0,0,0"/>
                     </StackPanel>
                 </MenuItem.Header>
                 <MenuItem Header="Manual Utility"
@@ -61,10 +61,10 @@
                     </Grid>
                 </MenuItem.Header>-->
                 <MenuItem.Header>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="70" Width="180" Margin="3">
-                        <Image Source="Images/Password.png" Height="60" Width="60" Margin="5,0"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="35" Width="120" Margin="3">
+                        <Image Source="Images/Password.png" Height="40" Width="35" Margin="5,0"/>
                         <TextBlock Text="User" VerticalAlignment="Center" Foreground="White"
-                        FontSize="28" FontWeight="Bold" Margin="0,0,0,0"/>
+                        FontSize="22" FontWeight="Bold" Margin="0,0,0,0"/>
                     </StackPanel>
                 </MenuItem.Header>
                 <MenuItem Header="Login"
@@ -83,10 +83,10 @@
                     </Grid>
                 </MenuItem.Header>-->
                 <MenuItem.Header>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="50" Width="165" Margin="3">
-                        <Image Source="Images/Service.png" Height="60" Width="60" Margin="5,0"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="35" Width="150" Margin="3">
+                        <Image Source="Images/Service.png" Height="35" Width="60" Margin="5,0"/>
                         <TextBlock Text="Service" VerticalAlignment="Center" Foreground="White"
-                    FontSize="28" FontWeight="Bold" Margin="0,0,0,0"/>
+                    FontSize="22" FontWeight="Bold" Margin="0,0,0,0"/>
                     </StackPanel>
                 </MenuItem.Header>
                 <MenuItem Header="Robot Teach Utility"
@@ -107,10 +107,10 @@
                     </Grid>
                 </MenuItem.Header>-->
                 <MenuItem.Header>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="50" Width="150" Margin="3">
-                        <Image Source="Images/Help.png" Height="50" Width="50" Margin="5,0"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="35" Width="150" Margin="3">
+                        <Image Source="Images/Help.png" Height="40" Width="50" Margin="5,0"/>
                         <TextBlock Text="Help" VerticalAlignment="Center" Foreground="White"
-                     FontSize="28" FontWeight="Bold" Margin="0,0,0,0"/>
+                     FontSize="22" FontWeight="Bold" Margin="0,0,0,0"/>
                     </StackPanel>
                 </MenuItem.Header>
                 <MenuItem Header="About"
@@ -137,7 +137,7 @@
                 <ColumnDefinition Width="*"/>
                 <!-- Main Content -->
             </Grid.ColumnDefinitions>
-            <ScrollViewer Grid.Column="1" Margin="10" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer Grid.Column="1" Margin="10" >
                 <Grid Grid.Column="1" Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>

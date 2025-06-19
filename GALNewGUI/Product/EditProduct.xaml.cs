@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GALNewGUI.UserManagement
+namespace GALNewGUI.Product
 {
     /// <summary>
-    /// Interaction logic for ManageUser.xaml
+    /// Interaction logic for EditProduct.xaml
     /// </summary>
-    public partial class ManageUser : Window
+    public partial class EditProduct : Window
     {
-        public ManageUser()
+        public EditProduct()
         {
             InitializeComponent();
         }
@@ -27,5 +27,6 @@ namespace GALNewGUI.UserManagement
         {
             this.Close();
         }
+    
     }
 }
