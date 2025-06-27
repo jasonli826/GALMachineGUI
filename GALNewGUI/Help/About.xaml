@@ -1,0 +1,80 @@
+﻿<Window x:Class="GALNewGUI.Help.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GALNewGUI.Help"
+        mc:Ignorable="d" Title="About" Height="300" Width="500" ResizeMode="NoResize" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <!-- Colorful Gradient Background -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#007ACC" Offset="1"/>
+            <GradientStop Color="#FFD500" Offset="1"/>
+            <GradientStop Color="#00C9FF" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid Margin="15" >
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FF416C" Offset="0"/>
+                <GradientStop Color="#FF4B2B" Offset="0.25"/>
+                <GradientStop Color="#FFD500" Offset="0.5"/>
+                <GradientStop Color="#00FFC8" Offset="0.75"/>
+                <GradientStop Color="#00FF87" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <!-- Colorful Background Panels -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title with multi-gradient colorful text -->
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold" Margin="0,10,0,5">
+            <TextBlock.Foreground>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#007ACC" Offset="1"/>
+                    <GradientStop Color="#FFD500" Offset="1"/>
+                    <GradientStop Color="#00C9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+            Getech Automatic Loader
+        </TextBlock>
+
+        <!-- Subtitle with vibrant background and white text -->
+        <Border Grid.Row="1" Margin="30,0,30,15" Padding="12,8" CornerRadius="12">
+            <Border.Background>
+                <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="0.8" RadiusY="0.8">
+                    <GradientStop Color="#FF6A00" Offset="0"/>
+                    <GradientStop Color="#FFCB00" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.Background>
+            <TextBlock Text="Software Version Details" FontSize="22" FontWeight="SemiBold" Foreground="White" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+        </Border>
+
+        <!-- Textbox with colorful border and background -->
+        <Border Grid.Row="2" CornerRadius="15" Padding="8"
+                BorderThickness="3">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF4B2B" Offset="0"/>
+                    <GradientStop Color="#FF416C" Offset="0.4"/>
+                    <GradientStop Color="#00FFC8" Offset="0.7"/>
+                    <GradientStop Color="#00FF87" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <TextBox Name="textboxVersonInfo"
+                     Background="Transparent"
+                     BorderThickness="0"
+                     FontSize="16"
+                     Foreground="#333333"
+                     VerticalScrollBarVisibility="Auto"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     Padding="5"
+                     VerticalContentAlignment="Top"/>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,178 @@
+#Input,
+0, Start Button
+1, Reserved
+2, Reserved
+3, RBM Door Closed Signal With Condition
+4, Stop Button (Pause and Reset Buttons Activated)
+5, Pause Button
+6, Continue (Start Button Activated)
+7, Reset Button
+6144, P&P Head 1 Down Sensor
+6145, P&P Head 1 Up Sensor
+6146, P&P Head 2 Down Sensor
+6147, P&P Head 2 Up Sensor
+6148, P&P Head 1 Vacuum Sensor
+6149, P&P Head 2 Vacuum Sensor
+6150, Signal from Previous Machine
+6151, Empty Tray Ready Sensor
+6152, Empty Tray Unstack Sensor
+6153, Empty Tray Low Buffer Sensor
+6154, Empty Tray Jack Up 1 Sensor
+6155, Empty Tray Jack Down 1 Sensor
+6156, Empty Tray Jack Up 2 Sensor
+6157, Empty Tray Jack Down 2 Sensor
+6158, Empty Tray Singulator Forward Sensor
+6159, Empty Tray Singulator Backward Sensor
+6160, Empty Tray Buffer Sensor
+6161, Unload Tray Jackup Sensor
+6162, Unload Tray Jackdown Sensor
+6163, SPARE
+6164, Unload Tray Full Sensor
+6165, Unload Tray Stack Sensor
+6166, Unload Tray Present Sensor
+6167, Unload Tray Pass Through Sensor
+6168, Shuttle Tray Front Present Sensor
+6169, Shuttle Tray Support Up
+6170, Shuttle Tray Support Down
+6171, Fixture Close Sensor
+6172, ICT Reject Tray Present Sensor
+6173, ICT Reject Tray Unlock Sensor
+6174, Shuttle Conveyor Motor Thermal OK
+6175, LOAD/UNLOAD Conveyor Motor Thermal OK
+6176, Bridge Axis Servo Ready
+6177, Bridge Axis Home Done
+6178, Bridge Axis Position Done
+6179, Bridge Axis Alarm
+6180, Shuttle Axis Servo Ready
+6181, Shuttle Axis Home Done
+6182, Shuttle Axis Position Done
+6183, Shuttle Axis Alarm
+6184, RESERVED
+6185, RESERVED
+6186, RESERVED
+6187, RESERVED
+6188, RESERVED
+6189, RESERVED
+6190, RESERVED
+6191, RESERVED
+6192, RESERVED
+6193, RESERVED
+6194, RESERVED
+6195, SPARE
+6196, SPARE
+6197, From Camera OUT22, STO
+6198, From Camera OUT23, OR
+6199, From Camera OUT0, ACK (RUN)
+6200, From Camera OUT1, NACK (Error)
+6201, From Camera OUT2, Busy (Ready 3)
+6202, From Camera OUT3, CMD-Ready
+6203, From Camera OUT4, Read 1
+6204, From Camera OUT5, Read 2
+6205, From Camera OUT6, OUT_DATA 0
+6206, From Camera OUT7, OUT_DATA 1
+6207, From Camera OUT8, OUT_DATA 2
+6208, Camera Axis Servo Ready
+6209, Camera Axis Home Done
+6210, Camera Axis Poistion Done
+6211, Camera Axis Alarm
+6212, SPARE
+6213, SPARE
+6214, SPARE
+6215, SPARE
+6216, SPARE
+6217, SPARE
+6218, SPARE
+6219, SPARE
+6220, SPARE
+6221, RBM Failed Board
+6222, RBM Table Info
+6223, Load/Unload Door Closed
+#Output,
+0, Tower Light Green (Software Control)
+1, Robot Running (Robot Control)
+2, Tower Light Amber(Software Control)
+3, Robot Error(Robot Control)
+4, SPARE
+5, SPARE
+6, Tower Light Red to Off (Relay)
+7, Buzzer
+6144, P&P Head 1 Down
+6145, P&P Head 2 Down
+6146, P&P Head 1 Purge
+6147, P&P Head 1 Vacuum On
+6148, P&P Head 2 Purge
+6149, P&P Head 2 Vacuum On
+6150, Signal to Previous Machine
+6151, Empty Tray Conveyor Run
+6152, Unload Tray Conveyor Run
+6153, Shuttle Tray Conveyor Run Forward
+6154, Shuttle Tray Conveyor Run Reversed (6153 Must Be On)
+6155, Empty Tray Jack Up 1
+6156, Empty Tray Jack Down 1
+6157, Empty Tray Jack Up 2
+6158, Empty Tray Jack Down 2
+6159, Spare
+6160, Empty Tray Singulator FWD
+6161, Empty Tray Singulator BWD
+6162, Unload Tray Jack Up
+6163, Unload Tray Jack Down
+6164, Shuttle Tray Support Up
+6165, SPARE
+6166, Bridge Fixture Clamp On
+6167, ICT Reject Tray Lock
+6168, Bridge Axis Servo On
+6169, Bridge Axis CMD Trigger
+6170, Bridge Axis POS Bit 0
+6171, Bridge Axis POS Bit 1
+6172, Bridge Axis POS Bit 2
+6173, Bridge Axis Alarm Reset
+6174, RESERVED
+6175, RESERVED
+6176, Shuttle Axis Servo On
+6177, Shuttle Axis CMD Trigger
+6178, Shuttle Axis POS Bit 0
+6179, Shuttle Axis POS Bit 1
+6180, Shuttle Axis POS Bit 2 (Not In Use)
+6181, Shuttle Axis Alarm Reset
+6182, RESERVED
+6183, RESERVED
+6184, RESERVED
+6185, RESERVED
+6186, RESERVED
+6187, RESERVED
+6188, RESERVED
+6189, RESERVED
+6190, RESERVED
+6191, RESERVED
+6192, RESERVED
+6193, RESERVED
+6194, RESERVED
+6195, SPARE
+6196, SPARE
+6197, SPARE
+6198, SPARE
+6199, SPARE
+6200, SPARE
+6201, To Camera IN15, PLC
+6202, To Camera 1 Flash Trigger
+6203, To Camera 2 Flash Trigger
+6204, To Camera 3 Flash Trigger
+6205, To Camera F_IN3, EXT
+6206, RESERVED
+6207, RESERVED
+6208, Camera Axis Servo On
+6209, Camera Axis CMD Trigger
+6210, Camera Axis POS Bit 0
+6211, Camera Axis POS Bit 1
+6212, Camera Axis POS Bit 2
+6213, Camera Axis Alarm Reset
+6214, RESERVED
+6215, RESERVED
+6216, SPARE
+6217, SPARE
+6218, To Camera IN12, CST
+6219, To Camera IN13, Reset
+6220, To Camera IN14, PST
+6221, SPARE
+6222, SPARE
+6223, SPARE

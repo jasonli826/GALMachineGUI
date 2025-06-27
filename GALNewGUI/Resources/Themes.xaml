@@ -501,4 +501,11 @@
         </Setter>
     </Style>
 
+    <Style TargetType="TextBlock" x:Key="SectionHeader">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="#142C57"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
 </ResourceDictionary>

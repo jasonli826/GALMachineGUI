@@ -37,6 +37,27 @@ namespace GALNewGUI
 
 
         }
+        private void MenuMachineSetting_Click(object sender, RoutedEventArgs e)
+        {
+            var AboutWindow = new GALNewGUI.Service.MachineSetting(); // Use the correct namespace if needed
+            AboutWindow.Owner = this;
+            AboutWindow.ShowDialog(); // Or use Show() if you don’t want modal
+
+        }
+        private void MenuHelp_Click(object sender, RoutedEventArgs e)
+        {
+            var AboutWindow = new GALNewGUI.Help.About(); // Use the correct namespace if needed
+            AboutWindow.Owner = this;
+            AboutWindow.ShowDialog(); // Or use Show() if you don’t want modal
+
+        }
+        private void MenuNewProduct_Click(object sender, RoutedEventArgs e)
+        {
+            var InputDialogWindow = new GALNewGUI.Product.InputDialog(); // Use the correct namespace if needed
+            InputDialogWindow.Owner = this;
+            InputDialogWindow.ShowDialog(); // Or use Show() if you don’t want modal
+
+        }
         private void MenuEditProduct_Click(object sender, RoutedEventArgs e)
         {
             var EditProductWindow = new GALNewGUI.Product.EditProduct(); // Use the correct namespace if needed
@@ -50,6 +71,20 @@ namespace GALNewGUI
             manageUserWindow.Owner = this;
             manageUserWindow.ShowDialog(); // Or use Show() if you don’t want modal
 
+        }
+        private void menuIOUtility_Click(object sender, RoutedEventArgs e)
+        {
+            var IOUtilityWindow = new GALNewGUI.Utilities.IOUtility(); 
+            IOUtilityWindow.Owner = this;
+            IOUtilityWindow.ShowDialog(); 
+
+        }
+        private void menuManualUtility_Click(object sender, RoutedEventArgs e)
+        {
+            var utilityWindow = new GALNewGUI.Utilities.MannualUtilities();
+            utilityWindow.Owner = this;
+            utilityWindow.ShowDialog();
+        
         }
         private void menuUserMgmt_Click(object sender, RoutedEventArgs e)
         {

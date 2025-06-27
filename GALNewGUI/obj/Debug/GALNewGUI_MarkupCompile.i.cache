@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\GALNewGUI\App.xaml
-61640078503
+1139543498
 
-9-646800549
+14134716216
 13-38814620
-MainWindow.xaml;Product\EditProduct.xaml;Resources\Themes.xaml;Resources\Themes1.xaml;UserManagement\Login.xaml;UserManagement\ManageUser.xaml;
+Help\About.xaml;MainWindow.xaml;Product\EditProduct.xaml;Product\InputDialog.xaml;Resources\Themes.xaml;Resources\Themes1.xaml;Service\MachineSetting.xaml;UserManagement\Login.xaml;UserManagement\ManageUser.xaml;Utilities\IOUtility.xaml;Utilities\MannualUtilities.xaml;
 
-False
+True
 

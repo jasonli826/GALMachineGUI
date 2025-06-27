@@ -55,8 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Help\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Product\EditProduct.xaml.cs">
       <DependentUpon>EditProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Product\InputDialog.xaml.cs">
+      <DependentUpon>InputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service\MachineSetting.xaml.cs">
+      <DependentUpon>MachineSetting.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserManagement\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -64,6 +73,16 @@
     <Compile Include="UserManagement\ManageUser.xaml.cs">
       <DependentUpon>ManageUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\IOUtility.xaml.cs">
+      <DependentUpon>IOUtility.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\MannualUtilities.xaml.cs">
+      <DependentUpon>MannualUtilities.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Help\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -80,6 +99,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Product\InputDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Themes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,11 +111,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Service\MachineSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserManagement\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserManagement\ManageUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utilities\IOUtility.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utilities\MannualUtilities.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +200,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Command.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BarcodeScanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MachineSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Scanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
