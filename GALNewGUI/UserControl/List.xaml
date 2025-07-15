@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="ProductViewHierarchy.Controls.List"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProductViewHierarchy.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <GroupBox Header="List" FontWeight="Bold" Margin="10">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <!-- Pt1 -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Move Button -->
+                <ColumnDefinition Width="80"/>
+                <!-- X Ref 1 -->
+                <ColumnDefinition Width="80"/>
+                <!-- Y Ref 1 -->
+                <ColumnDefinition Width="80"/>
+                <!-- X Local 1 -->
+                <ColumnDefinition Width="80"/>
+                <!-- Y Local 1 -->
+
+                <ColumnDefinition Width="20"/>
+                <!-- Spacer -->
+
+                <!-- Pt2 -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Move Button -->
+                <ColumnDefinition Width="80"/>
+                <!-- X Ref 2 -->
+                <ColumnDefinition Width="80"/>
+                <!-- Y Ref 2 -->
+                <ColumnDefinition Width="80"/>
+                <!-- X Local 2 -->
+                <ColumnDefinition Width="80"/>
+                <!-- Y Local 2 -->
+
+                <!-- Other Settings -->
+                <ColumnDefinition Width="80"/>
+                <!-- Z Offset -->
+                <ColumnDefinition Width="80"/>
+                <!-- Feed Rate -->
+                <ColumnDefinition Width="80"/>
+                <!-- Grid Z Offset -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Row 0: Labels -->
+            <Button Grid.Row="0" Grid.Column="0" Content="Move Ref Pt1" Width="90" Margin="2"/>
+            <Label Grid.Row="0" Grid.Column="1" Content="X Ref 1" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="2" Content="Y Ref 1" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="3" Content="X Local 1" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="4" Content="Y Local 1" HorizontalAlignment="Center"/>
+
+            <Button Grid.Row="0" Grid.Column="6" Content="Move Ref Pt2" Width="90" Margin="2"/>
+            <Label Grid.Row="0" Grid.Column="7" Content="X Ref 2" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="8" Content="Y Ref 2" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="9" Content="X Local 2" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="10" Content="Y Local 2" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="11" Content="Z Offset" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="12" Content="Feed Rate" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="13" Content="Grid Z Offset" HorizontalAlignment="Center"/>
+
+            <!-- Row 1: TextBoxes -->
+            <Button Grid.Row="1" Grid.Column="0" Content="Teach Ref Pt1" Width="90" Margin="2"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding XRef1}" HorizontalContentAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding YRef1}" HorizontalContentAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding XLocal1}" HorizontalContentAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="4" Text="{Binding YLocal1}" HorizontalContentAlignment="Center"/>
+
+            <Button Grid.Row="1" Grid.Column="6" Content="Teach Ref Pt2" Width="90" Margin="2"/>
+            <TextBox Grid.Row="1" Grid.Column="7" Text="{Binding XRef2}" HorizontalContentAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="8" Text="{Binding YRef2}" HorizontalContentAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="9" Text="{Binding XLocal2}" HorizontalContentAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="10" Text="{Binding YLocal2}" HorizontalContentAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="11" Text="{Binding ZOffset}" HorizontalContentAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="12" Text="{Binding FeedRate}" HorizontalContentAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="13" Text="{Binding GridZOffset}" HorizontalContentAlignment="Center"/>
+        </Grid>
+    </GroupBox>
+</UserControl>

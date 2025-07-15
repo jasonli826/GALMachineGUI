@@ -54,7 +54,7 @@
                                 <WrapPanel Margin="5" Background="LightCyan" >
                                     <TextBlock Margin="5" Width="220" VerticalAlignment="Center"
                        FontWeight="SemiBold" Foreground="#333">Machine Type</TextBlock>
-                                    <TextBox Margin="5" Width="200" Text="{Binding Path=MachineType}"
+                                    <TextBox Margin="5" Width="200" Text="GAL"
                      IsEnabled="False" Background="#FFEFD5" Foreground="#666"/>
                                 </WrapPanel>
 
@@ -62,20 +62,20 @@
                                 <WrapPanel Margin="5" Background="Lavender">
                                     <TextBlock Margin="5" Width="220" VerticalAlignment="Center"
                        FontWeight="SemiBold" Foreground="#333">Machine SNo</TextBlock>
-                                    <TextBox Margin="5" Width="200" Text="{Binding Path=MachineSerialNo}"
+                                    <TextBox Margin="5" Width="200" Text="GAL101"
                      Background="#FFF8DC"/>
                                 </WrapPanel>
                                 <!-- Robot IP -->
                                 <WrapPanel Margin="5" Background="Lavender">
                                     <TextBlock Margin="5" Width="220" VerticalAlignment="Center"
                                     FontWeight="SemiBold" Foreground="#333">Robot IP</TextBlock>
-                                    <TextBox Margin="5" Width="200" Text="{Binding Path=MachineSerialNo}"
+                                    <TextBox Margin="5" Width="200" Text="192.168.20.142"
                                      Background="#FFF8DC"/>
                                 </WrapPanel>
                                 <WrapPanel Margin="5" Background="Lavender">
                                     <TextBlock Margin="5" Width="220" VerticalAlignment="Center"
                                     FontWeight="SemiBold" Foreground="#333">Robot Port No</TextBlock>
-                                    <TextBox Margin="5" Width="200" Text="{Binding Path=MachineSerialNo}"
+                                    <TextBox Margin="5" Width="200" Text="2001"
                                      Background="#FFF8DC"/>
                                 </WrapPanel>
 
@@ -100,12 +100,12 @@
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" Height="32">
                         <Image Source="../Images/Scanner.png"
-                   Width="20" Height="20"
-                   VerticalAlignment="Center" />
+                       Width="20" Height="20"
+                       VerticalAlignment="Center" />
                         <TextBlock Text="Scanner Comm Port"
-                       VerticalAlignment="Center"
-                       Margin="5,0,0,0"
-                       FontSize="14"/>
+                           VerticalAlignment="Center"
+                           Margin="5,0,0,0"
+                           FontSize="14"/>
                     </StackPanel>
                 </TabItem.Header>
 
@@ -140,9 +140,9 @@
 
                                             <StackPanel Orientation="Horizontal" x:Name="sp_scanner1Serial" Background="#F5FFFA" Margin="3">
                                                 <TextBlock Margin="5" Width="40" HorizontalAlignment="Right" Foreground="#333">COM</TextBlock>
-                                                <TextBox Margin="5" Width="100" Text="{Binding Path=machineParameters.ComSetting.Comport1}" Background="#F0FFF0"/>
+                                                <TextBox Margin="5" Width="100" Text="1" Background="#F0FFF0"/>
                                                 <TextBlock Margin="5" Width="100" Foreground="#333">Baudrate</TextBlock>
-                                                <TextBox Margin="5" Width="100" Text="{Binding Path=machineParameters.ComSetting.Baudrate1}" Background="#F0FFF0"/>
+                                                <TextBox Margin="5" Width="100" Text="9600" Background="#F0FFF0"/>
                                             </StackPanel>
 
                                             <StackPanel Orientation="Horizontal" Margin="3">
@@ -163,19 +163,11 @@
                                         </WrapPanel>
 
                                         <WrapPanel>
-                                            <!--<StackPanel Orientation="Horizontal"
-                                                x:Name="sp_scanner2TCP" Background="#FFFFE0" Margin="3">
-                                                <TextBlock Margin="5" Width="80" HorizontalAlignment="Right" Foreground="#333">IP Address</TextBlock>
-                                                <TextBox Margin="5" Width="140" Text="{Binding Path=machineParameters.ComSetting.IP_SC2}" Background="#FFFFF0"/>
-                                                <TextBlock Margin="5" Width="40" HorizontalAlignment="Right" Foreground="#333">Port</TextBlock>
-                                                <TextBox Margin="5" Width="100" Text="{Binding Path=machineParameters.ComSetting.Port_SC2}" Background="#FFFFF0"/>
-                                            </StackPanel>-->
-
                                             <StackPanel Orientation="Horizontal" x:Name="sp_scanner2Serial" Background="#F0FFF0" Margin="3">
                                                 <TextBlock Margin="5" Width="40" HorizontalAlignment="Right" Foreground="#333">COM</TextBlock>
-                                                <TextBox Margin="5" Width="100" Text="{Binding Path=machineParameters.ComSetting.Comport2}" Background="#F0FFF0"/>
+                                                <TextBox Margin="5" Width="100" Text="1" Background="#F0FFF0"/>
                                                 <TextBlock Margin="5" Width="100" Foreground="#333">Baudrate</TextBlock>
-                                                <TextBox Margin="5" Width="100" Text="{Binding Path=machineParameters.ComSetting.Baudrate2}" Background="#F0FFF0"/>
+                                                <TextBox Margin="5" Width="100" Text="9600" Background="#F0FFF0"/>
                                             </StackPanel>
 
                                             <StackPanel Orientation="Horizontal" Margin="3">
@@ -199,7 +191,7 @@
 
                         <StackPanel Margin="5,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" >
                             <Button Content="Save" Style="{StaticResource ModernButton}" Margin="0,0,10,0"/>
-                            <Button Content="Cancel" Style="{StaticResource stopButton}" />
+                            <Button Content="Cancel" Style="{StaticResource stopButton}" Click="BtnClose_Click" />
                         </StackPanel>
                     </StackPanel>
                 </ScrollViewer>

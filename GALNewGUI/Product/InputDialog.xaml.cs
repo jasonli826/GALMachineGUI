@@ -34,8 +34,8 @@ namespace GALNewGUI.Product
                 MessageBox.Show("Product Name Cannot be empty");
                 return;
             }
-
-            var EditProductWindow = new GALNewGUI.Product.EditProduct(); // Use the correct namespace if needed
+            string filePath = "C:\\router\\Product File\\"+productName+".json";
+            var EditProductWindow = new GALNewGUI.Product.EditProduct(filePath); // Use the correct namespace if needed
             EditProductWindow.Owner = this;
             EditProductWindow.ShowDialog(); // Or use Show() if you don’t want modal
             this.Close();

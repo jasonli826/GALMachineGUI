@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -44,11 +45,35 @@ namespace GALNewGUI
             AboutWindow.ShowDialog(); // Or use Show() if you don’t want modal
 
         }
+        private void MenuLoadProduct_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = @"C:\router\Product File";
+            openFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+            openFileDialog.Title = "Select a Product JSON file";
+
+            bool? result = openFileDialog.ShowDialog();
+
+            if (result == true)
+            {
+                string selectedFile = openFileDialog.FileName;
+
+                Product.EditProduct editWindow = new Product.EditProduct(selectedFile);
+                editWindow.Show();
+            }
+        }
         private void MenuHelp_Click(object sender, RoutedEventArgs e)
         {
             var AboutWindow = new GALNewGUI.Help.About(); // Use the correct namespace if needed
             AboutWindow.Owner = this;
             AboutWindow.ShowDialog(); // Or use Show() if you don’t want modal
+
+        }
+        private void MenuRobotTechUtil_Click(object sender, RoutedEventArgs e)
+        {
+            var TeachUtilityWindow = new GALNewGUI.Service.TeachUtility(); // Use the correct namespace if needed
+            TeachUtilityWindow.Owner = this;
+            TeachUtilityWindow.ShowDialog(); // Or use Show() if you don’t want modal
 
         }
         private void MenuNewProduct_Click(object sender, RoutedEventArgs e)

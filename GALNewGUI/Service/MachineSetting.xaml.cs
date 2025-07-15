@@ -68,7 +68,7 @@ namespace GALNewGUI.Service
 
             //gblightconfig.DataContext = machineParameters;
         }
-        private void BtnClose_Click(object sender, RoutedEvent e)
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

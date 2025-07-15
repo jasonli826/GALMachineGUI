@@ -35,8 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +59,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entity\AdaptorPallet.cs" />
+    <Compile Include="Entity\BarcodeOffsetPoints.cs" />
+    <Compile Include="Entity\CheckSpot1Offset.cs" />
+    <Compile Include="Entity\CheckSpot2Offset.cs" />
+    <Compile Include="Entity\CheckSpot3Offset .cs" />
+    <Compile Include="Entity\CheckSpot4Offset.cs" />
+    <Compile Include="Entity\CheckSpotEnable.cs" />
+    <Compile Include="Entity\CheckSpotPosOnOff.cs" />
+    <Compile Include="Entity\FlyCheckSpot1Offset.cs" />
+    <Compile Include="Entity\FlyCheckSpot2Offset.cs" />
+    <Compile Include="Entity\FlyCheckSpot3Offset.cs" />
+    <Compile Include="Entity\FlyCheckSpot4Offset.cs" />
+    <Compile Include="Entity\GALTimer.cs" />
+    <Compile Include="Entity\InputTray.cs" />
+    <Compile Include="Entity\ModuleBarcodePoints.cs" />
+    <Compile Include="Entity\Options.cs" />
+    <Compile Include="Entity\PlacementOffset.cs" />
+    <Compile Include="Entity\ProductHierarchyView\Barcode.cs" />
+    <Compile Include="Entity\ProductHierarchyView\ExportModel.cs" />
+    <Compile Include="Entity\ProductHierarchyView\Fiducial.cs" />
+    <Compile Include="Entity\ProductHierarchyView\GripperPlace.cs" />
+    <Compile Include="Entity\ProductHierarchyView\InterfaceResult.cs" />
+    <Compile Include="Entity\ProductHierarchyView\Line.cs" />
+    <Compile Include="Entity\ProductHierarchyView\List.cs" />
+    <Compile Include="Entity\ProductHierarchyView\MessageBoxMode.cs" />
+    <Compile Include="Entity\ProductHierarchyView\Pallet.cs" />
+    <Compile Include="Entity\ProductHierarchyView\TreeItem.cs" />
+    <Compile Include="Entity\ProductParameters.cs" />
+    <Compile Include="Entity\Root.cs" />
     <Compile Include="Help\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -66,6 +99,36 @@
     </Compile>
     <Compile Include="Service\MachineSetting.xaml.cs">
       <DependentUpon>MachineSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service\TeachUtility.xaml.cs">
+      <DependentUpon>TeachUtility.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Barcode.xaml.cs">
+      <DependentUpon>Barcode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Fiducial.xaml.cs">
+      <DependentUpon>Fiducial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\GripperPlace.xaml.cs">
+      <DependentUpon>GripperPlace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\InterfaceResult.xaml.cs">
+      <DependentUpon>InterfaceResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Line.xaml.cs">
+      <DependentUpon>Line.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\List.xaml.cs">
+      <DependentUpon>List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\LoadingOverlay.xaml.cs">
+      <DependentUpon>LoadingOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ModernMessageDialog.xaml.cs">
+      <DependentUpon>ModernMessageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Pallet.xaml.cs">
+      <DependentUpon>Pallet.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserManagement\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -115,6 +178,46 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Service\TeachUtility.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\Barcode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\Fiducial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\GripperPlace.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\InterfaceResult.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\Line.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\LoadingOverlay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\ModernMessageDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\Pallet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserManagement\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +253,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -228,5 +332,6 @@
   <ItemGroup>
     <Resource Include="Images\Light.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

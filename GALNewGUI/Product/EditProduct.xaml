@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GALNewGUI.Product"
         mc:Ignorable="d"
-        Title="EditProduct" Height="600" Width="1100">
+        Title="EditProduct" Height="600" Width="1100" Closing="EditProduct_Closing">
     <Window.Background>
         <!-- Colorful Gradient Background -->
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -24,8 +24,14 @@
     </Window.Resources>
 
     <!-- UI -->
-    <Grid>
-        <TabControl Margin="20">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <!-- TabControl -->
+            <RowDefinition Height="Auto"/>
+            <!-- Save Button -->
+        </Grid.RowDefinitions>
+        <TabControl Margin="20" Grid.Row="0">
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" Height="32">
@@ -46,7 +52,7 @@
                         <GroupBox Header="Product Info" Margin="0,0,0,10" Padding="10">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                 <TextBlock Text="File Name:" VerticalAlignment="Center" Width="100" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Width="400" IsReadOnly="True" Text="New Product" Foreground="Green" />
+                                <TextBox Width="400" Text="{Binding ProductFileName}"  Foreground="Green" />
                             </StackPanel>
                         </GroupBox>
 
@@ -65,25 +71,25 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock Text="ModuleFromFactor:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="Product Name" Grid.Row="0" Grid.Column="1" Width="150" Foreground="Green"/>
+                                <TextBox Text="{Binding Name}" Grid.Row="0" Grid.Column="1" Width="150" Foreground="Green"/>
 
                                 <TextBlock Text="Product Name:" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="M500" Grid.Row="0" Grid.Column="3" Width="150" Foreground="Green"/>
+                                <TextBox Text="{Binding ProductName}" Grid.Row="0" Grid.Column="3" Width="150" Foreground="Green"/>
 
                                 <TextBlock Text="Length:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="1" Grid.Row="1" Grid.Column="1" Width="150" Foreground="Green"/>
+                                <TextBox Text="{Binding Length}" Grid.Row="1" Grid.Column="1" Width="150" Foreground="Green"/>
 
                                 <TextBlock Text="Height:" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="2.15" Grid.Row="1" Grid.Column="3" Width="150" Foreground="Green"/>
+                                <TextBox  Text="{Binding Height}" Grid.Row="1" Grid.Column="3" Width="150" Foreground="Green"/>
 
                                 <TextBlock Text="Width:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}"  FontSize="18"/>
-                                <TextBox Text="2" Grid.Row="2" Grid.Column="1" Width="150" Foreground="Green"/>
+                                <TextBox  Text="{Binding Width}" Grid.Row="2" Grid.Column="1" Width="150" Foreground="Green"/>
                             </Grid>
                         </GroupBox>
-                        <StackPanel Margin="5,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <!--<StackPanel Margin="5,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" >
                             <Button Content="Save" Style="{StaticResource ModernButton}" Margin="0,0,10,0"/>
                             <Button Content="Cancel" Style="{StaticResource stopButton}"/>
-                        </StackPanel>
+                        </StackPanel>-->
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
@@ -129,24 +135,24 @@
 
                                     <!-- Row 0 -->
                                     <TextBlock Text="Rows:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="4" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox Text="{Binding InputTray.Rows}" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
 
                                     <TextBlock Text="Columns:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="2" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBox Text="{Binding InputTray.Columns}" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
 
                                     <!-- Row 1 -->
                                     <TextBlock Text="Row Pitch:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="0" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox Text="{Binding InputTray.RowPitch}" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
 
                                     <TextBlock Text="Column Pitch:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="0" Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBox Text="{Binding InputTray.ColumnPitch}" Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
 
                                     <!-- Row 2 -->
                                     <TextBlock Text="Row Offset:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="0" Grid.Row="2" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox Text="{Binding InputTray.RowOffset}" Grid.Row="2" Grid.Column="1"  Foreground="Green"/>
 
                                     <TextBlock Text="Column Offset:" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="0" Grid.Row="2" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBox Text="{Binding InputTray.ColumnOffset}"  Grid.Row="2" Grid.Column="4"  Foreground="Green"/>
                                 </Grid>
                             </GroupBox>
 
@@ -166,13 +172,13 @@
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Text="Offset.X:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="0" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox  Text="{Binding InputTray.ModuleBarcode_Points.X}" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
                                     <TextBlock Text="Offset.Y:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="0"  Grid.Row="0" Grid.Column="4"  Foreground="Green" />
+                                    <TextBox Text="{Binding InputTray.ModuleBarcode_Points.Y}"  Grid.Row="0" Grid.Column="4"  Foreground="Green" />
                                     <TextBlock Text="Offset.Z:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="0"  Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox  Text="{Binding InputTray.ModuleBarcode_Points.Z}"  Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
                                     <TextBlock Text="Offset.U:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="0"  Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBox Text="{Binding InputTray.ModuleBarcode_Points.U}"  Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -200,17 +206,17 @@
                                         <ColumnDefinition Width="100"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="Prefix:"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="0" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox  Text="{Binding TrayBarcodePrefix}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
                                     <TextBlock Text="Barcode:" Width="90" VerticalAlignment="Center"  Grid.Row="0" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="InputTray1" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBox  Text="{Binding TrayBarcode}" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
                                     <TextBlock Text="Offset.X:" Width="90" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="0"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffset_Points.X}"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
                                     <TextBlock Text="Offset.Y:" Width="90"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="0"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffset_Points.Y}"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
                                     <TextBlock Text="Offset.Z:" Width="90" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="0"  VerticalAlignment="Center"  Grid.Row="2" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox Text="{Binding InputTray.BarcodeOffset_Points.Z}"  VerticalAlignment="Center"  Grid.Row="2" Grid.Column="1"  Foreground="Green"/>
                                     <TextBlock Text="Offset.U:" Width="90" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="0" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffset_Points.U}" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="4"  Foreground="Green"/>
                                     </Grid>
                             </GroupBox>
 
@@ -230,21 +236,21 @@
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Text="Offset.X:"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="0" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffsetX}"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
 
                                     <TextBlock Text="Offset.Y:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="0" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBox Text="{Binding InputTray.BarcodeOffsetY}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
                                     <TextBlock Text="Offset.Z:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Name="TxtTool3OffsetZRow0" Text="0" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox Name="TxtTool3OffsetZRow0" Text="{Binding InputTray.BarcodeOffsetZ}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
                                     <TextBlock Text="Offset.U:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="0" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBox Text="{Binding InputTray.BarcodeOffsetZ}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <StackPanel Margin="5,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <!--<StackPanel Margin="5,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" >
                             <Button Content="Save" Style="{StaticResource ModernButton}" Margin="0,0,10,0"/>
                             <Button Content="Cancel" Style="{StaticResource stopButton}"/>
-                        </StackPanel>
+                        </StackPanel>-->
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
@@ -290,22 +296,22 @@
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Text="Rows:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="6" Grid.Row="0" Grid.Column="1"  Foreground="Green" />
+                                    <TextBox Text="{Binding AdaptorPallet.Rows}" Grid.Row="0" Grid.Column="1"  Foreground="Green" />
 
                                     <TextBlock Text="Columns:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="2" Grid.Row="0" Grid.Column="4"  Foreground="Green" />
+                                    <TextBox Text="{Binding AdaptorPallet.Columns}" Grid.Row="0" Grid.Column="4"  Foreground="Green" />
 
                                     <TextBlock Text="Row Pitch:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="0" Grid.Row="1" Grid.Column="1"  Foreground="Green" />
+                                    <TextBox Text="{Binding AdaptorPallet.RowPitch}" Grid.Row="1" Grid.Column="1"  Foreground="Green" />
 
                                     <TextBlock Text="Column Pitch:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="0" Grid.Row="1" Grid.Column="4"  Foreground="Green" />
+                                    <TextBox Text="{Binding AdaptorPallet.ColumnPitch}" Grid.Row="1" Grid.Column="4"  Foreground="Green" />
 
                                     <TextBlock Text="Row Offset:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="0" Grid.Row="2" Grid.Column="1"  Foreground="Green" />
+                                    <TextBox Text="{Binding AdaptorPallet.RowOffset}" Grid.Row="2" Grid.Column="1"  Foreground="Green" />
 
                                     <TextBlock Text="Column Offset:" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="0" Grid.Row="2" Grid.Column="4"  Foreground="Green" />
+                                    <TextBox Text="{Binding AdaptorPallet.ColumnOffset}"  Grid.Row="2" Grid.Column="4"  Foreground="Green" />
                                 </Grid>
                             </GroupBox>
 
@@ -325,16 +331,16 @@
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Text="Offset.X:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="0" Grid.Row="0" Grid.Column="1"  Foreground="Green" />
+                                    <TextBox Text="{Binding AdaptorPallet.PlacementOffset.X}" Grid.Row="0" Grid.Column="1"  Foreground="Green" />
 
                                     <TextBlock Text="Offset.Y:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="0" Grid.Row="0" Grid.Column="4"  Foreground="Green" />
+                                    <TextBox  Text="{Binding AdaptorPallet.PlacementOffset.Y}" Grid.Row="0" Grid.Column="4"  Foreground="Green" />
 
                                     <TextBlock Text="Offset.Z:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="0" Grid.Row="1" Grid.Column="1"  Foreground="Green" />
+                                    <TextBox  Text="{Binding AdaptorPallet.PlacementOffset.Z}" Grid.Row="1" Grid.Column="1"  Foreground="Green" />
 
                                     <TextBlock Text="Offset.U:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="0" Grid.Row="1" Grid.Column="4"  Foreground="Green" />
+                                    <TextBox  Text="{Binding AdaptorPallet.PlacementOffset.U}" Grid.Row="1" Grid.Column="4"  Foreground="Green" />
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -355,7 +361,7 @@
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Text="Barcode:" VerticalAlignment="Center" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="OutputPallet1" Grid.Column="1"  Foreground="Green" />
+                                    <TextBox Text="{Binding PalletBarcode}" Grid.Column="1"  Foreground="Green" />
                                 </Grid>
                             </GroupBox>
 
@@ -376,23 +382,23 @@
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Text="Offset.X:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="0" Grid.Row="0" Grid.Column="1"  Foreground="Green" />
+                                    <TextBox Text="{Binding AdaptorPallet.BarcodeOffset_Points.X}" Grid.Row="0" Grid.Column="1"  Foreground="Green" />
 
                                     <TextBlock Text="Offset.Y:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="0" Grid.Row="0" Grid.Column="4"  Foreground="Green" />
+                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffset_Points.Y}" Grid.Row="0" Grid.Column="4"  Foreground="Green" />
 
                                     <TextBlock Text="Offset.Z:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="0" Grid.Row="1" Grid.Column="1"  Foreground="Green" />
+                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffset_Points.Z}" Grid.Row="1" Grid.Column="1"  Foreground="Green" />
 
                                     <TextBlock Text="Offset.U:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="0" Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffset_Points.U}" Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <StackPanel Margin="5,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <!--<StackPanel Margin="5,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" >
                             <Button Content="Save" Style="{StaticResource ModernButton}" Margin="0,0,10,0"/>
                             <Button Content="Cancel" Style="{StaticResource stopButton}"/>
-                        </StackPanel>
+                        </StackPanel>-->
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
@@ -434,16 +440,16 @@
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock Text="Offset.X:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="0" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                                <TextBox Text="{Binding Finger1OffsetX}" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
 
                                 <TextBlock Text="Offset.Y:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="0" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
+                                <TextBox  Text="{Binding Finger1OffsetY}"  Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
 
                                 <TextBlock Text="Offset.Z:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="0" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
+                                <TextBox  Text="{Binding Finger1OffsetZ}"  Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
 
                                 <TextBlock Text="Offset.U:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="0" Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
+                                <TextBox  Text="{Binding Finger1OffsetU}"  Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
                             </Grid>
                         </GroupBox>
 
@@ -459,7 +465,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock Text="Barcode:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="Finger1Barcode" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                                <TextBox Text="{Binding Finger2Barcode}" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
                             </Grid>
                         </GroupBox>
                     </Grid>
@@ -487,16 +493,16 @@
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock Text="Offset.X:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="0" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                                <TextBox Text="{Binding Finger2OffsetX}" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
 
                                 <TextBlock Text="Offset.Y:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="0" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
+                                <TextBox Text="{Binding Finger2OffsetY}" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
 
                                 <TextBlock Text="Offset.Z:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="0" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
+                                <TextBox Text="{Binding Finger2OffsetZ}" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
 
                                 <TextBlock Text="Offset.U:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="0" Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
+                                <TextBox Text="{Binding Finger2OffsetU}" Grid.Row="1" Grid.Column="4"  Foreground="Green"/>
                             </Grid>
                         </GroupBox>
 
@@ -512,103 +518,15 @@
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock Text="Barcode:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="Finger2Barcode" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                                <TextBox Text="{Binding Finger2Barcode}" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
                             </Grid>
                         </GroupBox>
                     </Grid>
-                    <StackPanel Margin="5,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" >
-                        <Button Content="Save" Style="{StaticResource ModernButton}" Margin="0,0,10,0"/>
-                        <Button Content="Cancel" Style="{StaticResource stopButton}"/>
-                    </StackPanel>
                 </StackPanel>
             </TabItem>
-
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal" Height="32">
-                        <Image Source="../Images/Light.png"
-                        Stretch="Uniform"
-                        VerticalAlignment="Stretch"
-                        Width="Auto" 
-                        Height="Auto"/>
-                        <TextBlock Text="TOWER LIGHT CONFIG"
-                    VerticalAlignment="Center"
-                    Margin="5,0,0,0"/>
-                    </StackPanel>
-                </TabItem.Header>
-                <GroupBox x:Name="gblightconfig">
-                    <GroupBox.Header>
-                        <TextBlock Text="TOWER LIGHT CONFIG"
-                                   FontWeight="Bold"
-                                   FontSize="18"
-                                   Foreground="Orange"></TextBlock>
-                    </GroupBox.Header>
-                    <StackPanel>
-                        <UniformGrid Rows="1"
-                                     Columns="7" 
-                                     Margin="10,5"
-                                     HorizontalAlignment="Left">
-                            <TextBlock Text="State" Width="150"></TextBlock>
-                            <TextBlock Text="Green"
-                                       Foreground="DarkGreen"
-                                       Width="150"
-                                       Background="LightGreen"></TextBlock>
-                            <TextBlock Text="Amber"
-                                       Width="150"
-                                       Foreground="DarkOrange"
-                                       Background="LightYellow"></TextBlock>
-                            <TextBlock Text="Red" Foreground="DarkRed"
-                                       Width="150" Background="IndianRed"></TextBlock>
-
-                            <TextBlock Text="Blue"
-                                       Width="150"  Foreground="DarkBlue"                                     
-                                       Background="LightSkyBlue"></TextBlock>
-
-                            <TextBlock Text="Buzzer" 
-                                       Width="150"></TextBlock>
-                            <Button Command="{Binding ResetTowerLightCommand}" 
-                                    Style="{StaticResource stopButton}">Reset</Button>
-                        </UniformGrid>
-                        <ListBox ItemsSource="{Binding LightConfig}">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <UniformGrid Rows="1" Columns="6" IsEnabled="{Binding IsEditable}">
-                                        <TextBox Text="{Binding Name}" Width="150" VerticalAlignment="Center"></TextBox>
-                                        <ComboBox ItemsSource="{Binding Source={StaticResource LightStatus}}"
-                                                  SelectedIndex="{Binding Green}"></ComboBox>
-                                        <ComboBox ItemsSource="{Binding Source={StaticResource LightStatus}}"
-                                                  SelectedIndex="{Binding Yellow}"></ComboBox>
-                                        <ComboBox ItemsSource="{Binding Source={StaticResource LightStatus}}"
-                                                  SelectedIndex="{Binding Red}"></ComboBox>
-                                        <ComboBox ItemsSource="{Binding Source={StaticResource LightStatus}}"
-                                                  SelectedIndex="{Binding Blue}"></ComboBox>
-                                        <ComboBox ItemsSource="{Binding Source={StaticResource LightStatus}}"
-                                                  SelectedIndex="{Binding Buzzer}"></ComboBox>
-                                    </UniformGrid>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </StackPanel>
-                </GroupBox>
-            </TabItem>
-            <!--<TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal" Height="32">
-                        <Image Source="../Images/Command.png"
-                         Stretch="Uniform"
-                         VerticalAlignment="Stretch"
-                         Width="Auto" 
-                         Height="Auto"/>
-                        <TextBlock Text="Command"
-                         VerticalAlignment="Center"
-                         Margin="5,0,0,0"/>
-                    </StackPanel>
-                </TabItem.Header>
-                <StackPanel>
-                    <Button Content="Save"  Style="{StaticResource ModernButton}"/>
-                </StackPanel>
-            </TabItem>-->
         </TabControl>
-
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="💾 Save Product File" Width="200" Height="36" Margin="0,10,0,0" Padding="10,4" FontWeight="Bold" Style="{StaticResource ModernButton}" Click="SaveFile_Click" />
+        </StackPanel>
     </Grid>
 </Window>

@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="ProductViewHierarchy.Controls.Fiducial"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProductViewHierarchy.Controls"
+             mc:Ignorable="d" 
+             Width="Auto" Height="Auto" Loaded="Fiducial_Loaded">
+    <Border Padding="6"  BorderThickness="1" CornerRadius="4" >
+        <GroupBox Header="Fiducial Position" FontWeight="Bold">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Inputs -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Options -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Buttons -->
+                </Grid.RowDefinitions>
+
+                <!-- Row 0: Input Fields in Grid -->
+                <Grid Grid.Row="0" Margin="0,0,0,4">
+                    <Grid.ColumnDefinitions>
+                        <!-- 11 label-input pairs -->
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Description -->
+                    <TextBlock Text="Desc" FontSize="10" VerticalAlignment="Center" Margin="2" Grid.Column="0"/>
+                    <TextBox x:Name="txtFiducial"  FontSize="10" Height="18" Margin="2" Grid.Column="1" Text="{Binding Description}"/>
+
+                    <!-- X -->
+                    <TextBlock Text="X" FontSize="10" VerticalAlignment="Center" Margin="2" Grid.Column="2"/>
+                    <TextBox Text="{Binding X}" FontSize="10" Height="18" Margin="2" Grid.Column="3"/>
+
+                    <!-- Y -->
+                    <TextBlock Text="Y" FontSize="10" VerticalAlignment="Center" Margin="2" Grid.Column="4"/>
+                    <TextBox Text="{Binding Y}" FontSize="10" Height="18" Margin="2" Grid.Column="5"/>
+
+                    <!-- Size X -->
+                    <TextBlock Text="Size X" FontSize="10" VerticalAlignment="Center" Margin="2" Grid.Column="6"/>
+                    <TextBox Text="{Binding XSize}" FontSize="10" Height="18" Margin="2" Grid.Column="7"/>
+
+                    <!-- Size Y -->
+                    <TextBlock Text="Size Y" FontSize="10" VerticalAlignment="Center" Margin="2" Grid.Column="8"/>
+                    <TextBox Text="{Binding YSize}" FontSize="10" Height="18" Margin="2" Grid.Column="9"/>
+
+                    <!-- Err Tol -->
+                    <TextBlock Text="ErrTol" FontSize="10" VerticalAlignment="Center" Margin="2" Grid.Column="10"/>
+                    <TextBox Text="{Binding ErrTol}" FontSize="10" Height="18" Margin="2" Grid.Column="11"/>
+
+                    <!-- Pos Tol -->
+                    <TextBlock Text="PosTol" FontSize="10" VerticalAlignment="Center" Margin="2" Grid.Column="12"/>
+                    <TextBox Text="{Binding PosTol}" FontSize="10" Height="18" Margin="2" Grid.Column="13"/>
+
+                    <!-- Fid Type -->
+                    <TextBlock Text="Type" FontSize="10" VerticalAlignment="Center" Margin="2" Grid.Column="14"/>
+                    <ComboBox x:Name="cmbType" FontSize="10" Height="18" Margin="2" Width="60" Grid.Column="15" SelectedValue="{Binding Type}">
+                    </ComboBox>
+
+                    <!-- Max Threshold -->
+                    <TextBlock Text="MaxThr" FontSize="10" VerticalAlignment="Center" Margin="2" Grid.Column="16"/>
+                    <TextBox Text="{Binding MaxThr}" FontSize="10" Height="18" Margin="2" Grid.Column="17"/>
+                </Grid>
+
+                <!-- Row 1: Options (Checkboxes + Radio Buttons) -->
+                <Grid Grid.Row="1" Margin="0,0,0,4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <CheckBox Content="Badmark" FontSize="10" Grid.Column="0" Margin="4,0" IsChecked="{Binding IsBadMark}"/>
+                    <CheckBox Content="Skip" FontSize="10" Grid.Column="1" Margin="4,0" IsChecked="{Binding IsSkip}"/>
+
+                    <!--<TextBlock Text="Fid Obj:" FontSize="10" VerticalAlignment="Center" Grid.Column="2" Margin="10,0,2,0"/>
+                    <RadioButton Content="Bright" GroupName="FidObj" FontSize="10" Grid.Column="3" Margin="2,0"/>
+                    <RadioButton Content="Dark" GroupName="FidObj" FontSize="10" Grid.Column="4" Margin="2,0"/>-->
+                </Grid>
+
+                <!-- Row 2: Buttons -->
+                <Grid Grid.Row="2" Margin="0,2,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Content="Teach" Width="60" Height="22" FontSize="10" Margin="2" Grid.Column="0"/>
+                    <Button Content="Move" Width="60" Height="22" FontSize="10" Margin="2" Grid.Column="1"/>
+                    <Button Content="Align" Width="60" Height="22" FontSize="10" Margin="2" Grid.Column="2"/>
+                    <Button Content="Delete" Width="60" Height="22" FontSize="10" Margin="2" Grid.Column="3"/>
+                    <Button Content="Test" Width="60" Height="22" FontSize="10" Margin="2" Grid.Column="4"/>
+                    <Button Content="Align All" Width="80" Height="22" FontSize="10" Margin="2" Grid.Column="5"/>
+                    <Button Content="Reset All" Width="80" Height="22" FontSize="10" Margin="2" Grid.Column="6"/>
+                </Grid>
+            </Grid>
+        </GroupBox>
+    </Border>
+</UserControl>
