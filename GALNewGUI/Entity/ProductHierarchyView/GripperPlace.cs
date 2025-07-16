@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProductViewHierarchy.Entity
+namespace GALNewGUI.Entity
 {
     public class GripperPlace:INotifyPropertyChanged
     {

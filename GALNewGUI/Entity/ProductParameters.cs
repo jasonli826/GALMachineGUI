@@ -224,7 +224,18 @@ namespace GALNewGUI.Entity
             get => _galTimer;
             set { _galTimer = value; OnPropertyChanged(nameof(GALTimer)); }
         }
-
+        private LeftTable _lefttable;
+        public LeftTable LeftTable
+        {
+            get => _lefttable;
+            set { _lefttable = value; OnPropertyChanged(nameof(LeftTable)); }
+        }
+        private RightTable _righttable;
+        public RightTable RightTable
+        {
+            get => _righttable;
+            set { _righttable = value; OnPropertyChanged(nameof(RightTable)); }
+        }
         public ProductParameters() { }
     }
 }

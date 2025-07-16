@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using ProductViewHierarchy.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ProductViewHierarchy.Entity
+namespace GALNewGUI.Entity
 {
     public class Pallet : INotifyPropertyChanged
     {

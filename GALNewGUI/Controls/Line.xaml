@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="GALNewGUI.Controls.Line"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             Height="auto" Width="auto" Loaded="Line_Loaded">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
+    </UserControl.Resources>
+    <GroupBox Header="Line" FontWeight="Bold" Margin="10">
+        <Border BorderThickness="1" Padding="8" CornerRadius="6">
+            <StackPanel Orientation="Vertical">
+
+                <!-- 一行：Description + 坐标（X/Y/Z/U） -->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,8">
+
+                    <!-- Description -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,12,0" MinWidth="170">
+                        <TextBlock Text="Description:" VerticalAlignment="Center" Margin="0,0,6,0" Width="80" FontSize="12"/>
+                        <TextBox x:Name="txtDescription" Width="80" Height="24" FontSize="12" Margin="0,0,6,0" Text="{Binding Description}"/>
+                    </StackPanel>
+
+                    <!-- X Start -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,12,0" Width="130">
+                        <TextBlock Text="X Start" VerticalAlignment="Center" FontSize="12"/>
+                        <TextBox x:Name="txtXStart" Width="80" Height="24" FontSize="12" Margin="10,0,0,0" Text="{Binding X_Start}"/>
+                    </StackPanel>
+
+                    <!-- Y Start -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,12,0" Width="130">
+                        <TextBlock Text="Y Start" VerticalAlignment="Center" FontSize="12"/>
+                        <TextBox x:Name="txtYStart" Width="80" Height="24" FontSize="12" Margin="10,0,0,0" Text="{Binding Y_Start}"/>
+                    </StackPanel>
+
+                    <!-- X End -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,12,0" Width="130">
+                        <TextBlock Text="X End" VerticalAlignment="Center" FontSize="12"/>
+                            <TextBox x:Name="txtXEnd" Width="80" Height="24" FontSize="12" Margin="10,0,0,0" Text="{Binding X_End}"/>
+                    </StackPanel>
+
+                    <!-- Y End -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,12,0" Width="130">
+                        <TextBlock Text="Y End" VerticalAlignment="Center" FontSize="12"/>
+                                <TextBox x:Name="txtYEnd" Width="80" Height="24" FontSize="12" Margin="10,0,0,0" Text="{Binding Y_End}"/>
+                    </StackPanel>
+
+                    <!-- Z -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,12,0" Width="110">
+                        <TextBlock Text="Z" VerticalAlignment="Center" FontSize="12"/>
+                        <TextBox x:Name="txtZ" Width="80" Height="24" FontSize="12" Margin="10,0,0,0" Text="{Binding Z}"/>
+                    </StackPanel>
+
+                    <!-- U -->
+                    <StackPanel Orientation="Horizontal" Width="110">
+                        <TextBlock Text="U" VerticalAlignment="Center" FontSize="12"/>
+                        <TextBox x:Name="txtU" Width="80" Height="24" FontSize="12" Margin="10,0,0,0" Text="{Binding U}"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- 按钮组 -->
+                <WrapPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <Button Content="Delete" Width="80" Height="28" Margin="0,0,6,0"/>
+                    <Button Content="Move Start" Width="90" Height="28" Margin="0,0,6,0"/>
+                    <Button Content="Teach Start" Width="90" Height="28" Margin="0,0,6,0"/>
+                    <Button Content="Move End" Width="90" Height="28" Margin="0,0,6,0"/>
+                    <Button Content="Teach End" Width="90" Height="28" Margin="0,0,6,0"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+                        <TextBlock Text="Approach" VerticalAlignment="Center" FontSize="12" Margin="0,0,5,0"/>
+                        <TextBox Width="60" Height="24" FontSize="12" Text="{Binding Approach}"/>
+                    </StackPanel>
+                </WrapPanel>
+
+                <!-- 选项和测试按钮 -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,10,0">
+                        <TextBlock Text="Tool Compensation" VerticalAlignment="Center" FontSize="12" Margin="0,0,5,0"/>
+                        <ComboBox x:Name="cmbToolCompensation"  Width="100" Height="24" FontSize="12" SelectedValue="{Binding ToolCompensation}" Foreground="Green">
+                            <!--<ComboBoxItem Content="LEFT"/>
+                            <ComboBoxItem Content="NONE"/>
+                            <ComboBoxItem Content="RIGHT"/>-->
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,10,0">
+                        <TextBlock Text="Z Pos to Next" VerticalAlignment="Center" FontSize="12" Margin="0,0,5,0"/>
+                        <ComboBox Width="100" Height="24" FontSize="12" x:Name="cmbZPosToNext"  SelectedValue="{Binding ZPosToNext}" Foreground="Green">
+                            <!--<ComboBoxItem Content="Default"/>
+                            <ComboBoxItem Content="Custom1"/>
+                            <ComboBoxItem Content="Custom2"/>-->
+                        </ComboBox>
+                    </StackPanel>
+
+                    <CheckBox Grid.Column="2" Content="Skip" VerticalAlignment="Center" FontSize="12" Margin="10,0,0,0" IsChecked="{Binding IsSkip}" />
+
+                    <WrapPanel Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Button Content="Test Segment" Width="100" Height="28" Margin="0,0,6,0"/>
+                        <Button Content="Align Fiducials" Width="100" Height="28" Margin="0,0,6,0"/>
+                        <Button Content="Reset Fiducials" Width="100" Height="28" Margin="0,0,6,0"/>
+                        <Button Content="Test All" Width="80" Height="28"/>
+                    </WrapPanel>
+                </Grid>
+
+            </StackPanel>
+        </Border>
+    </GroupBox>
+</UserControl>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace ProductViewHierarchy
+namespace GALNewGUI.Entity
 {
     public class TreeItem : INotifyPropertyChanged
     {
@@ -59,24 +59,24 @@ namespace ProductViewHierarchy
             get
             {
                 if (Name.ToUpper().StartsWith("LINE"))
-                    return "/Images/line.png";
+                    return "../Images/line.png";
                 if (Name.ToUpper().StartsWith("PALLET"))
-                    return "/Images/pallet.png";
+                    return "../Images/pallet.png";
                 if (Name.ToUpper().StartsWith("LIST"))
-                    return "/Images/list.png";
+                    return "../Images/list.png";
                 if (Name.ToUpper().StartsWith("BARCODE")||Name.ToUpper().Contains("BARCODE"))
-                    return "/Images/barcode.png";
+                    return "../Images/barcode.png";
                 if (Name.ToUpper().StartsWith("FIDUCIAL"))
-                    return "/Images/fiducial.png";
+                    return "../Images/fiducial.png";
                 if (Name.ToUpper().StartsWith("INTERFACERESULT"))
-                    return "/Images/interface.png";
+                    return "../Images/interface.png";
                 if (Name.ToUpper().StartsWith("TABLE"))
-                    return "/Images/table.png";
+                    return "../Images/table.png";
                 if (Name.ToUpper().StartsWith("GRIPPERPLACE"))
-                    return "/Images/gripperplace.png";
+                    return "../Images/gripperplace.png";
                 
 
-                return "/Images/line.png"; // fallback icon
+                return "../Images/line.png"; // fallback icon
             }
         }
 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ProductViewHierarchy.Entity
+namespace GALNewGUI.Entity
 {
     public class Fiducial : INotifyPropertyChanged
     {
@@ -53,6 +53,33 @@ namespace ProductViewHierarchy.Entity
                 {
                     y = value;
                     OnPropertyChanged(nameof(Y));
+                }
+            }
+        }
+
+        private double z;
+        public double Z
+        {
+            get => z;
+            set
+            {
+                if (z != value)
+                {
+                    z = value;
+                    OnPropertyChanged(nameof(Z));
+                }
+            }
+        }
+        private double u;
+        public double U
+        {
+            get => u;
+            set
+            {
+                if (u != value)
+                {
+                    u = value;
+                    OnPropertyChanged(nameof(U));
                 }
             }
         }
@@ -166,11 +193,13 @@ namespace ProductViewHierarchy.Entity
                 }
             }
         }
-        public Fiducial(string description,double x,double y,double xsize,double ysize,double errTol,double posTol,string type,int maxThr,bool? isBadMark = null,bool? isSkip = null)
+        public Fiducial(string description,double x,double y,double z,double u,double xsize,double ysize,double errTol,double posTol,string type,int maxThr,bool? isBadMark = null,bool? isSkip = null)
         {
             Description = description;
             X = x;
             Y = y;
+            Z = z;
+            U = u;
             XSize = xsize;
             YSize = ysize;
             ErrTol = errTol;

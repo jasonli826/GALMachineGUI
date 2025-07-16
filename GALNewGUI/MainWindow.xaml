@@ -82,13 +82,6 @@
                   Name="MachineSettings" Click="MenuMachineSetting_Click"></MenuItem>
             </MenuItem>
             <MenuItem Name="menuHelp">
-                <!--<MenuItem.Header>
-                    <Grid Width="120" Height="50">
-                        <Image Source="Images/Help.png" Stretch="Fill" />
-                        <TextBlock Text="Help" Foreground="White"  FontSize="26" FontWeight="Bold" 
-                                HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"/>
-                    </Grid>
-                </MenuItem.Header>-->
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="35" Width="150" Margin="3">
                         <Image Source="Images/Help.png" Height="40" Width="50" Margin="5,0"/>

@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="GALNewGUI.Controls.Pallet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="auto" Width="auto" Loaded="Pallet_Loaded">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
+    </UserControl.Resources>
+    <GroupBox Header="Pallet Teaching" FontWeight="Bold" Margin="10">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <!-- Label: Row -->
+                <ColumnDefinition Width="60"/>
+                <!-- Input: Row -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Label: Column -->
+                <ColumnDefinition Width="60"/>
+                <!-- Input: Column -->
+                <ColumnDefinition Width="100"/>
+                <!-- Move Button -->
+                <ColumnDefinition Width="100"/>
+                <!-- Teach Button -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Pt X Label -->
+                <ColumnDefinition Width="80"/>
+                <!-- Pt X Value -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Pt Y Label -->
+                <ColumnDefinition Width="80"/>
+                <!-- Pt Y Value -->
+                <ColumnDefinition Width="*"/>
+                <!-- Custom Pallet -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Row / Column -->
+            <TextBlock Text="Row" VerticalAlignment="Center" Margin="2" Grid.Row="0" Grid.Column="0"/>
+            <TextBox Width="60" Height="24" Margin="2" Grid.Row="0" Grid.Column="1" Text="{Binding Row}"/>
+
+            <TextBlock Text="Column" VerticalAlignment="Center" Margin="2" Grid.Row="0" Grid.Column="2"/>
+            <TextBox Width="60" Height="24" Margin="2" Grid.Row="0" Grid.Column="3" Text="{Binding Column}"/>
+
+            <!-- Pt1 -->
+            <Button Content="Move Pt 1" Height="24" Margin="2" Grid.Row="0" Grid.Column="4"/>
+            <Button Content="Teach Pt 1" Height="24" Margin="2" Grid.Row="0" Grid.Column="5"/>
+            <TextBlock Text="Pt 1 X:" VerticalAlignment="Center" Margin="2" Grid.Row="0" Grid.Column="6"/>
+            <TextBox Width="80" Height="24" Margin="2" Grid.Row="0" Grid.Column="7" Text="{Binding PT1X}"/>
+            <TextBlock Text="Pt 1 Y:" VerticalAlignment="Center" Margin="2" Grid.Row="0" Grid.Column="8"/>
+            <TextBox Width="80" Height="24" Margin="2" Grid.Row="0" Grid.Column="9" Text="{Binding PT1Y}"/>
+
+            <!-- Pt2 -->
+            <Button Content="Move Pt 2" Height="24" Margin="2" Grid.Row="1" Grid.Column="4"/>
+            <Button Content="Teach Pt 2" Height="24" Margin="2" Grid.Row="1" Grid.Column="5"/>
+            <TextBlock Text="Pt 2 X:" VerticalAlignment="Center" Margin="2" Grid.Row="1" Grid.Column="6"/>
+            <TextBox Width="80" Height="24" Margin="2" Grid.Row="1" Grid.Column="7" Text="{Binding PT2X}"/>
+            <TextBlock Text="Pt 2 Y:" VerticalAlignment="Center" Margin="2" Grid.Row="1" Grid.Column="8"/>
+            <TextBox Width="80" Height="24" Margin="2" Grid.Row="1" Grid.Column="9" Text="{Binding PT2Y}"/>
+
+            <!-- Pt3 -->
+            <Button Content="Move Pt 3" Height="24" Margin="2" Grid.Row="2" Grid.Column="4"/>
+            <Button Content="Teach Pt 3" Height="24" Margin="2" Grid.Row="2" Grid.Column="5"/>
+            <TextBlock Text="Pt 3 X:" VerticalAlignment="Center" Margin="2" Grid.Row="2" Grid.Column="6"/>
+            <TextBox Width="80" Height="24" Margin="2" Grid.Row="2" Grid.Column="7" Text="{Binding PT3X}"/>
+            <TextBlock Text="Pt 3 Y:" VerticalAlignment="Center" Margin="2" Grid.Row="2" Grid.Column="8"/>
+            <TextBox Width="80" Height="24" Margin="2" Grid.Row="2" Grid.Column="9" Text="{Binding PT3Y}"/>
+
+            <!-- Custom Pallet -->
+            <StackPanel Grid.Row="0" Grid.Column="10" Grid.RowSpan="3" Margin="10,0,0,0" VerticalAlignment="Top">
+                <CheckBox Content="Custom Pallet" Margin="0,0,0,5" IsChecked="{Binding isCustomPallet}" />
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Margin="2" Orientation="Horizontal">
+                        <TextBlock Text="Row" HorizontalAlignment="Center"/>
+                        <ComboBox x:Name="cmbRow" Width="45" Height="27" Margin="5,0,0,0" SelectedValue="{Binding Row}" Foreground="Green"/>
+                    </StackPanel>
+                    <StackPanel Margin="2" Orientation="Horizontal">
+                        <TextBlock Text="Column" HorizontalAlignment="Center"/>
+                        <ComboBox x:Name="cmbColumn" Width="45" Height="27" Margin="5,0,0,0" SelectedValue="{Binding Column}" Foreground="Green"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </GroupBox>
+</UserControl>

@@ -34,13 +34,46 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Getech.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.7\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.7\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.7\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.7\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,6 +92,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\Barcode.xaml.cs">
+      <DependentUpon>Barcode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Fiducial.xaml.cs">
+      <DependentUpon>Fiducial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GripperPlace.xaml.cs">
+      <DependentUpon>GripperPlace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InterfaceResult.xaml.cs">
+      <DependentUpon>InterfaceResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Line.xaml.cs">
+      <DependentUpon>Line.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\List.xaml.cs">
+      <DependentUpon>List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoadingOverlay.xaml.cs">
+      <DependentUpon>LoadingOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModernMessageDialog.xaml.cs">
+      <DependentUpon>ModernMessageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Pallet.xaml.cs">
+      <DependentUpon>Pallet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProductHierarchyView.xaml.cs">
+      <DependentUpon>ProductHierarchyView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Entity\AdaptorPallet.cs" />
     <Compile Include="Entity\BarcodeOffsetPoints.cs" />
     <Compile Include="Entity\CheckSpot1Offset.cs" />
@@ -81,16 +144,19 @@
     <Compile Include="Entity\ProductHierarchyView\Fiducial.cs" />
     <Compile Include="Entity\ProductHierarchyView\GripperPlace.cs" />
     <Compile Include="Entity\ProductHierarchyView\InterfaceResult.cs" />
+    <Compile Include="Entity\ProductHierarchyView\LeftTable.cs" />
     <Compile Include="Entity\ProductHierarchyView\Line.cs" />
     <Compile Include="Entity\ProductHierarchyView\List.cs" />
     <Compile Include="Entity\ProductHierarchyView\MessageBoxMode.cs" />
     <Compile Include="Entity\ProductHierarchyView\Pallet.cs" />
+    <Compile Include="Entity\ProductHierarchyView\RightTable.cs" />
     <Compile Include="Entity\ProductHierarchyView\TreeItem.cs" />
     <Compile Include="Entity\ProductParameters.cs" />
     <Compile Include="Entity\Root.cs" />
     <Compile Include="Help\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
+    <Compile Include="JsonEncryption\JsonMechanism.cs" />
     <Compile Include="Product\EditProduct.xaml.cs">
       <DependentUpon>EditProduct.xaml</DependentUpon>
     </Compile>
@@ -102,33 +168,6 @@
     </Compile>
     <Compile Include="Service\TeachUtility.xaml.cs">
       <DependentUpon>TeachUtility.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\Barcode.xaml.cs">
-      <DependentUpon>Barcode.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\Fiducial.xaml.cs">
-      <DependentUpon>Fiducial.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\GripperPlace.xaml.cs">
-      <DependentUpon>GripperPlace.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\InterfaceResult.xaml.cs">
-      <DependentUpon>InterfaceResult.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\Line.xaml.cs">
-      <DependentUpon>Line.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\List.xaml.cs">
-      <DependentUpon>List.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\LoadingOverlay.xaml.cs">
-      <DependentUpon>LoadingOverlay.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\ModernMessageDialog.xaml.cs">
-      <DependentUpon>ModernMessageDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\Pallet.xaml.cs">
-      <DependentUpon>Pallet.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserManagement\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -142,6 +181,46 @@
     <Compile Include="Utilities\MannualUtilities.xaml.cs">
       <DependentUpon>MannualUtilities.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\Barcode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Fiducial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\GripperPlace.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\InterfaceResult.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Line.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\LoadingOverlay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ModernMessageDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Pallet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ProductHierarchyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Help\About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -166,6 +245,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\ProductViewHierarchy\Themes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Resources\Themes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -181,42 +264,6 @@
     <Page Include="Service\TeachUtility.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControl\Barcode.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControl\Fiducial.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControl\GripperPlace.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControl\InterfaceResult.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControl\Line.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControl\List.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControl\LoadingOverlay.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControl\ModernMessageDialog.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControl\Pallet.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserManagement\Login.xaml">
       <SubType>Designer</SubType>
@@ -332,6 +379,19 @@
   <ItemGroup>
     <Resource Include="Images\Light.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\barcode.png" />
+    <Resource Include="Images\fiducial.png" />
+    <Resource Include="Images\gripperplace.png" />
+    <Resource Include="Images\interface.png" />
+    <Resource Include="Images\interfaceresult.png" />
+    <Resource Include="Images\line.png" />
+    <Resource Include="Images\list.png" />
+    <Resource Include="Images\pallet.png" />
+    <Resource Include="Images\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Getech.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

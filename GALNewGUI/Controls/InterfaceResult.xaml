@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="GALNewGUI.Controls.InterfaceResult"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GALNewGUI.Controls"
+             mc:Ignorable="d" 
+             Height="auto" Width="auto" Loaded="InterfaceResult_Load">
+    <UserControl.Resources>
+        <!-- Smaller text box style -->
+        <Style x:Key="CompactTextBox" TargetType="TextBox">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="Green"/>
+            <Setter Property="Height" Value="22"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
+        <!-- Smaller button style -->
+        <Style x:Key="CompactButton" TargetType="Button">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Height" Value="22"/>
+            <Setter Property="MinWidth" Value="50"/>
+            <Setter Property="Padding" Value="4,0"/>
+        </Style>
+    </UserControl.Resources>
+
+    <GroupBox Header="Interface Result" FontWeight="Bold" FontSize="12" Margin="5">
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+                <!-- for the WrapPanel -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Program -->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Program:" VerticalAlignment="Center" Margin="3"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Program}" Margin="3" Style="{StaticResource CompactTextBox}" Width="250"/>
+            <Button Grid.Row="0" Grid.Column="2" Content="..." Margin="3" Style="{StaticResource CompactButton}"/>
+
+            <!-- Function -->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Function:" VerticalAlignment="Center" Margin="3"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Function}" Margin="3" Style="{StaticResource CompactTextBox}"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="Test" Margin="3" Style="{StaticResource CompactButton}"/>
+
+            <!-- String -->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="String:" VerticalAlignment="Center" Margin="3"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Param_String}" Margin="3" Style="{StaticResource CompactTextBox}"/>
+
+            <!-- Move the options here in the same row as the button -->
+            <WrapPanel Grid.Row="2" Grid.Column="3" Margin="3,0,0,0" VerticalAlignment="Center">
+                <CheckBox Content="Send Parameter" IsChecked="{Binding IsSendParameter}" Margin="3,0"/>
+                <ComboBox Name="cmbListForSendParameter" Width="36" Height="25"
+                          SelectedValue="{Binding NumberOfSendParameters}"
+                          Margin="0,0,5,0" VerticalAlignment="Center" Foreground="Green"/>
+                <CheckBox Content="Call Style Return" IsChecked="{Binding CallStyleReturn}" Margin="3,0"/>
+                <CheckBox Content="Is Gripper Side" IsChecked="{Binding IsGripperSide}" Margin="3,0"/>
+                <CheckBox Content="Skip" IsChecked="{Binding IsSkip}" Margin="3,0"/>
+            </WrapPanel>
+        </Grid>
+    </GroupBox>
+</UserControl>

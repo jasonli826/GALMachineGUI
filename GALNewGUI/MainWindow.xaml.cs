@@ -1,7 +1,9 @@
-﻿using Microsoft.Win32;
+﻿using GALNewGUI.Entity;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -15,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static GALNewGUI.Controls.ProductHierarchyView;
 
 namespace GALNewGUI
 {
@@ -31,6 +34,7 @@ namespace GALNewGUI
         {
             InitializeComponent();
             StartLoggingThread();
+            DeleteJsonFilesOnStartup();
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -44,6 +48,23 @@ namespace GALNewGUI
             AboutWindow.Owner = this;
             AboutWindow.ShowDialog(); // Or use Show() if you don’t want modal
 
+        }
+        private void DeleteJsonFilesOnStartup()
+        {
+            string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            var jsonFiles = Directory.GetFiles(appDirectory, "*.json", SearchOption.TopDirectoryOnly);
+            foreach (var file in jsonFiles)
+            {
+                try
+                {
+                    File.Delete(file);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Exception Message :"+ex.Message);
+                }
+            }
         }
         private void MenuLoadProduct_Click(object sender, RoutedEventArgs e)
         {
@@ -85,10 +106,23 @@ namespace GALNewGUI
         }
         private void MenuEditProduct_Click(object sender, RoutedEventArgs e)
         {
-            var EditProductWindow = new GALNewGUI.Product.EditProduct(); // Use the correct namespace if needed
-            EditProductWindow.Owner = this;
-            EditProductWindow.ShowDialog(); // Or use Show() if you don’t want modal
+            //var EditProductWindow = new GALNewGUI.Product.EditProduct(); // Use the correct namespace if needed
+            //EditProductWindow.Owner = this;
+            //EditProductWindow.ShowDialog(); // Or use Show() if you don’t want modal
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = @"C:\router\Product File";
+            openFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+            openFileDialog.Title = "Select a Product JSON file";
 
+            bool? result = openFileDialog.ShowDialog();
+
+            if (result == true)
+            {
+                string selectedFile = openFileDialog.FileName;
+
+                Product.EditProduct editWindow = new Product.EditProduct(selectedFile);
+                editWindow.Show();
+            }
         }
         private void menuManageUser_Click(object sender, RoutedEventArgs e)
         {
