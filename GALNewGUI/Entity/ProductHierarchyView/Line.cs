@@ -9,6 +9,7 @@ namespace GALNewGUI.Entity
 {
     public class Line : INotifyPropertyChanged
     {
+        public Line() { }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName) =>
            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -163,7 +164,6 @@ namespace GALNewGUI.Entity
                 }
             }
         }
-        public Line() { }
 
         public Line(string description, double xstart, double xend, double ystart, double yend, double z, double u, double apporach, string compension, string zpositionToNext, bool isSkip)
         {

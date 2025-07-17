@@ -2,6 +2,12 @@
 
 public class FlyCheckSpot4Offset : INotifyPropertyChanged
 {
+    public FlyCheckSpot4Offset() { }
+    public FlyCheckSpot4Offset ShallowCopy()
+    {
+        return (FlyCheckSpot4Offset)this.MemberwiseClone();
+
+    }
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged(string propertyName) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

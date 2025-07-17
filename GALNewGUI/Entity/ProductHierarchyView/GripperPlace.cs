@@ -9,6 +9,7 @@ namespace GALNewGUI.Entity
 {
     public class GripperPlace:INotifyPropertyChanged
     {
+        public GripperPlace() { }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName) =>
            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -157,7 +158,6 @@ namespace GALNewGUI.Entity
                 }
             }
         }
-        public GripperPlace() { }
         public GripperPlace(string description,double placeOrientation, double placeZOffset,double gripperOpenOffset,int trayPocket,bool? placeOutput2 = null,bool? dustBlow = null, bool? extraAction = null,bool? ejectBoardAfterPlace = null, bool? usePostVision = null,bool? reverse = null)
         {
             Description = description;

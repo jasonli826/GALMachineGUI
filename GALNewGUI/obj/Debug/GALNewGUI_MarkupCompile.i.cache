@@ -16,5 +16,5 @@ D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGU
 251941895229
 Controls\Barcode.xaml;Controls\Fiducial.xaml;Controls\GripperPlace.xaml;Controls\InterfaceResult.xaml;Controls\Line.xaml;Controls\List.xaml;Controls\LoadingOverlay.xaml;Controls\ModernMessageDialog.xaml;Controls\Pallet.xaml;Controls\ProductHierarchyView.xaml;Help\About.xaml;MainWindow.xaml;Product\EditProduct.xaml;Product\InputDialog.xaml;Resources\ProductViewHierarchy\Themes.xaml;Resources\Themes.xaml;Resources\Themes1.xaml;Service\MachineSetting.xaml;Service\TeachUtility.xaml;UserManagement\Login.xaml;UserManagement\ManageUser.xaml;Utilities\IOUtility.xaml;Utilities\MannualUtilities.xaml;
 
-False
+True
 

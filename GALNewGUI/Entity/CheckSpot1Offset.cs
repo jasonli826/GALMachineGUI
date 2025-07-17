@@ -1,7 +1,14 @@
-﻿using System.ComponentModel;
+﻿using GALNewGUI.Entity;
+using System.ComponentModel;
 
 public class CheckSpot1Offset : INotifyPropertyChanged
 {
+    public CheckSpot1Offset() { }
+    public CheckSpot1Offset ShallowCopy()
+    {
+        return (CheckSpot1Offset)this.MemberwiseClone();
+
+    }
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged(string name) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

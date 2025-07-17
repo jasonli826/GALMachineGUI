@@ -15,6 +15,7 @@ namespace GALNewGUI.Entity
 {
     public class Barcode: INotifyPropertyChanged
     {
+        public Barcode() { }
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName) =>
@@ -117,7 +118,6 @@ namespace GALNewGUI.Entity
                 }
             }
         }
-        public Barcode() { }
 
         public Barcode(string desc,double xstart,double xend,double ystart,double yend,double z1,double u1) 
         {

@@ -79,7 +79,7 @@ namespace GALNewGUI
             {
                 string selectedFile = openFileDialog.FileName;
 
-                Product.EditProduct editWindow = new Product.EditProduct(selectedFile);
+                Product.EditProduct editWindow = new Product.EditProduct(selectedFile,true);
                 editWindow.Show();
             }
         }
@@ -120,7 +120,7 @@ namespace GALNewGUI
             {
                 string selectedFile = openFileDialog.FileName;
 
-                Product.EditProduct editWindow = new Product.EditProduct(selectedFile);
+                Product.EditProduct editWindow = new Product.EditProduct(selectedFile,true);
                 editWindow.Show();
             }
         }

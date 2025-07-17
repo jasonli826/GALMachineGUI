@@ -1,4 +1,5 @@
 ﻿using GALNewGUI.Entity;
+using System;
 using System.ComponentModel;
 
 public class InputTray : INotifyPropertyChanged
@@ -6,7 +7,15 @@ public class InputTray : INotifyPropertyChanged
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged(string name) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+    public InputTray ShallowCopy()
+    {
+        return (InputTray)this.MemberwiseClone();
 
+    }
+
+    public InputTray() {
+    
+    }
     private string _rows;
     public string Rows
     {
@@ -64,17 +73,17 @@ public class InputTray : INotifyPropertyChanged
     }
 
     private BarcodeOffsetPoints _barcodeOffset_Points;
-    public BarcodeOffsetPoints BarcodeOffset_Points
+    public BarcodeOffsetPoints BarcodeOffsetPoints
     {
         get => _barcodeOffset_Points;
-        set { _barcodeOffset_Points = value; OnPropertyChanged(nameof(BarcodeOffset_Points)); }
+        set { _barcodeOffset_Points = value; OnPropertyChanged(nameof(BarcodeOffsetPoints)); }
     }
 
     private ModuleBarcodePoints _moduleBarcode_Points;
-    public ModuleBarcodePoints ModuleBarcode_Points
+    public ModuleBarcodePoints ModuleBarcodePoints
     {
         get => _moduleBarcode_Points;
-        set { _moduleBarcode_Points = value; OnPropertyChanged(nameof(ModuleBarcode_Points)); }
+        set { _moduleBarcode_Points = value; OnPropertyChanged(nameof(ModuleBarcodePoints)); }
     }
 
     private string _barcodeOffsetX;

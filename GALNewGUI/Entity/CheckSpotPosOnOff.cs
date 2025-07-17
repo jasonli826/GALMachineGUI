@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.ComponentModel;
 namespace GALNewGUI.Entity
 {
-    using System.ComponentModel;
+
+
 
     public class CheckSpotPosOnOff : INotifyPropertyChanged
     {
+        public CheckSpotPosOnOff() { }
+        public CheckSpotPosOnOff ShallowCopy()
+        {
+            return (CheckSpotPosOnOff)this.MemberwiseClone();
+
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

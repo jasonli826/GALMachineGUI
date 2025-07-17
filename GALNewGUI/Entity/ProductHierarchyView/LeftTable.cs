@@ -1,14 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GALNewGUI.Entity;
 using System.Collections.ObjectModel;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GALNewGUI.Entity
+public class LeftTable : ICloneable
 {
-    public  class LeftTable
+    public LeftTable() { }
+    public ObservableCollection<TreeItem> Items { get; set; } = new ObservableCollection<TreeItem>();
+
+    public object Clone()
     {
-        public ObservableCollection<TreeItem> Items { get; set; }
+        var clone = (LeftTable)this.MemberwiseClone();
+
+        // Deep clone the Items collection
+        clone.Items = new ObservableCollection<TreeItem>(
+            this.Items.Select(item => item.DeepClone())
+        );
+
+        return clone;
+    }
+
+    public LeftTable ShallowCopy()
+    {
+        return (LeftTable)this.MemberwiseClone();
     }
 }

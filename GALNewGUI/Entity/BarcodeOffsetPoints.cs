@@ -10,6 +10,7 @@ namespace GALNewGUI.Entity
 
     public class BarcodeOffsetPoints : INotifyPropertyChanged
     {
+        public BarcodeOffsetPoints() { }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -117,6 +118,11 @@ namespace GALNewGUI.Entity
         {
             get => _name;
             set { _name = value; OnPropertyChanged(nameof(Name)); }
+        }
+        public BarcodeOffsetPoints ShallowCopy()
+        {
+            return (BarcodeOffsetPoints)this.MemberwiseClone();
+
         }
     }
 

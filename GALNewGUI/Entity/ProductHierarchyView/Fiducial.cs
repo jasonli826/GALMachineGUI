@@ -12,6 +12,7 @@ namespace GALNewGUI.Entity
 {
     public class Fiducial : INotifyPropertyChanged
     {
+        public Fiducial() { }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName) =>
            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

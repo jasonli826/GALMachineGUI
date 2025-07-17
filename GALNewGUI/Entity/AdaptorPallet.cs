@@ -1,13 +1,15 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace GALNewGUI.Entity
 {
     public class AdaptorPallet : INotifyPropertyChanged
     {
+        public AdaptorPallet() { }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-
+  
         private string _rows;
         public string Rows
         {

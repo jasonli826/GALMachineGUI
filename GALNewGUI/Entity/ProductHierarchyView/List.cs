@@ -9,6 +9,7 @@ namespace GALNewGUI.Entity
 {
     public class List : INotifyPropertyChanged
     {
+        public List() { }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName) =>
            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -157,7 +158,6 @@ namespace GALNewGUI.Entity
                 }
             }
         }
-        public List() { }
         public List(double xRef1,double yRef1,double xLocal1,double yLocal1,double xRef2,double yRef2,double xLocal2,double yLocal2,double zOffset,double feedRate,double gridZOffset)
         {
             XRef1 = xRef1;

@@ -1,10 +1,12 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 
 namespace GALNewGUI.Entity
 {
     public class TreeItem : INotifyPropertyChanged
     {
+        public TreeItem() { }
         public Entity.Barcode BarcodeData { get; set; }
         public Entity.InterfaceResult InterfaceResultData { get; set; }
 
@@ -52,7 +54,7 @@ namespace GALNewGUI.Entity
             Name = name;
             Type = type;
         }
-        public TreeItem() { }
+
 
         public string IconPath
         {
@@ -79,7 +81,24 @@ namespace GALNewGUI.Entity
                 return "../Images/line.png"; // fallback icon
             }
         }
+        public TreeItem DeepClone()
+        {
+            var clone = new TreeItem
+            {
+                Name = this.Name,
+                Type = this.Type,
+                BarcodeData = this.BarcodeData, // Or .Clone() if needed
+                InterfaceResultData = this.InterfaceResultData,
+                List = this.List,
+                Pallet = this.Pallet,
+                Fiducial = this.Fiducial,
+                Line = this.Line,
+                GripperPlace = this.GripperPlace,
+                Children = new ObservableCollection<TreeItem>(this.Children.Select(c => c.DeepClone()))
+            };
 
+            return clone;
+        }
         // ✅ Only one declaration of INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propName) =>

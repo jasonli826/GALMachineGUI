@@ -2,6 +2,12 @@
 
 public class CheckSpot2Offset : INotifyPropertyChanged
 {
+    public CheckSpot2Offset() { }
+    public CheckSpot2Offset ShallowCopy()
+    {
+        return (CheckSpot2Offset)this.MemberwiseClone();
+
+    }
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged(string name) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

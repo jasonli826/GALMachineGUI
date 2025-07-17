@@ -80,7 +80,7 @@
                         <GroupBox Header="Product Info" Margin="0,0,0,10" Padding="10">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                 <TextBlock Text="File Name:" VerticalAlignment="Center" Width="100" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Width="400" Text="{Binding ProductFileName}"  Foreground="Green" />
+                                <TextBox Width="400" Text="{Binding ProductFileName, Mode=TwoWay}"  Foreground="Green" />
                             </StackPanel>
                         </GroupBox>
 
@@ -108,7 +108,7 @@
                                 <TextBox Text="{Binding Length}" Grid.Row="1" Grid.Column="1" Width="150" Foreground="Green" PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
 
                                 <TextBlock Text="Height:" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox  Text="{Binding Height}" Grid.Row="1" Grid.Column="3" Width="150" Foreground="Green"/>
+                                <TextBox  Text="{Binding Height}" Grid.Row="1" Grid.Column="3" Width="150" Foreground="Green" PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
 
                                 <TextBlock Text="Width:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}"  FontSize="18"/>
                                 <TextBox  Text="{Binding Width}" Grid.Row="2" Grid.Column="1" Width="150" Foreground="Green" PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
@@ -196,13 +196,13 @@
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Text="Offset.X:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="{Binding InputTray.ModuleBarcode_Points.X}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox  Text="{Binding InputTray.ModuleBarcodePoints.X}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
                                     <TextBlock Text="Offset.Y:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="{Binding InputTray.ModuleBarcode_Points.Y}"  Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+                                    <TextBox Text="{Binding InputTray.ModuleBarcodePoints.Y}"  Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
                                     <TextBlock Text="Offset.Z:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="{Binding InputTray.ModuleBarcode_Points.Z}"  Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox  Text="{Binding InputTray.ModuleBarcodePoints.Z}"  Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
                                     <TextBlock Text="Offset.U:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="{Binding InputTray.ModuleBarcode_Points.U}"  Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox Text="{Binding InputTray.ModuleBarcodePoints.U}"  Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -234,13 +234,13 @@
                                     <TextBlock Text="Barcode:" Width="90" VerticalAlignment="Center"  Grid.Row="0" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
                                     <TextBox  Text="{Binding TrayBarcode}" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
                                     <TextBlock Text="Offset.X:" Width="90" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="{Binding InputTray.BarcodeOffset_Points.X}"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffsetPoints.X}"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
                                     <TextBlock Text="Offset.Y:" Width="90"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="{Binding InputTray.BarcodeOffset_Points.Y}"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffsetPoints.Y}"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
                                     <TextBlock Text="Offset.Z:" Width="90" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="{Binding InputTray.BarcodeOffset_Points.Z}"  VerticalAlignment="Center"  Grid.Row="2" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox Text="{Binding InputTray.BarcodeOffsetPoints.Z}"  VerticalAlignment="Center"  Grid.Row="2" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
                                     <TextBlock Text="Offset.U:" Width="90" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="{Binding InputTray.BarcodeOffset_Points.U}" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffsetPoints.U}" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
                                     </Grid>
                             </GroupBox>
 
@@ -267,7 +267,7 @@
                                     <TextBlock Text="Offset.Z:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
                                     <TextBox Name="TxtTool3OffsetZRow0" Text="{Binding InputTray.BarcodeOffsetZ}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
                                     <TextBlock Text="Offset.U:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="{Binding InputTray.BarcodeOffsetZ}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox Text="{Binding InputTray.BarcodeOffsetU}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
                                 </Grid>
                             </GroupBox>
                         </Grid>

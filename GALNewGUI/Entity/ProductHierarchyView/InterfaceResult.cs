@@ -11,6 +11,7 @@ namespace GALNewGUI.Entity
 
     public  class InterfaceResult: INotifyPropertyChanged
     {
+        public InterfaceResult() { }
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName) =>
@@ -121,7 +122,7 @@ namespace GALNewGUI.Entity
                 }
             }
         }
-        public InterfaceResult() { }
+
 
         public InterfaceResult(string progm, string fn, string param, bool sendingParam, int numOfParam, bool callStyle, bool gripper, bool skip)
         {

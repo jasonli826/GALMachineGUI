@@ -35,7 +35,7 @@ namespace GALNewGUI.Product
                 return;
             }
             string filePath = "C:\\router\\Product File\\"+productName+".json";
-            var EditProductWindow = new GALNewGUI.Product.EditProduct(filePath); // Use the correct namespace if needed
+            var EditProductWindow = new GALNewGUI.Product.EditProduct(filePath,false); // Use the correct namespace if needed
             EditProductWindow.Owner = this;
             EditProductWindow.ShowDialog(); // Or use Show() if you don’t want modal
             this.Close();

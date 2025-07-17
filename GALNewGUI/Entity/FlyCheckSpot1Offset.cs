@@ -10,6 +10,12 @@ namespace GALNewGUI.Entity
 
     public class FlyCheckSpot1Offset : INotifyPropertyChanged
     {
+        public FlyCheckSpot1Offset() { }
+        public FlyCheckSpot1Offset ShallowCopy()
+        {
+            return (FlyCheckSpot1Offset)this.MemberwiseClone();
+
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

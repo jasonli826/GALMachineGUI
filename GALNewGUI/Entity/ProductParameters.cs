@@ -4,6 +4,7 @@ namespace GALNewGUI.Entity
 {
     public class ProductParameters : INotifyPropertyChanged
     {
+        public ProductParameters() { }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -236,6 +237,12 @@ namespace GALNewGUI.Entity
             get => _righttable;
             set { _righttable = value; OnPropertyChanged(nameof(RightTable)); }
         }
-        public ProductParameters() { }
+
+        public ProductParameters ShallowCopy()
+        {
+            return (ProductParameters)this.MemberwiseClone();
+
+        }
+
     }
 }

@@ -1,11 +1,20 @@
-﻿using System.ComponentModel;
+﻿using GALNewGUI.Entity;
+using System;
+using System.ComponentModel;
 
 public class GALTimer : INotifyPropertyChanged
 {
+    public GALTimer() { }
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged(string propertyName) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
+
+    public GALTimer ShallowCopy()
+    {
+        return (GALTimer)this.MemberwiseClone();
+
+    }
     private string _index;
     public string Index
     {

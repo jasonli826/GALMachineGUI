@@ -10,6 +10,12 @@ namespace GALNewGUI.Entity
 
     public class ModuleBarcodePoints : INotifyPropertyChanged
     {
+        public ModuleBarcodePoints() { }
+        public ModuleBarcodePoints ShallowCopy()
+        {
+            return (ModuleBarcodePoints)this.MemberwiseClone();
+
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

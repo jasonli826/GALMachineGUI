@@ -2,6 +2,12 @@
 
 public class PlacementOffset : INotifyPropertyChanged
 {
+    public PlacementOffset() { }
+    public PlacementOffset ShallowCopy()
+    {
+        return (PlacementOffset)this.MemberwiseClone();
+
+    }
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged(string name) =>PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 

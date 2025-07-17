@@ -2,6 +2,12 @@
 
 public class CheckSpotEnable : INotifyPropertyChanged
 {
+    public CheckSpotEnable() { }
+    public CheckSpotEnable ShallowCopy()
+    {
+        return (CheckSpotEnable)this.MemberwiseClone();
+
+    }
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged(string name) =>PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 

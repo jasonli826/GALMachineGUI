@@ -12,6 +12,7 @@ namespace GALNewGUI.Entity
 {
     public class Pallet : INotifyPropertyChanged
     {
+        public Pallet() { }
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName) =>
@@ -144,7 +145,6 @@ namespace GALNewGUI.Entity
                 }
             }
         }
-        public Pallet() { }
         public Pallet(int row, int column,
               double pt1x, double pt1y,
               double pt2x, double pt2y,
