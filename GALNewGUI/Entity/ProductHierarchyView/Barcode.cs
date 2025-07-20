@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media.Media3D;
 
-namespace GALNewGUI.Entity
+namespace MachineNewGUI.Entity
 {
     public class Barcode: INotifyPropertyChanged
     {

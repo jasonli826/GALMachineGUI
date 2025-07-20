@@ -15,14 +15,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GALNewGUI.Controls
+namespace MachineNewGUI.Controls
 {
     /// <summary>
     /// Interaction logic for Pallet.xaml
     /// </summary>
     public partial class Pallet : UserControl
     {
-        public GALNewGUI.Entity.Pallet pallet = null;
+        public MachineNewGUI.Entity.Pallet pallet = null;
         private string SavePath = "pallet";
         private string PalletName = string.Empty;
         public Pallet(string name,int num)
@@ -63,7 +63,7 @@ namespace GALNewGUI.Controls
                 if (File.Exists(SavePath))
                 {
                     var json = File.ReadAllText(SavePath);
-                    pallet = JsonConvert.DeserializeObject<GALNewGUI.Entity.Pallet>(json);
+                    pallet = JsonConvert.DeserializeObject<MachineNewGUI.Entity.Pallet>(json);
                 }
 
                 if (pallet == null)
@@ -81,9 +81,9 @@ namespace GALNewGUI.Controls
             pallet.PropertyChanged += (_, __) => SavePalletData();
         }
 
-        private GALNewGUI.Entity.Pallet GetDefaultPallet()
+        private MachineNewGUI.Entity.Pallet GetDefaultPallet()
         {
-            return new GALNewGUI.Entity.Pallet(4,2, -208.01, 51.05, -48.95,50.90, -208.01,50.05,false);
+            return new MachineNewGUI.Entity.Pallet(4,2, -208.01, 51.05, -48.95,50.90, -208.01,50.05,false);
         }
         private void SavePalletData()
         {

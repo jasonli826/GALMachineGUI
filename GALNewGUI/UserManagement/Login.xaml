@@ -1,9 +1,9 @@
-﻿<Window x:Class="GALNewGUI.UserManagement.Login"
+﻿<Window x:Class="MachineNewGUI.UserManagement.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GALNewGUI.UserManagement"
+        xmlns:local="clr-namespace:MachineNewGUI.UserManagement"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
@@ -36,11 +36,7 @@
                     <ComboBox x:Name="UsernameBox" IsEditable="True"
                               FontSize="16" FontFamily="Segoe UI Semibold" Height="40" Padding="10,5"
                               Foreground="#333" BorderThickness="0">
-                        <ComboBoxItem Content="Developer" />
-                        <ComboBoxItem Content="Service" />
-                        <ComboBoxItem Content="Engineer" />
-                        <ComboBoxItem Content="Techician" />
-                        <ComboBoxItem Content="Operator" />
+  
                     </ComboBox>
                 </Border>
 

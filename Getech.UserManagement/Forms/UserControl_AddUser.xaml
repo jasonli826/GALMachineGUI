@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Getech.UserManagement.UserControl_AddUser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="240" d:DesignWidth="360" Loaded="UserControl_Loaded">
+    <Grid Name="grid" Height="240" Width="360" Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" Margin="10">User Name</TextBlock>
+        <TextBox Name="textboxName" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" FontSize="16" Margin="10"></TextBox>
+        <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" Margin="10">Password</TextBlock>
+        <TextBox Name="textboxPwd" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" FontSize="16" Margin="10"></TextBox>
+        <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" Margin="10">User Level</TextBlock>
+        <ComboBox Name="comboboxLevel" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" FontSize="16" Margin="10">
+            <!--<ComboBoxItem>Operator</ComboBoxItem>
+            <ComboBoxItem>Technician</ComboBoxItem>
+            <ComboBoxItem>Engineer</ComboBoxItem>
+            <ComboBoxItem>Service</ComboBoxItem>-->
+            <!--<ComboBoxItem>Developer</ComboBoxItem>-->
+        </ComboBox>
+        <Button Name="buttonAdd" Grid.Column="1" Grid.Row="3" Style="{StaticResource bluebutton}" Click="buttonAdd_Click">Add</Button>
+    </Grid>
+</UserControl>

@@ -19,9 +19,9 @@ using System.ComponentModel;
 using System.Windows.Documents;
 using System.Diagnostics;
 using System.Text.Json;
-using GALNewGUI.Entity;
+using MachineNewGUI.Entity;
 
-namespace GALNewGUI.Controls
+namespace MachineNewGUI.Controls
 {
 
     public partial class ProductHierarchyView : UserControl
@@ -83,33 +83,33 @@ namespace GALNewGUI.Controls
                 {
                     if (type.ToUpper() == "BARCODE") // match the node name in your TreeView
                     {
-                        UserControlContainer.Content = new GALNewGUI.Controls.Barcode(_selectedItem.Name,i); // load your user control
+                        UserControlContainer.Content = new MachineNewGUI.Controls.Barcode(_selectedItem.Name,i); // load your user control
 
                     }
                     else if (type.ToUpper() == "INTERFACERESULT")
                     {
-                        UserControlContainer.Content = new GALNewGUI.Controls.InterfaceResult(_selectedItem.Name,i);
+                        UserControlContainer.Content = new MachineNewGUI.Controls.InterfaceResult(_selectedItem.Name,i);
 
                     }
                     else if (type.ToUpper() == "FIDUCIAL")
                     {
-                        UserControlContainer.Content = new GALNewGUI.Controls.Fiducial(_selectedItem.Name,i);
+                        UserControlContainer.Content = new MachineNewGUI.Controls.Fiducial(_selectedItem.Name,i);
                     }
                     else if (type.ToUpper() == "PALLET")
                     {
-                        UserControlContainer.Content = new GALNewGUI.Controls.Pallet(_selectedItem.Name,i);
+                        UserControlContainer.Content = new MachineNewGUI.Controls.Pallet(_selectedItem.Name,i);
                     }
                     else if (type.ToUpper() == "LINE")
                     {
-                        UserControlContainer.Content = new GALNewGUI.Controls.Line(_selectedItem.Name,i);
+                        UserControlContainer.Content = new MachineNewGUI.Controls.Line(_selectedItem.Name,i);
                     }
                     else if (type.ToUpper() == "LIST")
                     {
-                        UserControlContainer.Content = new GALNewGUI.Controls.List(_selectedItem.Name,i);
+                        UserControlContainer.Content = new MachineNewGUI.Controls.List(_selectedItem.Name,i);
                     }
                     else if (type.ToUpper() == "GRIPPERPLACE")
                     {
-                        UserControlContainer.Content = new GALNewGUI.Controls.GripperPlace(_selectedItem.Name,i);
+                        UserControlContainer.Content = new MachineNewGUI.Controls.GripperPlace(_selectedItem.Name,i);
                     }
                     else
                     {
@@ -1446,7 +1446,7 @@ namespace GALNewGUI.Controls
         public enum MessageType { Info, Success, Warning, Error }
         public bool ShowDeleteConfirmation(string title, string message, MessageBoxMode mode)
         {
-            var dialog = new GALNewGUI.Controls.ModernMessageDialog
+            var dialog = new MachineNewGUI.Controls.ModernMessageDialog
             {
                 Title = title,
                 Message = message,
@@ -1474,7 +1474,7 @@ namespace GALNewGUI.Controls
 
         public void ShowModernMessage(string title, string message, MessageBoxMode mode, MessageType type)
         {
-            var dialog = new GALNewGUI.Controls.ModernMessageDialog
+            var dialog = new MachineNewGUI.Controls.ModernMessageDialog
             {
                 Title = title,
                 Message = message,
@@ -1518,7 +1518,7 @@ namespace GALNewGUI.Controls
         }
         public static void ShowModernMessageForStaticMethod(string title, string message, MessageBoxMode mode, MessageType type)
         {
-            var dialog = new GALNewGUI.Controls.ModernMessageDialog
+            var dialog = new MachineNewGUI.Controls.ModernMessageDialog
             {
                 Title = title,
                 Message = message,

@@ -1,12 +1,12 @@
-﻿<Window x:Class="GALNewGUI.Product.EditProduct"
+﻿<Window x:Class="MachineNewGUI.Product.EditProduct"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GALNewGUI.Product"
-        xmlns:controls="clr-namespace:GALNewGUI.Controls"
+        xmlns:local="clr-namespace:MachineNewGUI.Product"
+        xmlns:controls="clr-namespace:MachineNewGUI.Controls"
         mc:Ignorable="d"
-        Title="EditProduct" Height="1000" Width="1100" Closing="EditProduct_Closing" WindowState="Maximized">
+        Title="EditProduct" Height="1000" Width="1100" Closing="EditProduct_Closing" WindowState="Maximized" Loaded="EditProduct_Loaded">
     <Window.Background>
         <!-- Colorful Gradient Background -->
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -80,7 +80,7 @@
                         <GroupBox Header="Product Info" Margin="0,0,0,10" Padding="10">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                 <TextBlock Text="File Name:" VerticalAlignment="Center" Width="100" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Width="400" Text="{Binding ProductFileName, Mode=TwoWay}"  Foreground="Green" />
+                                <TextBox Width="400" Name="txtFileName" Text="{Binding ProductFileName, Mode=TwoWay}"  Foreground="Green" />
                             </StackPanel>
                         </GroupBox>
 
@@ -406,16 +406,16 @@
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Text="Offset.X:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox Text="{Binding AdaptorPallet.BarcodeOffset_Points.X}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+                                    <TextBox Text="{Binding AdaptorPallet.BarcodeOffsetPoints.X}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
 
                                     <TextBlock Text="Offset.Y:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffset_Points.Y}" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffsetPoints.Y}" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
 
                                     <TextBlock Text="Offset.Z:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffset_Points.Z}" Grid.Row="1" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffsetPoints.Z}" Grid.Row="1" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
 
                                     <TextBlock Text="Offset.U:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
-                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffset_Points.U}" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffsetPoints.U}" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -489,7 +489,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock Text="Barcode:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                <TextBox Text="{Binding Finger2Barcode}" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                                <TextBox Text="{Binding Finger1Barcode}" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
                             </Grid>
                         </GroupBox>
                     </Grid>

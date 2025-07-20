@@ -1,9 +1,9 @@
-﻿using GALNewGUI.Entity;
+﻿using MachineNewGUI.Entity;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace GALNewGUI.Controls
+namespace MachineNewGUI.Controls
 {
     public partial class ModernMessageDialog : UserControl
     {

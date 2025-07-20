@@ -5,9 +5,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2DF8E4FA-6AC2-4294-A864-CFF1C8AF6CE9}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>GALNewGUI</RootNamespace>
-    <AssemblyName>GALNewGUI</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MachineNewGUI</RootNamespace>
+    <AssemblyName>MachineNewGUI</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,17 +38,59 @@
   <PropertyGroup>
     <ApplicationIcon>Getech.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="APILXYSoftCommunication">
+      <HintPath>..\..\..\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\GAL\bin\Debug\net8.0-windows\APILXYSoftCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="CommControlLib">
+      <HintPath>..\..\..\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\GAL\bin\Debug\net8.0-windows\CommControlLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="CTOVisionMaster4.2DLL">
+      <HintPath>..\..\..\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\GAL\bin\Debug\net8.0-windows\CTOVisionMaster4.2DLL.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="GALXYSoftCommunication">
+      <HintPath>..\..\..\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\GAL\bin\Debug\net8.0-windows\GALXYSoftCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="GetechSorter.Scanner">
+      <HintPath>..\..\..\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\GAL\bin\Debug\net8.0-windows\GetechSorter.Scanner.dll</HintPath>
+    </Reference>
+    <Reference Include="JogControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\GAL\bin\Debug\net8.0-windows\JogControl.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.7\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RobotController, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\RobotController.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.IO.Pipelines, Version=9.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.9.0.7\lib\net462\System.IO.Pipelines.dll</HintPath>
@@ -73,6 +116,9 @@
     </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -124,6 +170,7 @@
     </Compile>
     <Compile Include="Entity\AdaptorPallet.cs" />
     <Compile Include="Entity\BarcodeOffsetPoints.cs" />
+    <Compile Include="Entity\BatchParameter.cs" />
     <Compile Include="Entity\CheckSpot1Offset.cs" />
     <Compile Include="Entity\CheckSpot2Offset.cs" />
     <Compile Include="Entity\CheckSpot3Offset .cs" />
@@ -136,6 +183,7 @@
     <Compile Include="Entity\FlyCheckSpot4Offset.cs" />
     <Compile Include="Entity\GALTimer.cs" />
     <Compile Include="Entity\InputTray.cs" />
+    <Compile Include="Entity\MachineConfiguration.cs" />
     <Compile Include="Entity\ModuleBarcodePoints.cs" />
     <Compile Include="Entity\Options.cs" />
     <Compile Include="Entity\PlacementOffset.cs" />
@@ -152,23 +200,29 @@
     <Compile Include="Entity\ProductHierarchyView\RightTable.cs" />
     <Compile Include="Entity\ProductHierarchyView\TreeItem.cs" />
     <Compile Include="Entity\ProductParameters.cs" />
-    <Compile Include="Entity\Root.cs" />
+    <Compile Include="Entity\ProductStream.cs" />
+    <Compile Include="Entity\Product.cs" />
+    <Compile Include="Entity\SystemParameter.cs" />
     <Compile Include="Help\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
     <Compile Include="JsonEncryption\JsonMechanism.cs" />
+    <Compile Include="Log\Log.cs" />
     <Compile Include="Product\EditProduct.xaml.cs">
       <DependentUpon>EditProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="Product\InputDialog.xaml.cs">
       <DependentUpon>InputDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Scanner\HIKScannerTCP.cs" />
     <Compile Include="Service\MachineSetting.xaml.cs">
       <DependentUpon>MachineSetting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\TeachUtility.xaml.cs">
       <DependentUpon>TeachUtility.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserManagement\Authentication\UserAthentication.cs" />
+    <Compile Include="UserManagement\Authentication\VersionRedirectBinder.cs" />
     <Compile Include="UserManagement\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>

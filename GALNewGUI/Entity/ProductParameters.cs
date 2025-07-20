@@ -1,10 +1,17 @@
 ﻿using System.ComponentModel;
 
-namespace GALNewGUI.Entity
+namespace MachineNewGUI.Entity
 {
     public class ProductParameters : INotifyPropertyChanged
     {
-        public ProductParameters() { }
+        public ProductParameters() {
+            Options = new Options();
+            InputTray = new InputTray();
+            AdaptorPallet = new AdaptorPallet();
+            NewMachineTimer = new NewMachineTimer();
+            LeftTable = new LeftTable();
+            RightTable = new RightTable();
+         }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -135,11 +142,11 @@ namespace GALNewGUI.Entity
             set { _palletWidth = value; OnPropertyChanged(nameof(PalletWidth)); }
         }
 
-        private string _palletConveyorAxisClampStrokeGAL;
-        public string PalletConveyorAxisClampStrokeGAL
+        private string _palletConveyorAxisClampStrokeNewMachineTimer;
+        public string PalletConveyorAxisClampStrokeNewMachineTimer
         {
-            get => _palletConveyorAxisClampStrokeGAL;
-            set { _palletConveyorAxisClampStrokeGAL = value; OnPropertyChanged(nameof(PalletConveyorAxisClampStrokeGAL)); }
+            get => _palletConveyorAxisClampStrokeNewMachineTimer;
+            set { _palletConveyorAxisClampStrokeNewMachineTimer = value; OnPropertyChanged(nameof(PalletConveyorAxisClampStrokeNewMachineTimer)); }
         }
 
         private string _finger1OffsetX;
@@ -212,18 +219,18 @@ namespace GALNewGUI.Entity
             set { _finger2Barcode = value; OnPropertyChanged(nameof(Finger2Barcode)); }
         }
 
-        private string _axis3ServoTraySingulatePos2GAL;
-        public string Axis3ServoTraySingulatePos2GAL
+        private string _axis3ServoTraySingulatePos2NewMachine;
+        public string Axis3ServoTraySingulatePos2NewMachine
         {
-            get => _axis3ServoTraySingulatePos2GAL;
-            set { _axis3ServoTraySingulatePos2GAL = value; OnPropertyChanged(nameof(Axis3ServoTraySingulatePos2GAL)); }
+            get => _axis3ServoTraySingulatePos2NewMachine;
+            set { _axis3ServoTraySingulatePos2NewMachine = value; OnPropertyChanged(nameof(Axis3ServoTraySingulatePos2NewMachine)); }
         }
 
-        private GALTimer _galTimer;
-        public GALTimer GALTimer
+        private NewMachineTimer _newMachineTimer;
+        public NewMachineTimer NewMachineTimer
         {
-            get => _galTimer;
-            set { _galTimer = value; OnPropertyChanged(nameof(GALTimer)); }
+            get => _newMachineTimer;
+            set { _newMachineTimer = value; OnPropertyChanged(nameof(NewMachineTimer)); }
         }
         private LeftTable _lefttable;
         public LeftTable LeftTable
@@ -238,11 +245,6 @@ namespace GALNewGUI.Entity
             set { _righttable = value; OnPropertyChanged(nameof(RightTable)); }
         }
 
-        public ProductParameters ShallowCopy()
-        {
-            return (ProductParameters)this.MemberwiseClone();
-
-        }
 
     }
 }

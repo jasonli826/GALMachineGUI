@@ -1,11 +1,12 @@
-﻿using GALNewGUI.Controls;
-using GALNewGUI.Entity;
-using GALNewGUI.JsonEncryption;
+﻿using MachineNewGUI.Controls;
+using MachineNewGUI.Entity;
+using MachineNewGUI.JsonEncryption;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -21,20 +22,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GALNewGUI.Product
+namespace MachineNewGUI.Product
 {
     /// <summary>
     /// Interaction logic for EditProduct.xaml
     /// </summary>
     public partial class EditProduct : Window
     {
-
+        private string MachineGUIDirectroy = ConfigurationManager.AppSettings["Directory"].ToString();
         private static readonly Regex _regex = new Regex(@"^[0-9]*(\.[0-9]*)?$");
-        private string productFilePath;
-        private Root root = null;
+        private string currentProductName;
+        private Entity.Product root = null;
         private bool flag = false;
         private bool isSaveFile = false;
         private ProductParameters productParameter=null;
+        private string productFilePath = string.Empty;
+        private InternalMemoryStateManagement InternalMemoryStateManagement = null;
+        public event Action<InternalMemoryStateManagement> InternalMemoryStateManagementReady;
+       
         public EditProduct()
         {
             InitializeComponent();
@@ -64,17 +69,45 @@ namespace GALNewGUI.Product
                 e.CancelCommand();
             }
         }
-        public EditProduct(string filePath,bool f)
+        protected void EditProduct_Loaded(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-            productFilePath = filePath;
-            if (string.IsNullOrEmpty(productFilePath))
+
+
+
+
+        }
+        private bool FileNameExists(string fileName, string directoryPath)
+        {
+            if (string.IsNullOrWhiteSpace(fileName))
+                throw new ArgumentException("File name must not be empty.", nameof(fileName));
+
+            if (!Directory.Exists(directoryPath))
+                throw new DirectoryNotFoundException($"Directory not found: {directoryPath}");
+
+            foreach (var filePath in Directory.EnumerateFiles(directoryPath, "*", SearchOption.AllDirectories))
             {
-                productFilePath = "C:\\router\\Product File\\NewProductForGAL.json";
-            
+                string temp = System.IO.Path.GetFileNameWithoutExtension(filePath);
+                if (string.Equals(temp, fileName, StringComparison.OrdinalIgnoreCase))
+                    return true;
             }
-            LoadProduct(productFilePath);
-            flag = f;
+
+            return false;
+        }
+        public EditProduct(string productName)
+        {
+            string directory = MachineGUIDirectroy + @"/Product File";
+            InitializeComponent();
+            currentProductName = productName;
+            if (!string.IsNullOrEmpty(currentProductName))
+            {
+                
+                productFilePath = MachineGUIDirectroy + @"/Product File/" + currentProductName + ".json";
+
+                LoadProduct(productFilePath);
+               
+            }
+       
+
         }
         private bool AreObjectsEqualByValue<T>(T obj1, T obj2)
         {
@@ -93,6 +126,7 @@ namespace GALNewGUI.Product
         private void EditProduct_Closing(object sender, CancelEventArgs e)
         {
 
+            var productCreated = new InternalMemoryStateManagement();
             if (root.ProductParameters.LeftTable == null)
             {
                 root.ProductParameters.LeftTable = new LeftTable();
@@ -122,10 +156,16 @@ namespace GALNewGUI.Product
                 }
                 else
                 {
+                    productCreated.isCreateProduct = true;
                     SaveProductFile();
                   
                 }
             }
+
+
+            productCreated.LastProduct = currentProductName;
+            productCreated.LastReservation = DateTime.Now.ToString();
+            InternalMemoryStateManagementReady?.Invoke(productCreated);
         }
 
         private void LoadProduct(string filePath)
@@ -139,13 +179,13 @@ namespace GALNewGUI.Product
                 {
                     json = File.ReadAllText(filePath);
                     json = jsonDecryption.DecryptString(json);
-                    root = JsonConvert.DeserializeObject<Entity.Root>(json);
+                    root = JsonConvert.DeserializeObject<Entity.Product>(json);
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error deserializing JSON: {ex.Message}");
                 }
-                this.DataContext = root.ProductParameters;
+              
                 if (root.ProductParameters.LeftTable != null)
                 {
 
@@ -158,51 +198,35 @@ namespace GALNewGUI.Product
                     ProductHierarchyViewRightTable.Items = root.ProductParameters.RightTable.Items;
 
                 }
+                if (root.ProductParameters.InputTray == null)
+                    root.ProductParameters.InputTray = new InputTray();
+                if (root.ProductParameters.InputTray.ModuleBarcodePoints==null)
+                root.ProductParameters.InputTray.ModuleBarcodePoints = new ModuleBarcodePoints();
+                if (root.ProductParameters.InputTray.BarcodeOffsetPoints==null)
+                root.ProductParameters.InputTray.BarcodeOffsetPoints = new BarcodeOffsetPoints();
+                if (root.ProductParameters.AdaptorPallet == null)
+                {
+                    root.ProductParameters.AdaptorPallet = new AdaptorPallet();
+                    if(root.ProductParameters.AdaptorPallet.BarcodeOffsetPoints==null)
+                        root.ProductParameters.AdaptorPallet.BarcodeOffsetPoints = new BarcodeOffsetPoints();
+                    if (root.ProductParameters.AdaptorPallet.PlacementOffset == null)
+                        root.ProductParameters.AdaptorPallet.PlacementOffset = new PlacementOffset();
+                
+                }
+                this.DataContext = root.ProductParameters;
             }
             else
             {
-                root = new Root();
+                root = new Entity.Product();
                 root.ProductParameters = new ProductParameters();
-                root.ProductParameters.InputTray = new InputTray();
-                root.ProductParameters.InputTray.ModuleBarcodePoints = new ModuleBarcodePoints();
-                root.ProductParameters.InputTray.BarcodeOffsetPoints = new BarcodeOffsetPoints();
-                root.ProductParameters.Options = new Options();
-                root.ProductParameters.AdaptorPallet = new AdaptorPallet();
-                root.ProductParameters.GALTimer = new GALTimer();
-                root.ProductParameters.LeftTable = new LeftTable();
-                root.ProductParameters.RightTable = new RightTable();
-                root.ProductParameters.AdaptorPallet.PlacementOffset = new PlacementOffset();
-                root.ProductParameters.AdaptorPallet.BarcodeOffset_Points = new BarcodeOffsetPoints();
+                root.ProductParameters.ProductName = currentProductName;
+                root.ProductParameters.ProductFileName = currentProductName;
                 this.DataContext = root.ProductParameters;
 
             }
 
             var tempObj = JsonConvert.SerializeObject(root.ProductParameters);
             productParameter = JsonConvert.DeserializeObject<ProductParameters>(tempObj);
-            //productParameter = root.ProductParameters.ShallowCopy();
-            
-            //productParameter.InputTray = root.ProductParameters.InputTray.ShallowCopy();
-            //productParameter = root.ProductParameters.ShallowCopy();
-            //productParameter.InputTray = root.ProductParameters.InputTray.ShallowCopy();
-            //productParameter.InputTray.BarcodeOffset_Points = root.ProductParameters.InputTray.BarcodeOffset_Points.ShallowCopy();
-            //productParameter.InputTray.ModuleBarcode_Points = root.ProductParameters.InputTray.ModuleBarcode_Points.ShallowCopy();
-            //productParameter.InputTray.CheckSpot1Offset = root.ProductParameters.InputTray.CheckSpot1Offset.ShallowCopy();
-            //productParameter.InputTray.CheckSpot2Offset = root.ProductParameters.InputTray.CheckSpot2Offset.ShallowCopy();
-            //productParameter.InputTray.CheckSpot3Offset = root.ProductParameters.InputTray.CheckSpot3Offset.ShallowCopy();
-            //productParameter.InputTray.CheckSpot4Offset = root.ProductParameters.InputTray.CheckSpot4Offset.ShallowCopy();
-            //productParameter.InputTray.CheckSpotEnable = root.ProductParameters.InputTray.CheckSpotEnable.ShallowCopy();
-            //productParameter.InputTray.CheckSpotPosOnOff = root.ProductParameters.InputTray.CheckSpotPosOnOff.ShallowCopy();
-            //productParameter.InputTray.FlyCheckSpot1Offset = root.ProductParameters.InputTray.FlyCheckSpot1Offset.ShallowCopy();
-            //productParameter.InputTray.FlyCheckSpot2Offset = root.ProductParameters.InputTray.FlyCheckSpot2Offset.ShallowCopy();
-            //productParameter.InputTray.FlyCheckSpot3Offset = root.ProductParameters.InputTray.FlyCheckSpot3Offset.ShallowCopy();
-            //productParameter.InputTray.FlyCheckSpot4Offset = root.ProductParameters.InputTray.FlyCheckSpot4Offset.ShallowCopy();
-            //productParameter.InputTray.PlacementOffset = root.ProductParameters.InputTray.PlacementOffset.ShallowCopy();
-
-            //productParameter.Options = root.ProductParameters.Options.ShallowCopy();
-            //productParameter.AdaptorPallet = root.ProductParameters.AdaptorPallet.ShallowCopy();
-            //productParameter.GALTimer = root.ProductParameters.GALTimer.ShallowCopy();
-            //productParameter.LeftTable = root.ProductParameters.LeftTable.ShallowCopy();
-            //productParameter.RightTable = root.ProductParameters.RightTable.ShallowCopy();
         }
         private void SaveProductFile()
         {
@@ -226,12 +250,11 @@ namespace GALNewGUI.Product
             {
                 root.ProductParameters.RightTable.Items = ProductHierarchyViewRightTable.GetCurrentTableData();
             }
-            JsonMechanism jsonEncryption = new JsonMechanism();
+                JsonMechanism jsonEncryption = new JsonMechanism();
 
-            string json = JsonConvert.SerializeObject(root);
-            json = jsonEncryption.EncryptionString(json);
-            if (flag)
-            {
+                string json = JsonConvert.SerializeObject(root);
+                json = jsonEncryption.EncryptionString(json);
+
                 if (File.Exists(productFilePath))
                 {
                     File.Delete(productFilePath);
@@ -247,22 +270,8 @@ namespace GALNewGUI.Product
                     File.WriteAllText(productFilePath, json);
                 }
                 MessageBox.Show("Save Product File Successfully");
-            }
-            else
-            {
-                SaveFileDialog openFileDialog = new SaveFileDialog();
-                openFileDialog.InitialDirectory = @"C:\router\Product File";
-                openFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
-                fileName = System.IO.Path.GetFileName(productFilePath);
-                openFileDialog.FileName = fileName;
+            
 
-                bool? result = openFileDialog.ShowDialog();
-                if (result.Value == true)
-                {
-                    File.WriteAllText(openFileDialog.FileName, json);
-                    MessageBox.Show("Save Product File Successfully");
-                }
-            }
             var tempObj = JsonConvert.SerializeObject(root.ProductParameters);
             productParameter = JsonConvert.DeserializeObject<ProductParameters>(tempObj);
 
@@ -277,12 +286,9 @@ namespace GALNewGUI.Product
             {
                
                 SaveProductFile();
-              
+                //WindowClosedWithData?.Invoke(this, "Data from child");
             }
         
         }
-
-
-
     }
 }

@@ -1,4 +1,4 @@
-﻿using GALNewGUI.Entity;
+﻿using MachineNewGUI.Entity;
 using System.ComponentModel;
 
 public class FlyCheckSpot2Offset : INotifyPropertyChanged

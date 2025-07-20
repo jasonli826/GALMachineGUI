@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GALNewGUI.JsonEncryption
+namespace MachineNewGUI.JsonEncryption
 {
     public class JsonMechanism
     {

@@ -13,9 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using static GALNewGUI.Utilities.IOUtility;
+using static MachineNewGUI.Utilities.IOUtility;
 
-namespace GALNewGUI.Utilities
+namespace MachineNewGUI.Utilities
 {
     /// <summary>
     /// Interaction logic for IOUtility.xaml

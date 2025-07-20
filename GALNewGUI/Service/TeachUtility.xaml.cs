@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GALNewGUI.Service
+namespace MachineNewGUI.Service
 {
     /// <summary>
     /// Interaction logic for TeachUtility.xaml

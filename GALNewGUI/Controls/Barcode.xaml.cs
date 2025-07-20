@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GALNewGUI.Controls
+namespace MachineNewGUI.Controls
 {
     /// <summary>
     /// Interaction logic for Barcode.xaml

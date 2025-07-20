@@ -1,4 +1,4 @@
-﻿using GALNewGUI.Entity;
+﻿using MachineNewGUI.Entity;
 using System;
 using System.ComponentModel;
 
@@ -14,7 +14,18 @@ public class InputTray : INotifyPropertyChanged
     }
 
     public InputTray() {
-    
+        BarcodeOffsetPoints = new BarcodeOffsetPoints();
+        ModuleBarcodePoints = new ModuleBarcodePoints();
+        CheckSpot1Offset = new CheckSpot1Offset();
+        CheckSpot2Offset = new CheckSpot2Offset();
+        CheckSpot3Offset = new CheckSpot3Offset();
+        CheckSpot4Offset = new CheckSpot4Offset();
+        CheckSpotEnable = new CheckSpotEnable();
+        CheckSpotPosOnOff = new CheckSpotPosOnOff();
+        FlyCheckSpot1Offset = new FlyCheckSpot1Offset();
+        FlyCheckSpot2Offset = new FlyCheckSpot2Offset();
+        FlyCheckSpot3Offset = new FlyCheckSpot3Offset();
+        FlyCheckSpot4Offset = new FlyCheckSpot4Offset();
     }
     private string _rows;
     public string Rows

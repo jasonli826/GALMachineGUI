@@ -1,4 +1,4 @@
-﻿using GALNewGUI.Entity;
+﻿using MachineNewGUI.Entity;
 using System.Collections.ObjectModel;
 using System;
 using System.Linq;

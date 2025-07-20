@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GALNewGUI.Entity
+namespace MachineNewGUI.Entity
 {
 
     public  class InterfaceResult: INotifyPropertyChanged

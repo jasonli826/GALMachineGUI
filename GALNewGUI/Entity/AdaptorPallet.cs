@@ -1,11 +1,26 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace GALNewGUI.Entity
+namespace MachineNewGUI.Entity
 {
     public class AdaptorPallet : INotifyPropertyChanged
     {
-        public AdaptorPallet() { }
+       
+        public AdaptorPallet() {
+            BarcodeOffsetPoints = new BarcodeOffsetPoints();
+            ModuleBarcodePoints = new ModuleBarcodePoints();
+            CheckSpot1Offset = new CheckSpot1Offset();
+            CheckSpot2Offset = new CheckSpot2Offset();
+            CheckSpot3Offset = new CheckSpot3Offset();
+            CheckSpot4Offset = new CheckSpot4Offset();
+            CheckSpotEnable = new CheckSpotEnable();
+            CheckSpotPosOnOff = new CheckSpotPosOnOff();
+            FlyCheckSpot1Offset = new FlyCheckSpot1Offset();
+            FlyCheckSpot2Offset = new FlyCheckSpot2Offset();
+            FlyCheckSpot3Offset = new FlyCheckSpot3Offset();
+            FlyCheckSpot4Offset = new FlyCheckSpot4Offset();
+            PlacementOffset = new PlacementOffset();
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -151,8 +166,8 @@ namespace GALNewGUI.Entity
         }
 
         // Complex child objects (implement INotifyPropertyChanged inside those classes too)
-        public BarcodeOffsetPoints BarcodeOffset_Points { get; set; }
-        public ModuleBarcodePoints ModuleBarcode_Points { get; set; }
+        public BarcodeOffsetPoints BarcodeOffsetPoints { get; set; }
+        public ModuleBarcodePoints ModuleBarcodePoints { get; set; }
         public CheckSpot1Offset CheckSpot1Offset { get; set; }
         public CheckSpot2Offset CheckSpot2Offset { get; set; }
         public CheckSpot3Offset CheckSpot3Offset { get; set; }

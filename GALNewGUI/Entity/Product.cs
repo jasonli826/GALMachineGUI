@@ -5,20 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GALNewGUI.Entity
+namespace MachineNewGUI.Entity
 {
-    public  class Root:ICloneable
+    public  class Product
     {
         public ProductParameters ProductParameters { get; set; }
 
-        public object Clone()
-        {
-            var clone = (Root)this.MemberwiseClone();
-
-
-
-            return clone;
-        }
 
  
     }

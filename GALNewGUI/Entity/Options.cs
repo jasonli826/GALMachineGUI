@@ -1,27 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-
-public class Options : INotifyPropertyChanged
+namespace MachineNewGUI.Entity
 {
-
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void OnPropertyChanged(string name) =>
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-    public Options ShallowCopy()
+    public class Options : INotifyPropertyChanged
     {
-        return (Options)this.MemberwiseClone();
-
-    }
-
-    private List<string> _boolean;
-    public List<string> boolean
-    {
-        get => _boolean;
-        set
+        public Options() { }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        public Options ShallowCopy()
         {
-            _boolean = value;
-            OnPropertyChanged(nameof(boolean));
+            return (Options)this.MemberwiseClone();
+
+        }
+
+        private List<string> _boolean;
+        public List<string> boolean
+        {
+            get => _boolean;
+            set
+            {
+                _boolean = value;
+                OnPropertyChanged(nameof(boolean));
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 
-namespace GALNewGUI.Entity
+namespace MachineNewGUI.Entity
 {
     public class TreeItem : INotifyPropertyChanged
     {
