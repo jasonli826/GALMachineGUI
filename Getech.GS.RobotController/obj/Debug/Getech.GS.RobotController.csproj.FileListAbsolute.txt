@@ -1,0 +1,73 @@
+D:\CTO\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.dll
+D:\CTO\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.pdb
+D:\CTO\Getech.GS.RobotController\bin\Debug\JogControl.dll
+D:\CTO\Getech.GS.RobotController\bin\Debug\RobotController.dll
+D:\CTO\Getech.GS.RobotController\bin\Debug\CommControlLib.dll
+D:\CTO\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
+D:\CTO\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.dll
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.pdb
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.GS.RobotController\bin\Debug\JogControl.dll
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.GS.RobotController\bin\Debug\RobotController.dll
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.GS.RobotController\bin\Debug\CommControlLib.dll
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.dll
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.pdb
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.GS.RobotController\bin\Debug\JogControl.dll
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.GS.RobotController\bin\Debug\RobotController.dll
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.GS.RobotController\bin\Debug\CommControlLib.dll
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.dll
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.pdb
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\JogControl.dll
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\RobotController.dll
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\CommControlLib.dll
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.pdb
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\JogControl.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\RobotController.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\CommControlLib.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.CoreCompileInputs.cache
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.CopyComplete
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csprojAssemblyReference.cache
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.CoreCompileInputs.cache
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.CopyComplete
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.pdb
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\JogControl.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\RobotController.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\bin\Debug\CommControlLib.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.AssemblyReference.cache
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.CoreCompileInputs.cache
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.CopyComplete
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb
+D:\Project\GAL MACHINE GUI\GAL\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.dll
+D:\Project\GAL MACHINE GUI\GAL\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.pdb
+D:\Project\GAL MACHINE GUI\GAL\Getech.GS.RobotController\bin\Debug\CommControlLib.dll
+D:\Project\GAL MACHINE GUI\GAL\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.AssemblyReference.cache
+D:\Project\GAL MACHINE GUI\GAL\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.CoreCompileInputs.cache
+D:\Project\GAL MACHINE GUI\GAL\Getech.GS.RobotController\obj\Debug\Getech.G.EF8A82DA.Up2Date
+D:\Project\GAL MACHINE GUI\GAL\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
+D:\Project\GAL MACHINE GUI\GAL\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.dll
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.pdb
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\Getech.GS.RobotController\bin\Debug\CommControlLib.dll
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.AssemblyReference.cache
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.CoreCompileInputs.cache
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\Getech.GS.RobotController\obj\Debug\Getech.G.EF8A82DA.Up2Date
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL MACHINE GUI\GAL MACHINE GUI 4\GAL MACHINE GUI\GAL\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.dll
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.pdb
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.AssemblyReference.cache
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.CoreCompileInputs.cache
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.G.EF8A82DA.Up2Date
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb

@@ -1,0 +1,622 @@
+﻿<Window x:Class="MachineNewGUI.Product.EditProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MachineNewGUI.Product"
+        xmlns:controls="clr-namespace:MachineNewGUI.Controls"
+        mc:Ignorable="d"
+        Title="EditProduct" Height="1000" Width="1100" Closing="EditProduct_Closing" WindowState="Maximized" Loaded="EditProduct_Loaded">
+    <Window.Background>
+        <!-- Colorful Gradient Background -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#007ACC" Offset="0"/>
+            <GradientStop Color="#FFD500" Offset="0.5"/>
+            <GradientStop Color="#00C9FF" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <!-- Define Beautiful Styles -->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/Themes.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <!-- UI -->
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <!-- TabControl -->
+            <RowDefinition Height="Auto"/>
+            <!-- Save Button -->
+        </Grid.RowDefinitions>
+        <TabControl Margin="0" Padding="0" Grid.Row="0">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Height="32">
+                        <Image Source="../Images/Table.png"
+                   Width="20" Height="20"
+                   VerticalAlignment="Center" />
+                        <TextBlock Text="Left Table"
+                       VerticalAlignment="Center"
+                       Margin="5,0,0,0"
+                       FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <ScrollViewer Margin="0" Padding="0">
+                    <controls:ProductHierarchyView x:Name="ProductHierarchyViewLeftTable" ParentTag="LEFT"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Height="32">
+                        <TextBlock Text="Right Table"
+                       VerticalAlignment="Center"
+                       Margin="5,0,0,0"
+                       FontSize="14"/>
+                        <Image Source="../Images/Table.png"
+                         Width="20" Height="20"
+                         VerticalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
+                <controls:ProductHierarchyView x:Name="ProductHierarchyViewRightTable" ParentTag="RIGHT"/>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Height="32">
+                        <Image Source="../Images/product.png"
+                   Width="20" Height="20"
+                   VerticalAlignment="Center" />
+                        <TextBlock Text="Product"
+                       VerticalAlignment="Center"
+                       Margin="5,0,0,0"
+                       FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <ScrollViewer Margin="0" Padding="0">
+                    <StackPanel Margin="5,0,0,0" Orientation="Vertical" VerticalAlignment="Top">
+
+                        <!-- Product File Name -->
+                        <GroupBox Header="Product Info" Margin="0,0,0,10" Padding="10">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="File Name:" VerticalAlignment="Center" Width="100" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Width="400" Name="txtFileName" Text="{Binding ProductFileName, Mode=TwoWay}"  Foreground="Green" />
+                            </StackPanel>
+                        </GroupBox>
+
+                        <!-- Product Dimensions & Info -->
+                        <GroupBox Header="Specifications" Padding="10">
+                            <Grid Margin="0" HorizontalAlignment="Left">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="ModuleFromFactor:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Text="{Binding Name}" Grid.Row="0" Grid.Column="1" Width="150" Foreground="Green"/>
+
+                                <TextBlock Text="Product Name:" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Text="{Binding ProductName}" Grid.Row="0" Grid.Column="3" Width="150" Foreground="Green"/>
+
+                                <TextBlock Text="Length:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Text="{Binding Length}" Grid.Row="1" Grid.Column="1" Width="150" Foreground="Green" PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                <TextBlock Text="Height:" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox  Text="{Binding Height}" Grid.Row="1" Grid.Column="3" Width="150" Foreground="Green" PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                <TextBlock Text="Width:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Foreground="{StaticResource PrimaryColorForLogin}"  FontSize="18"/>
+                                <TextBox  Text="{Binding Width}" Grid.Row="2" Grid.Column="1" Width="150" Foreground="Green" PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Height="32">
+                        <Image Source="../Images/InputTray.png"
+                   Width="20" Height="20"
+                   VerticalAlignment="Center"/>
+                        <TextBlock Text="Input Tray"
+                       VerticalAlignment="Center"
+                       Margin="5,0,0,0"
+                       FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="10" Orientation="Vertical" VerticalAlignment="Top">
+
+                        <!-- Row 1: Tray Grid Config + Module-MID Barcode -->
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Tray Grid Configuration -->
+                            <GroupBox Header="Tray Grid Configuration" Padding="10" Margin="0,0,10,0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Row 0 -->
+                                    <TextBlock Text="Rows:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.Rows}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Columns:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.Columns}" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                    <!-- Row 1 -->
+                                    <TextBlock Text="Row Pitch:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.RowPitch}" Grid.Row="1" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                    <TextBlock Text="Column Pitch:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.ColumnPitch}" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                    <!-- Row 2 -->
+                                    <TextBlock Text="Row Offset:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.RowOffset}" Grid.Row="2" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                    <TextBlock Text="Column Offset:" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.ColumnOffset}"  Grid.Row="2" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                </Grid>
+                            </GroupBox>
+
+                            <!-- Module-MID Barcode -->
+                            <GroupBox Header="Module-MID Barcode Offset" Padding="10" Grid.Column="1" Margin="10,0,0,0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="Offset.X:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  Text="{Binding InputTray.ModuleBarcode_Points.X}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBlock Text="Offset.Y:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.ModuleBarcode_Points.Y}"  Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+                                    <TextBlock Text="Offset.Z:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  Text="{Binding InputTray.ModuleBarcode_Points.Z}"  Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBlock Text="Offset.U:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.ModuleBarcode_Points.U}"  Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+
+                        <!-- Row 2: Tray Barcode Config + Tool Tip 3 (example shown as visible) -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Tray Barcode Config -->
+                            <GroupBox Header="Tray Barcode Configuration" Padding="10" Grid.Column="0" Margin="0,0,10,0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Prefix:"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  Text="{Binding TrayBarcodePrefix}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBlock Text="Barcode:" Width="90" VerticalAlignment="Center"  Grid.Row="0" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  Text="{Binding TrayBarcode}" Grid.Row="0" Grid.Column="4"  Foreground="Green"/>
+                                    <TextBlock Text="Offset.X:" Width="90" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffset_Points.X}"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBlock Text="Offset.Y:" Width="90"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffset_Points.Y}"  VerticalAlignment="Center"  Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBlock Text="Offset.Z:" Width="90" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.BarcodeOffset_Points.Z}"  VerticalAlignment="Center"  Grid.Row="2" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBlock Text="Offset.U:" Width="90" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffset_Points.U}" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                </Grid>
+                            </GroupBox>
+
+                            <!-- Tool Tip 3 -->
+                            <!--<GroupBox Header="Tool Tip 3" Padding="10" Grid.Column="1" Margin="10,0,0,0" Name="InputTrayHeadTool3">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="Offset.X:"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  Text="{Binding InputTray.BarcodeOffsetX}"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                    <TextBlock Text="Offset.Y:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.BarcodeOffsetY}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBlock Text="Offset.Z:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Name="TxtTool3OffsetZRow0" Text="{Binding InputTray.BarcodeOffsetZ}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBlock Text="Offset.U:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding InputTray.BarcodeOffsetU}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                </Grid>
+                            </GroupBox>-->
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Height="32">
+                        <Image Source="../Images/OutputTray.png"
+                 Stretch="Uniform"
+                 VerticalAlignment="Stretch"
+                 Width="Auto" 
+                 Height="Auto"/>
+                        <TextBlock Text="Output Tray"
+                     VerticalAlignment="Center"
+                     Margin="5,0,0,0"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="10" Orientation="Vertical" VerticalAlignment="Top">
+
+                        <!-- Row 1: Grid Config + Placement Offset -->
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Tray Grid Configuration -->
+                            <GroupBox Header="Tray Grid Configuration" Padding="10" Grid.Column="0" Margin="0,0,10,0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="Rows:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox Text="{Binding AdaptorPallet.Rows}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Columns:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox Text="{Binding AdaptorPallet.Columns}" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Row Pitch:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox Text="{Binding AdaptorPallet.RowPitch}" Grid.Row="1" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Column Pitch:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox Text="{Binding AdaptorPallet.ColumnPitch}" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Row Offset:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox Text="{Binding AdaptorPallet.RowOffset}" Grid.Row="2" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Column Offset:" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox Text="{Binding AdaptorPallet.ColumnOffset}"  Grid.Row="2" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+                                </Grid>
+                            </GroupBox>
+
+                            <!-- Placement Offset -->
+                            <GroupBox Header="Placement Offset" Padding="10" Grid.Column="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="Offset.X:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox Text="{Binding AdaptorPallet.PlacementOffset.X}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Offset.Y:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox  Text="{Binding AdaptorPallet.PlacementOffset.Y}" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Offset.Z:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  Text="{Binding AdaptorPallet.PlacementOffset.Z}" Grid.Row="1" Grid.Column="1"  Foreground="Green" />
+
+                                    <TextBlock Text="Offset.U:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox  Text="{Binding AdaptorPallet.PlacementOffset.U}" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+                                    <TextBlock Text="Clamp Stroke (mm):" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"></TextBlock>
+                                    <TextBox Grid.Row="2" Grid.Column="1"  Foreground="Green" Text="{Binding Path=PalletConveyorAxisClampStrokeGAL}"></TextBox>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+
+                        <!-- Row 2: Pallet Barcode + Pallet Barcode Scan -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Pallet Barcode -->
+                            <GroupBox Header="Pallet Barcode" Grid.Column="0" Margin="0,0,10,0" Padding="10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="220" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="Barcode:" VerticalAlignment="Center" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox Text="{Binding PalletBarcode}" Grid.Column="1"  Foreground="Green" />
+                                </Grid>
+                            </GroupBox>
+
+                            <!-- Pallet Barcode Scan -->
+                            <GroupBox Header="Pallet Barcode Scan" Grid.Column="1" Padding="10"
+                          IsEnabled="{Binding ElementName=ChkAdapatorScan, Path=IsChecked}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="Offset.X:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox Text="{Binding AdaptorPallet.BarcodeOffsetX}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Offset.Y:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffsetY}" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Offset.Z:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffsetZ}" Grid.Row="1" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Offset.U:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox  Text="{Binding AdaptorPallet.BarcodeOffsetU}" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Tray Grid Configuration -->
+                            <GroupBox Header="Fly Check" Padding="10" Grid.Column="0" Margin="0,0,10,0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <CheckBox Content="Fly Check Enabled" IsChecked="{Binding IsFlyCheckEnabled}" FontSize="16"
+                                        Foreground="{StaticResource PrimaryColorForLogin}" Grid.Row="0"  Grid.ColumnSpan="2"/>
+                                    <TextBlock Text="Fly Check Speed:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"  />
+                                    <TextBox  Margin="5" Text="{Binding Path=AdaptorPallet.FlyCheckSpeed}" Grid.Row="1" Grid.Column="1"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" Width="80" Foreground="Green"  />
+                                    <TextBlock Margin="0,5,0,0"  Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="16">Check Delta:</TextBlock>
+                                    <TextBox Margin="5" Width="80" IsEnabled="{Binding ElementName=FlyChkEnable, Path=IsChecked}" Text="{Binding Path=AdaptorPallet.CheckDelta}" Grid.Row="1" Grid.Column="4" PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" Foreground="Green" ></TextBox>
+                                </Grid>
+                            </GroupBox>
+
+                            <!-- Placement Offset -->
+                            <GroupBox Header="Fly-CheckSpot" Padding="10" Grid.Column="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="60" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="Fly-Check Spot1 Offset X:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  IsEnabled="{Binding ElementName=FlyChkEnable, Path=IsChecked}"  Text="{Binding Path=AdaptorPallet.FlyCheckSpot1Offset.X}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Fly-Check Spot1 Offset Y" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox  IsEnabled="{Binding ElementName=FlyChkEnable, Path=IsChecked}"  Text="{Binding Path=AdaptorPallet.FlyCheckSpot1Offset.Y}" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+
+                                    <TextBlock Text="Fly-Check Spot2 Offset X:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  IsEnabled="{Binding ElementName=FlyChkEnable, Path=IsChecked}"  Text="{Binding Path=AdaptorPallet.FlyCheckSpot2Offset.X}" Grid.Row="1" Grid.Column="1"  Foreground="Green" />
+
+                                    <TextBlock Text="Fly-Check Spot2 Offset Y:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox  IsEnabled="{Binding ElementName=FlyChkEnable, Path=IsChecked}"  Text="{Binding Path=AdaptorPallet.FlyCheckSpot2Offset.Y}" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+                                    <TextBlock Text="Fly-Check Spot3 Offset X:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                    <TextBox  IsEnabled="{Binding ElementName=FlyChkEnable, Path=IsChecked}"  Text="{Binding Path=AdaptorPallet.FlyCheckSpot3Offset.X}" Grid.Row="2" Grid.Column="1"  Foreground="Green" />
+
+                                    <TextBlock Text="Fly-Check Spot3 Offset Y:" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18" />
+                                    <TextBox  IsEnabled="{Binding ElementName=FlyChkEnable, Path=IsChecked}"  Text="{Binding Path=AdaptorPallet.FlyCheckSpot4Offset.Y}" Grid.Row="2" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting" />
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Height="32">
+                        <Image Source="../Images/Gripper.png"
+                         Stretch="Uniform"
+                         VerticalAlignment="Stretch"
+                         Width="Auto" 
+                         Height="Auto"/>
+                        <TextBlock Text="Gripper"
+                     VerticalAlignment="Center"
+                     Margin="5,0,0,0"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <StackPanel Orientation="Vertical" Margin="10">
+
+                    <!-- Row 1: Finger 1 Offset + Finger 1 Barcode -->
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Finger 1 Offset -->
+                        <GroupBox Header="Finger 1 Offset" Padding="10" Margin="0,0,10,0">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="Offset.X:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Text="{Binding Finger1OffsetX}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                <TextBlock Text="Offset.Y:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox  Text="{Binding Finger1OffsetY}"  Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                <TextBlock Text="Offset.Z:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox  Text="{Binding Finger1OffsetZ}"  Grid.Row="1" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                <TextBlock Text="Offset.U:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox  Text="{Binding Finger1OffsetU}"  Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                            </Grid>
+                        </GroupBox>
+
+                        <!-- Finger 1 Barcode -->
+                        <GroupBox Header="Finger 1 Barcode" Padding="10" Grid.Column="1" Margin="10,0,0,0">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="Barcode:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Text="{Binding Finger1Barcode}" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+
+                    <!-- Row 2: Finger 2 Offset + Finger 2 Barcode -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Finger 2 Offset -->
+                        <GroupBox Header="Finger 2 Offset" Padding="10" Margin="0,0,10,0">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="Offset.X:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Text="{Binding Finger2OffsetX}" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                <TextBlock Text="Offset.Y:" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Text="{Binding Finger2OffsetY}" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                <TextBlock Text="Offset.Z:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Text="{Binding Finger2OffsetZ}" Grid.Row="1" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+
+                                <TextBlock Text="Offset.U:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Text="{Binding Finger2OffsetU}" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                            </Grid>
+                        </GroupBox>
+
+                        <!-- Finger 2 Barcode -->
+                        <GroupBox Header="Finger 2 Barcode" Padding="10" Grid.Column="1" Margin="10,0,0,0">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="Barcode:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
+                                <TextBox Text="{Binding Finger2Barcode}" Grid.Row="0" Grid.Column="1"  Foreground="Green"/>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="💾 Save Product File" Width="200" Height="36" Margin="0,10,0,0" Padding="10,4" FontWeight="Bold" Style="{StaticResource ModernButton}" Click="SaveFile_Click" />
+
+            <Button Content="❌ Close"
+            Width="120" Height="36" Margin="25,10,0,0" Padding="10,4"
+            FontWeight="Bold" Style="{StaticResource ModernButton}"
+            Click="Close_Click"  />
+        </StackPanel>
+    </Grid>
+</Window>

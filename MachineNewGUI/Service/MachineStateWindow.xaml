@@ -1,0 +1,29 @@
+﻿<Window x:Class="MachineNewGUI.Service.MachineStateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MachineStateWindow" Height="38" Width="300" Left="1000" Top="1" 
+        WindowState="Normal" WindowStyle="None" AllowsTransparency="True" Background="Yellow" Topmost="True" Focusable="False" ShowInTaskbar="False">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard >
+                            <Storyboard AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>                        
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="textBlockDoorOpen" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="Red" Margin="5">Door Open</TextBlock>
+        <TextBlock Name="textBlockPause" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Foreground="Red" Margin="5">Pause</TextBlock>
+    </Grid>
+</Window>
