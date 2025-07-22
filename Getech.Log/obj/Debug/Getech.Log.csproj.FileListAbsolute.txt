@@ -1,0 +1,4 @@
+D:\Getech\Getech.Log\Getech.Log\bin\Debug\Getech.Log.dll
+D:\Getech\Getech.Log\Getech.Log\bin\Debug\Getech.Log.pdb
+D:\Getech\Getech.Log\Getech.Log\obj\Debug\Getech.Log.dll
+D:\Getech\Getech.Log\Getech.Log\obj\Debug\Getech.Log.pdb

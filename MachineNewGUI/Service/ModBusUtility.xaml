@@ -1,0 +1,113 @@
+﻿<Window x:Class="MachineNewGUI.Service.ModBusUtility"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ModBusUtility" Width="1366" Height="600" WindowState="Maximized" Loaded="Form_Loaded">
+    <Window.Background>
+        <!-- Colorful Gradient Background -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#007ACC" Offset="0"/>
+            <GradientStop Color="#FFD500" Offset="0.5"/>
+            <GradientStop Color="#00C9FF" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/MachineNewGUI;component/Resources/ScrollViewer.xaml"/>
+            </ResourceDictionary.MergedDictionaries>      
+        </ResourceDictionary>
+    </Window.Resources>
+    <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+    <Grid>
+
+        <StackPanel Name="Stackpanel1" Orientation="Vertical">
+
+                <WrapPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <WrapPanel>
+                            <GroupBox Header="Axis" Height="370" Width="600" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top">
+
+                                <DataGrid  Grid.Row="0" Grid.Column="1" Name="datagridRobotPoints" Height="310" RowBackground="AliceBlue" AlternatingRowBackground="White" ColumnHeaderStyle="{StaticResource datagridColHeaderStyle}" AutoGenerateColumns="False" BeginningEdit="datagridRobotPoints_BeginningEdit">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Axis Number" Width="1*" x:Name="colNumber" Binding="{Binding AxisNo}" IsReadOnly="True"></DataGridTextColumn>
+                                        <DataGridTextColumn Header="RefMovement" Width="2*" x:Name="colName" Binding="{Binding RefMov}"></DataGridTextColumn>
+                                        <DataGridTextColumn Header="RefPulses" Width="1*" x:Name="colX" Binding="{Binding Refpulse}"></DataGridTextColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                            </GroupBox>
+                        </WrapPanel>
+
+                        <WrapPanel>
+                            <StackPanel Orientation="Vertical" >
+                                <WrapPanel>
+                                    <GroupBox Header="ModBus Comport" Height="260" Width=" 300"  VerticalAlignment="Top" HorizontalAlignment="Left">
+                                        <StackPanel Name="stackProduct1">
+                                            <WrapPanel Margin="5">
+                                                <TextBlock Margin="5">ComPort</TextBlock>
+                                                <TextBox Margin="5" Width="120" Text="{Binding Path=Comport}"></TextBox>
+                                            </WrapPanel>
+                                            <WrapPanel Margin="5">
+                                                <TextBlock Margin="5">Baudrate</TextBlock>
+                                                <TextBox Margin="5" Width="120" Text="{Binding Path=Baudrate}"></TextBox>
+                                            </WrapPanel>
+                                            <WrapPanel Margin="5">
+                                                <TextBlock Margin="5">DataBits</TextBlock>
+                                                <TextBox Margin="10,5,5,5" Width="120" Text="{Binding Path=Databits}"></TextBox>
+                                            </WrapPanel>
+                                            <WrapPanel Margin="5">
+                                                <TextBlock Margin="5">Stopbits</TextBlock>
+                                                <TextBox Margin="10,5,5,5" Width="120" Text="{Binding Path=Stopbits}"></TextBox>
+                                            </WrapPanel>
+                                            <WrapPanel Margin="5">
+                                                <TextBlock Margin="5">Parity Even</TextBlock>
+                                            </WrapPanel>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="Command" Height="100" Width="300" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                        <WrapPanel >
+                                            <Button Name="buttonSave2File" Content="Save To File" Style="{StaticResource ModernButton}" Click="buttonSave2File_Click" ></Button>
+
+                                        </WrapPanel>
+                                    </GroupBox>
+
+                                </WrapPanel>
+                                <WrapPanel>
+                                    <GroupBox  Width="600" >
+                                        <StackPanel Background="AliceBlue" Orientation="Vertical">
+                                            <WrapPanel Background="AliceBlue" Margin="5">
+                                                <TextBlock Margin="10" FontWeight="Bold" Width="65" >AXIS No</TextBlock>
+                                                <ComboBox Name="comboboxAxisNo" Width="80"  Margin="5" SelectedIndex="0">
+                                                </ComboBox>
+                                            </WrapPanel>
+                                            <WrapPanel Background="AliceBlue" Margin="5">
+                                                <TextBlock Margin="10" FontWeight="Bold" Width="65">PR No</TextBlock>
+                                                <TextBox Name="TxtPrNum" Margin="5" Width="80"></TextBox>
+                                                <Button Name="buttonGetvalue" Style="{StaticResource ModernButton}"  Click="buttonGetvalue_Click">GET</Button>
+                                                <TextBlock Margin="10" FontWeight="Bold" >Value In (MM) :</TextBlock>
+                                                <TextBox Name="TxtResult" Margin="5" Width="100"></TextBox>
+                                            </WrapPanel>
+
+                                        </StackPanel>
+
+                                    </GroupBox>
+
+                                </WrapPanel>
+                            </StackPanel>
+
+                        </WrapPanel>
+
+
+
+                    </StackPanel>
+
+                </WrapPanel>
+
+                <WrapPanel>
+                
+            </WrapPanel>
+
+        </StackPanel>
+    </Grid>
+        </ScrollViewer>
+</Window>

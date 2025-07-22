@@ -32,10 +32,10 @@
 
                 <TextBlock Text="Username" />
                 
-                <Border CornerRadius="5" BorderBrush="{StaticResource PrimaryColorForLogin}" BorderThickness="1" Padding="0">
+                <Border  BorderBrush="{StaticResource PrimaryColorForLogin}" BorderThickness="1" Padding="0">
                     <ComboBox x:Name="UsernameBox" IsEditable="False"
                               FontSize="16" FontFamily="Segoe UI Semibold" Height="40" Padding="10,5"
-                              Foreground="#333" BorderThickness="0">
+                             BorderThickness="0" Foreground="Green">
   
                     </ComboBox>
                 </Border>

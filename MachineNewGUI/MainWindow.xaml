@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MachineNewGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1600"  Loaded="Window_Loaded"  WindowState="Maximized">
+        Title="MainWindow" Height="800" Width="1600"  Loaded="Window_Loaded" Closed="Window_Closed" Closing="Window_Closing"  WindowState="Maximized">
     <Window.Resources>
         <!-- Define Beautiful Styles -->
         <ResourceDictionary>
@@ -75,8 +75,8 @@
                     </MenuItem.Header>
                     <MenuItem Header="Robot Teach Utility"
                   Name="menuRobotTeachUtil" Click="MenuRobotTechUtil_Click" ></MenuItem>
-                    <MenuItem Header="Server Drive Utility"
-                  Name="ServerDriveUtil"></MenuItem>
+                    <MenuItem Header="Servo Drive Utility"
+                  Name="ServerDriveUtil" Click="MenuServoDriveUtility_Click"></MenuItem>
                     <MenuItem Header="ToolTip Calibration Utility"
                   Name="TooltipCaliUtil"></MenuItem>
                     <MenuItem Header="Machine Settings"
@@ -152,7 +152,7 @@
                                 </WrapPanel>
                                 <WrapPanel>
                                     <Label Name="labelproductfile" Content="Product File:" Margin="0,5,0,5" Background="WhiteSmoke" Foreground="Green" FontSize="16" FontWeight="Bold" Width="110" Height="32" HorizontalContentAlignment="Center"></Label>
-                                    <Label Name="txtProductName"  Content="D:\MachineNewGUI\Product Files\NewProduct.xml" Margin="0,5,5,5" Background="WhiteSmoke" Foreground="Green" FontSize="16" FontWeight="Bold" Width="Auto" Height="32" HorizontalContentAlignment="Center">
+                                    <Label Name="txtProductName"  Content="D:\MachineNewGUI\Product Files\NewProduct.xml" Margin="0,5,5,5" Background="WhiteSmoke" Foreground="Green" FontSize="16" FontWeight="Bold" Width="Auto" Height="37" HorizontalContentAlignment="Center">
 
                                     </Label>
                                 </WrapPanel>

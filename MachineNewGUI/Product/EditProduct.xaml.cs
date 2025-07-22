@@ -37,13 +37,104 @@ namespace MachineNewGUI.Product
         private bool isSaveFile = false;
         private ProductParameters productParameter=null;
         private string productFilePath = string.Empty;
-        private InternalMemoryStateManagement InternalMemoryStateManagement = null;
-        public event Action<InternalMemoryStateManagement> InternalMemoryStateManagementReady;
-        private bool isCreateProduct = false;
+        //private InternalMemoryStateManagement InternalMemoryStateManagement = null;
+        //public event Action<InternalMemoryStateManagement> InternalMemoryStateManagementReady;
+        //private bool isCreateProduct = false;
         public EditProduct()
         {
             InitializeComponent();
         }
+        public EditProduct(string productName)
+        {
+            string directory = MachineGUIDirectroy + @"/Product Files";
+            InitializeComponent();
+            currentProductName = productName;
+            productFilePath = MachineGUIDirectroy + @"/Product Files/" + currentProductName + ".json";
+       
+
+        }
+        protected void EditProduct_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadCurrentProduct();
+
+
+
+        }
+        private void EditProduct_Closing(object sender, CancelEventArgs e)
+        {
+            if (root.ProductParameters != null)
+            {
+                if (root.ProductParameters.LeftTable == null)
+                {
+                    root.ProductParameters.LeftTable = new LeftTable();
+                    root.ProductParameters.LeftTable.Items = ProductHierarchyViewLeftTable.GetCurrentTableData();
+                }
+                else
+                {
+
+                    root.ProductParameters.LeftTable.Items = ProductHierarchyViewLeftTable.GetCurrentTableData();
+                }
+                if (root.ProductParameters.RightTable == null)
+                {
+                    root.ProductParameters.RightTable = new RightTable();
+                    root.ProductParameters.RightTable.Items = ProductHierarchyViewRightTable.GetCurrentTableData();
+                }
+                else
+                {
+                    root.ProductParameters.RightTable.Items = ProductHierarchyViewRightTable.GetCurrentTableData();
+                }
+                if (!AreObjectsEqualByValue<ProductParameters>(root.ProductParameters, productParameter))
+                {
+                    MessageBoxResult result = MessageBox.Show("Do you want to save the product file before exiting this page?", "Confirm Exit", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                    if (result != MessageBoxResult.Yes)
+                    {
+
+                        //this.Close();
+                    }
+                    else
+                    {
+
+                        SaveProductFile();
+
+                    }
+                }
+
+            }
+
+        }
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void LoadCurrentProduct()
+        {
+
+            if (!string.IsNullOrEmpty(currentProductName))
+            {
+                root = new Entity.Product();
+                root.ProductParameters = ProductStream.Load(currentProductName);
+
+                if (root.ProductParameters.LeftTable != null)
+                {
+
+                    ProductHierarchyViewLeftTable.Items = root.ProductParameters.LeftTable.Items;
+
+                }
+                if (root.ProductParameters.RightTable != null)
+                {
+
+                    ProductHierarchyViewRightTable.Items = root.ProductParameters.RightTable.Items;
+
+                }
+
+                this.DataContext = root.ProductParameters;
+                productFilePath = MachineGUIDirectroy + @"/Product Files/" + currentProductName + ".json";
+                var tempObj = JsonConvert.SerializeObject(root.ProductParameters);
+                productParameter = JsonConvert.DeserializeObject<ProductParameters>(tempObj);
+            }
+        }
+
         private void DecimalOnlyTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -69,13 +160,7 @@ namespace MachineNewGUI.Product
                 e.CancelCommand();
             }
         }
-        protected void EditProduct_Loaded(object sender, RoutedEventArgs e)
-        {
 
-
-
-
-        }
         private bool FileNameExists(string fileName, string directoryPath)
         {
             if (string.IsNullOrWhiteSpace(fileName))
@@ -93,22 +178,7 @@ namespace MachineNewGUI.Product
 
             return false;
         }
-        public EditProduct(string productName)
-        {
-            string directory = MachineGUIDirectroy + @"/Product Files";
-            InitializeComponent();
-            currentProductName = productName;
-            if (!string.IsNullOrEmpty(currentProductName))
-            {
-                
-                productFilePath = MachineGUIDirectroy + @"/Product Files/" + currentProductName + ".json";
-
-                LoadProduct(productFilePath);
-               
-            }
-       
-
-        }
+  
         private bool AreObjectsEqualByValue<T>(T obj1, T obj2)
         {
             if (obj1 == null && obj2 == null) return true;
@@ -119,56 +189,8 @@ namespace MachineNewGUI.Product
 
             return json1 == json2;
         }
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-        private void EditProduct_Closing(object sender, CancelEventArgs e)
-        {
-
-            var productCreated = new InternalMemoryStateManagement();
-            productCreated.isCreateProduct = isCreateProduct;
-            if (root.ProductParameters.LeftTable == null)
-            {
-                root.ProductParameters.LeftTable = new LeftTable();
-                root.ProductParameters.LeftTable.Items = ProductHierarchyViewLeftTable.GetCurrentTableData();
-            }
-            else
-            {
-
-                root.ProductParameters.LeftTable.Items = ProductHierarchyViewLeftTable.GetCurrentTableData();
-            }
-            if (root.ProductParameters.RightTable == null)
-            {
-                root.ProductParameters.RightTable = new RightTable();
-                root.ProductParameters.RightTable.Items = ProductHierarchyViewRightTable.GetCurrentTableData();
-            }
-            else
-            {
-                root.ProductParameters.RightTable.Items = ProductHierarchyViewRightTable.GetCurrentTableData();
-            }
-            if (!AreObjectsEqualByValue<ProductParameters>(root.ProductParameters,productParameter))
-            {
-                MessageBoxResult result = MessageBox.Show("Do you want to save the product file before exiting this page?", "Confirm Exit", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-                if (result != MessageBoxResult.Yes)
-                {
-                    productCreated.isCreateProduct= isCreateProduct;
-                    //this.Close();
-                }
-                else
-                {
-                    productCreated.isCreateProduct = true;
-                    SaveProductFile();
-                  
-                }
-            }
 
 
-            productCreated.LastProduct = currentProductName;
-            productCreated.LastReservation = DateTime.Now.ToString();
-            InternalMemoryStateManagementReady?.Invoke(productCreated);
-        }
 
         private void LoadProduct(string filePath)
         {
@@ -271,7 +293,7 @@ namespace MachineNewGUI.Product
                 else
                 {
 
-                    isCreateProduct = true;
+                    //isCreateProduct = true;
                     File.WriteAllText(productFilePath, json);
                 }
                 MessageBox.Show("Save Product File Successfully");

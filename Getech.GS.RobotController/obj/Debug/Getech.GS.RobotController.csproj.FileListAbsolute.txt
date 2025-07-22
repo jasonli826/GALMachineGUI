@@ -71,3 +71,10 @@ D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGU
 D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.G.EF8A82DA.Up2Date
 D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
 D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewGALMachineGUIV2\GALMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.dll
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\Getech.GS.RobotController\bin\Debug\Getech.GS.RobotController.pdb
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.AssemblyReference.cache
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.csproj.CoreCompileInputs.cache
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.G.EF8A82DA.Up2Date
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.dll
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\Getech.GS.RobotController\obj\Debug\Getech.GS.RobotController.pdb

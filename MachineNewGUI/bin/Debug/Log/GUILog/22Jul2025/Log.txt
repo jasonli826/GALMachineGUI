@@ -1,0 +1,112 @@
+22-07-25, 08:34:56.409> Machine Configutation file saved
+22-07-25, 08:37:45.412> Machine Configutation file saved
+22-07-25, 08:49:53.940> Machine Configutation file saved
+22-07-25, 09:01:14.506> Machine Configutation file saved
+22-07-25, 09:03:22.954> Machine Configutation file saved
+22-07-25, 09:32:17.549> Machine Configutation file saved
+22-07-25, 09:34:09.716> Machine Configutation file saved
+22-07-25, 09:34:57.519> Machine Configutation file saved
+22-07-25, 09:35:15.513> Machine Configutation file saved
+22-07-25, 09:36:42.036> Machine Configutation file saved
+22-07-25, 09:37:53.516> Machine Configutation file saved
+22-07-25, 09:39:52.768> Machine Configutation file saved
+22-07-25, 09:45:04.596> Machine Configutation file saved
+22-07-25, 09:56:06.395> Machine Configutation file saved
+22-07-25, 10:15:59.405> Machine Configutation file saved
+22-07-25, 10:19:32.661> Machine Configutation file saved
+22-07-25, 10:20:10.408> Machine Configutation file saved
+22-07-25, 10:22:37.905> Machine Configutation file saved
+22-07-25, 10:58:54.825> Machine Configutation file saved
+22-07-25, 11:07:14.114> Machine Configutation file saved
+22-07-25, 11:07:44.738> Machine Configutation file saved
+22-07-25, 11:08:42.440> Machine Configutation file saved
+22-07-25, 11:13:43.513> Machine Configutation file saved
+22-07-25, 11:16:21.646> Machine Configutation file saved
+22-07-25, 12:17:55.856> Machine Configutation file saved
+22-07-25, 12:18:21.507> Machine Configutation file saved
+22-07-25, 12:19:09.340> Machine Configutation file saved
+22-07-25, 12:21:38.867> Machine Configutation file saved
+22-07-25, 12:22:30.388> Machine Configutation file saved
+22-07-25, 12:25:01.799> Machine Configutation file saved
+22-07-25, 12:30:05.889> Machine Configutation file saved
+22-07-25, 12:32:07.241> Machine Configutation file saved
+22-07-25, 12:33:19.932> Machine Configutation file saved
+22-07-25, 12:34:38.005> Machine Configutation file saved
+22-07-25, 13:20:06.555> Machine Configutation file saved
+22-07-25, 13:22:10.885> Machine Configutation file saved
+22-07-25, 13:25:24.341> Machine Configutation file saved
+22-07-25, 13:26:23.710> Machine Configutation file saved
+22-07-25, 13:33:27.098> Machine Configutation file saved
+22-07-25, 13:35:01.757> Machine Configutation file saved
+22-07-25, 13:35:53.046> Machine Configutation file saved
+22-07-25, 13:37:05.049> Machine Configutation file saved
+22-07-25, 13:37:53.912> Machine Configutation file saved
+22-07-25, 13:38:32.517> Machine Configutation file saved
+22-07-25, 13:39:05.629> Machine Configutation file saved
+22-07-25, 13:40:51.688> Machine Configutation file saved
+22-07-25, 13:42:32.995> Machine Configutation file saved
+22-07-25, 13:44:05.210> Machine Configutation file saved
+22-07-25, 13:46:48.250> Machine Configutation file saved
+22-07-25, 13:49:42.738> Machine Configutation file saved
+22-07-25, 13:50:56.826> Machine Configutation file saved
+22-07-25, 13:52:44.343> Machine Configutation file saved
+22-07-25, 13:53:44.697> Machine Configutation file saved
+22-07-25, 13:55:08.691> Machine Configutation file saved
+22-07-25, 13:57:01.888> Machine Configutation file saved
+22-07-25, 14:07:20.313> Machine Configutation file saved
+22-07-25, 14:19:10.468> 14:19:10.457> Application started
+22-07-25, 14:19:10.494> 14:19:10.488> New Machine -  Version: 1.0.0.0    
+22-07-25, 14:19:12.629> Machine Configutation file saved
+22-07-25, 14:19:13.481> 14:19:13.473> Exception in COM open: The port 'COM1' does not exist.
+22-07-25, 14:19:13.504> 14:19:09.557> InitEpsonSoftware exThe system cannot find the file specified
+22-07-25, 14:19:41.078> 14:19:41.073> Loading product file NewProduct
+22-07-25, 14:19:41.086> 14:19:41.080> Loading product file D:\MachineNewGUI\Product Files\NewProduct.json
+22-07-25, 14:19:41.099> 14:19:41.092> Sending Product data to robot
+22-07-25, 14:19:51.053> 14:19:51.041> Sending VBatchParameter to robot
+22-07-25, 14:19:51.066> 14:19:51.061> False False False False False False False False False False
+22-07-25, 14:19:51.179> 14:19:51.173> Initializing batch control flags
+22-07-25, 14:19:51.193> 14:19:51.186> Sending LoadBatchParameter() done
+22-07-25, 14:20:13.020> 14:20:13.013> RecipeModified : RecipeName = NewProduct ,Sent to host
+22-07-25, 14:20:14.658> 14:20:14.654> Loading product file NewProduct
+22-07-25, 14:20:14.667> 14:20:14.661> Loading product file D:\MachineNewGUI\Product Files\NewProduct.json
+22-07-25, 14:20:14.677> 14:20:14.671> Sending Product data to robot
+22-07-25, 14:20:24.469> 14:20:24.463> Sending VBatchParameter to robot
+22-07-25, 14:20:24.483> 14:20:24.476> False False False False False False False False False False
+22-07-25, 14:20:24.599> 14:20:24.590> Initializing batch control flags
+22-07-25, 14:20:24.611> 14:20:24.604> Sending LoadBatchParameter() done
+22-07-25, 14:34:37.283> 14:34:37.271> Application started
+22-07-25, 14:34:37.301> 14:34:37.292> New Machine -  Version: 1.0.0.0    
+22-07-25, 14:34:39.383> Machine Configutation file saved
+22-07-25, 14:34:39.808> 14:34:39.800> Exception in COM open: The port 'COM1' does not exist.
+22-07-25, 14:34:39.827> 14:34:36.403> InitEpsonSoftware exThe system cannot find the file specified
+22-07-25, 14:39:31.672> 14:39:31.663> Application started
+22-07-25, 14:39:31.691> 14:39:31.683> New Machine -  Version: 1.0.0.0    
+22-07-25, 14:39:33.772> Machine Configutation file saved
+22-07-25, 14:39:34.357> 14:39:34.353> Exception in COM open: The port 'COM1' does not exist.
+22-07-25, 14:39:34.378> 14:39:30.976> InitEpsonSoftware exThe system cannot find the file specified
+22-07-25, 14:42:15.687> 14:42:15.679> Application started
+22-07-25, 14:42:15.706> 14:42:15.700> New Machine -  Version: 1.0.0.0    
+22-07-25, 14:42:18.014> Machine Configutation file saved
+22-07-25, 14:42:18.830> 14:42:18.820> Exception in COM open: The port 'COM1' does not exist.
+22-07-25, 14:42:18.888> 14:42:14.962> InitEpsonSoftware exThe system cannot find the file specified
+22-07-25, 14:43:11.043> 14:43:11.035> Application started
+22-07-25, 14:43:11.057> 14:43:11.051> New Machine -  Version: 1.0.0.0    
+22-07-25, 14:43:13.289> Machine Configutation file saved
+22-07-25, 14:43:13.708> 14:43:13.702> Exception in COM open: The port 'COM1' does not exist.
+22-07-25, 14:43:13.752> 14:43:10.395> InitEpsonSoftware exThe system cannot find the file specified
+22-07-25, 14:44:21.747> 14:44:21.739> Application started
+22-07-25, 14:44:21.764> 14:44:21.758> New Machine -  Version: 1.0.0.0    
+22-07-25, 14:44:24.020> Machine Configutation file saved
+22-07-25, 14:44:24.589> 14:44:24.585> Exception in COM open: The port 'COM1' does not exist.
+22-07-25, 14:44:24.649> 14:44:21.145> InitEpsonSoftware exThe system cannot find the file specified
+22-07-25, 14:44:45.987> 14:44:45.982> Application started
+22-07-25, 14:44:45.998> 14:44:45.994> New Machine -  Version: 1.0.0.0    
+22-07-25, 14:44:48.284> Machine Configutation file saved
+22-07-25, 14:44:48.999> 14:44:48.973> Exception in COM open: The port 'COM1' does not exist.
+22-07-25, 14:44:49.054> 14:44:45.432> InitEpsonSoftware exThe system cannot find the file specified
+22-07-25, 14:47:02.428> 14:47:02.419> Application started
+22-07-25, 14:47:02.443> 14:47:02.437> New Machine -  Version: 1.0.0.0    
+22-07-25, 14:47:04.784> Machine Configutation file saved
+22-07-25, 14:47:05.379> 14:47:05.369> Exception in COM open: The port 'COM1' does not exist.
+22-07-25, 14:47:05.412> 14:47:01.663> InitEpsonSoftware exThe system cannot find the file specified
+22-07-25, 14:47:34.655> 14:47:34.651> RecipeCreated : RecipeName = NewProduct ,Sent to host

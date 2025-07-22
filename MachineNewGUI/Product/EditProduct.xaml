@@ -247,7 +247,7 @@
                             </GroupBox>
 
                             <!-- Tool Tip 3 -->
-                            <!--<GroupBox Header="Tool Tip 3" Padding="10" Grid.Column="1" Margin="10,0,0,0" Name="InputTrayHeadTool3">
+                            <GroupBox Header="Gripper Pick" Padding="10" Grid.Column="1" Margin="10,0,0,0" Name="InputTrayHeadTool3">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
@@ -262,16 +262,16 @@
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Text="Offset.X:"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox  Text="{Binding InputTray.BarcodeOffsetX}"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox Text="{Binding Path=InputTray.GripperPickOffsetX}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
 
                                     <TextBlock Text="Offset.Y:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="{Binding InputTray.BarcodeOffsetY}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox  Text="{Binding Path=InputTray.GripperPickOffsetY}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
                                     <TextBlock Text="Offset.Z:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Name="TxtTool3OffsetZRow0" Text="{Binding InputTray.BarcodeOffsetZ}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
+                                    <TextBox Name="TxtTool3OffsetZRow0" Text="{Binding Path=InputTray.GripperPickOffsetZ}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"  Foreground="Green"/>
                                     <TextBlock Text="Offset.U:" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="3"  Foreground="{StaticResource PrimaryColorForLogin}" FontSize="18"/>
-                                    <TextBox Text="{Binding InputTray.BarcodeOffsetU}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
+                                    <TextBox  Text="{Binding Path=InputTray.GripperPickOffsetU}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="4"  Foreground="Green"  PreviewTextInput="DecimalOnlyTextBox_PreviewTextInput" DataObject.Pasting="DecimalOnlyTextBox_Pasting"/>
                                 </Grid>
-                            </GroupBox>-->
+                            </GroupBox>
                         </Grid>
                     </StackPanel>
                 </ScrollViewer>

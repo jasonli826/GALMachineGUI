@@ -171,9 +171,12 @@
     <Compile Include="Entity\BatchParameter.cs" />
     <Compile Include="Entity\CalibrationData.cs" />
     <Compile Include="Entity\DeltaServoAxisData.cs" />
+    <Compile Include="Entity\HIKScannerTCP.cs" />
     <Compile Include="Entity\NewMachineTimer.cs" />
     <Compile Include="Entity\MachineConfiguration.cs" />
     <Compile Include="Entity\Options.cs" />
+    <Compile Include="Entity\OutputTrayTracker.cs" />
+    <Compile Include="Entity\OutputXMLTracker.cs" />
     <Compile Include="Entity\PlacementOffset.cs" />
     <Compile Include="Entity\ProductHierarchyView\Barcode.cs" />
     <Compile Include="Entity\ProductHierarchyView\ExportModel.cs" />
@@ -189,8 +192,11 @@
     <Compile Include="Entity\ProductHierarchyView\TreeItem.cs" />
     <Compile Include="Entity\ProductParameters.cs" />
     <Compile Include="Entity\Product.cs" />
+    <Compile Include="Entity\ReservationLot.cs" />
     <Compile Include="Entity\RobotCommandConst.cs" />
+    <Compile Include="Entity\ServiceParameters.cs" />
     <Compile Include="Entity\SystemParameter.cs" />
+    <Compile Include="Entity\ValueConverters.cs" />
     <Compile Include="Help\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -210,6 +216,9 @@
     <Compile Include="Service\MachineStateWindow.xaml.cs">
       <DependentUpon>MachineStateWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service\ModBusUtility.xaml.cs">
+      <DependentUpon>ModBusUtility.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service\TeachUtility.xaml.cs">
       <DependentUpon>TeachUtility.xaml</DependentUpon>
     </Compile>
@@ -226,6 +235,18 @@
     </Compile>
     <Compile Include="Utilities\MannualUtilities.xaml.cs">
       <DependentUpon>MannualUtilities.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ErrorDescriptionConfig.xaml.cs">
+      <DependentUpon>ErrorDescriptionConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ErrorMessageWindow.xaml.cs">
+      <DependentUpon>ErrorMessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HomeProgressWindow.xaml.cs">
+      <DependentUpon>HomeProgressWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ProgressWindow.xaml.cs">
+      <DependentUpon>ProgressWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Controls\Barcode.xaml">
       <SubType>Designer</SubType>
@@ -295,6 +316,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resources\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Resources\Themes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -310,6 +335,10 @@
     <Page Include="Service\MachineStateWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Service\ModBusUtility.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Service\TeachUtility.xaml">
       <SubType>Designer</SubType>
@@ -330,6 +359,22 @@
     <Page Include="Utilities\MannualUtilities.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ErrorDescriptionConfig.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ErrorMessageWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\HomeProgressWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ProgressWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

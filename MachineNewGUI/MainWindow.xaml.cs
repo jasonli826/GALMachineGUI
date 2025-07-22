@@ -1,6 +1,7 @@
 ﻿using APILXYSoftCommunication;
 using CommControlLib;
 using Getech.GS.RobotController;
+using Getech.IO;
 using GetechSorter.Scanner;
 using MachineNewGUI.Entity;
 using MachineNewGUI.Product;
@@ -51,12 +52,10 @@ namespace MachineNewGUI
         private BatchParameter batchParameter = null;
         TcpIpCom tcpRobotCommDevice_Loader;
         System.Object lockRobot1 = new System.Object();
-
+        ProgressWindow PrgWindow;
+        HomeProgressWindow HomePrgWindow = new HomeProgressWindow();
         bool bHomeDone = false;
         bool bVerifyDone = false;
-
-        // FOR MODBUS COMMUNICATION \\      
-
         public ModbusMotionControl ModbusMotionControl;
         ModbusRtuComm ModbusComm = new ModbusRtuComm();
         AxisData[] AxesData;
@@ -74,7 +73,7 @@ namespace MachineNewGUI
         SystemParameter SystemParameterData;
         //Error list
         Dictionary<int, string> dictErrorList = new Dictionary<int, string>();
-
+        public static string ErrorDescriptionPath = @"D:\MachineNewGUI\system\ErrorDescription.txt";
 
         //batch control flags
         DispatcherTimer dispatcherTimerRobotStatusRead = new DispatcherTimer();
@@ -188,6 +187,67 @@ namespace MachineNewGUI
             LoadSystemParameters();
             RefreshBatchParameter();
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure to exit?", "Confirmation", MessageBoxButton.YesNo);
+
+                if (result == MessageBoxResult.Yes)
+                {
+
+                    dispatcherTimerRobotStatusRead.Stop();
+                    machineStateWindow.Close();
+
+                    //Robot closing
+                    if (tcpRobotCommDevice_Loader != null)
+                    {
+                        // LOADER ROBOT
+                        robotController.OnCommDeviceConnected -= robotController_OnCommDeviceConnected;
+                        robotController.OnRobotError -= robotController_OnRobotError_Loader;
+                        robotController.OnRobotErrorResume -= robotController_OnRobotErrorResume_Loader;
+                        robotController.OnUpdateRobotStatus -= robotController_UpdateRobotStatus_Loader;
+                        robotController.OnEpsonRobotCmd -= robotController_OnRobotCmd_Loader;
+                        robotController.DisconnectController();
+
+                        tcpRobotCommDevice_Loader.StopThread();
+                        tcpRobotCommDevice_Loader = null;
+                    }
+
+                    ScannersDispose();
+
+                    ModbusCommDisconnect();
+
+                    CloseProgress();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Log.WriteToFile("Form_Closing Exception :" + ex.Message);
+                UpdateLogMessage("Form_Closing Exception :" + ex.Message);
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            //looks like this is not called by window
+            try
+            {
+                Environment.Exit(0);
+            }
+            catch (Exception ex)
+            {
+                Log.WriteToFile("Form_Closed Exception :" + ex.Message);
+            }
+
+        }
+
         private void InitEpsonSoftware()
         {
             try
@@ -305,11 +365,93 @@ namespace MachineNewGUI
                 UpdateLogMessage("Exception in LoadBatchParameters(): " + ex.Message);
             }
         }
+        private void CloseHomeProgressLoader()
+        {
+            bHoming = false;
+            try
+            {
+                if (HomePrgWindow != null)
+                {
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        HomePrgWindow.Close();
+                    });
+                }
+                HomePrgWindow = null;
+            }
+            catch (Exception eX)
+            {
+                // Debugger.Break();
+
+                //Getting an error when attempting to end the thread:                 
+                //Unable to evaluate expression because the code is optimized or a native frame is on top of the call stack             
+            }
+        }
+        public void ShowHomeProgressLoader()
+        {
+            try
+            {
+                CloseHomeProgressLoader();
+                bHoming = true;
+                if (HomePrgWindow == null)
+                {
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        HomePrgWindow = new HomeProgressWindow();
+                        HomePrgWindow.Show();
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                UpdateLogMessage("Exception in ShowHomeProgress(): " + ex.Message);
+            }
+        }
+        private void CloseProgress()
+        {
+            bHoming = false;
+            try
+            {
+                if (PrgWindow != null)
+                {
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        PrgWindow.Close();
+                    });
+                }
+
+                PrgWindow = null;
+            }
+            catch (Exception eX)
+            {
+
+            }
+        }
+        public void ShowProgress()
+        {
+            try
+            {
+                CloseProgress();
+                bHoming = true;
+                if (PrgWindow == null)
+                {
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        PrgWindow = new ProgressWindow(productParameters);
+                        PrgWindow.Show();
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                UpdateLogMessage("Exception in ShowProgress(): " + ex.Message);
+            }
+        }
         private async Task SendProdNCalData()
         {
             try
             {
-               // ShowProgress();
+                ShowProgress();
 
                 await Task.Run(() =>
                 {
@@ -328,7 +470,7 @@ namespace MachineNewGUI
 
                     Thread.Sleep(200);
 
-                    RobotStream.SendProductDataGAL(productParameters, robotController, machineParameters);
+                    RobotStream.SendProductDataGAL(productParameters, robotController, machineParameters,SystemParameterData);
                     Thread.Sleep(200);
                     if (machineParameters.IsModBusTrue)
                     {
@@ -341,7 +483,7 @@ namespace MachineNewGUI
 
                 });
 
-                //CloseProgress();
+                CloseProgress();
 
                 Thread.Sleep(1000);
             }
@@ -1198,7 +1340,7 @@ namespace MachineNewGUI
                 {
                     #region ProductData
                     RobotStream.SendPanelInfo(productParameters, robotController);
-                    RobotStream.SendProductDataGAL(productParameters, robotController, machineParameters);
+                    RobotStream.SendProductDataGAL(productParameters, robotController, machineParameters,SystemParameterData);
                     robotController.SendCmd2Robot(0, 0, RobotCommandConst.VSendProductData, "1");
                     #endregion
                 }
@@ -1338,17 +1480,17 @@ namespace MachineNewGUI
                 if (Type == "CREATED")
                 {
                    // xySoftConn.RecipeCreated(RecipeName);
-                    UpdateLogMessage($"{DateTime.Now:HH:mm:ss.fff}> " + String.Format("RecipeCreated : RecipeName = {0} ,Sent to host", RecipeName));
+                    UpdateLogMessage(String.Format("RecipeCreated : RecipeName = {0} ,Sent to host", RecipeName));
                 }
                 else if (Type == "MODIFIED")
                 {
                     //xySoftConn.RecipeModified(RecipeName);
-                    UpdateLogMessage($"{DateTime.Now:HH:mm:ss.fff}> " + String.Format("RecipeModified : RecipeName = {0} ,Sent to host", RecipeName));
+                    UpdateLogMessage(String.Format("RecipeModified : RecipeName = {0} ,Sent to host", RecipeName));
                 }
                 else if (Type == "LOADED")
                 {
                     //xySoftConn.RecipeLoaded(RecipeName);
-                    UpdateLogMessage($"{DateTime.Now:HH:mm:ss.fff}> " + String.Format("RecipeLoaded : RecipeName = {0} ,Sent to host", RecipeName));
+                    UpdateLogMessage( String.Format("RecipeLoaded : RecipeName = {0} ,Sent to host", RecipeName));
                 }
             
         }
@@ -1359,34 +1501,85 @@ namespace MachineNewGUI
             TeachUtilityWindow.ShowDialog(); // Or use Show() if you don’t want modal
 
         }
-        private void MenuNewProduct_Click(object sender, RoutedEventArgs e)
+        private void MenuServoDriveUtility_Click(object sender, RoutedEventArgs e)
         {
-            var InputDialogWindow = new MachineNewGUI.Product.InputDialog();
-            InputDialogWindow.Owner = this;
-            InputDialogWindow.ProductCreated += MainWindow_ProductReceived; // subscribe first
-            InputDialogWindow.ShowDialog();
-
-        }
-        private void MainWindow_ProductReceived(InternalMemoryStateManagement memory)
-        {
-            if (memory.isCreateProduct)
+            if ((!bBatchStarted) && (!bHoming))
             {
-                Internalmachinestatemanagent.LastProduct = memory.LastProduct; 
-                Internalmachinestatemanagent.LastReservation = memory.LastReservation;
-                InternalMemoryStateManagementConfigStream.Save(Internalmachinestatemanagent);
-                string str = MachineGUIDirectroy + @"\Product File\" + Internalmachinestatemanagent.LastProduct + ".json";
-                txtProductName.Content = str;
-                RecipeCreate_Modified_Loaded(Internalmachinestatemanagent.LastProduct, "CREATED");
+                bVerifyDone = false;
+
+                if (!xySoftConn.IsConnected)
+                {
+                    xySoftConn.ProcessStateChange("IDLE"); // CHANGE DONE
+                }
+
+                ModBusUtility Mob = new ModBusUtility(deltaServoAxisData, machineParameters, ModbusMotionControl);
+                Mob.ShowDialog();
+                if (ModbusCommDisconnect())
+                    UpdateLogMessage("Modbus Comm Disconnected");
+
+                if (ModbusCommConnect())
+                {
+                    bModbusCommConnected = true;
+                    UpdateLogMessage("Modbus Comm Connected");
+                }
+                return;
+            }
+            else if (bBatchStarted)
+            {
+                MessageBox.Show("Cannot access Servo Utility page while batch running !");
+            }
+            else if ((bHoming))
+            {
+                MessageBox.Show("Cannot access Servo Utility page while homing !");
             }
         }
+        private void MenuNewProduct_Click(object sender, RoutedEventArgs e)
+        {
+            //var InputDialogWindow = new MachineNewGUI.Product.InputDialog();
+            //InputDialogWindow.Owner = this;
+            //InputDialogWindow.ProductCreated += MainWindow_ProductReceived; // subscribe first
+            //InputDialogWindow.ShowDialog();
+            productParameters = new ProductParameters();
+
+            var inputDialog = new MachineNewGUI.Product.InputDialog();
+
+            if (inputDialog.ShowDialog() == true)
+            {
+                MachineNewGUI.Entity.Product newProduct = new MachineNewGUI.Entity.Product();
+                newProduct.ProductParameters.ProductName = inputDialog.Answer;
+                newProduct.ProductParameters.ProductFileName = inputDialog.Answer;
+                ProductStream.Save(inputDialog.Answer.Trim(), newProduct);
+                //productParameters = ProductStream.Load(inputDialog.Answer.Trim());
+                Internalmachinestatemanagent.LastProduct = inputDialog.Answer.Trim();
+                EditProduct editForm = new EditProduct(inputDialog.Answer.Trim());
+                editForm.ShowDialog();
+            }
+            MachineConfigStream.Load();
+            string str = MachineGUIDirectroy+ @"/Product Files/" + Internalmachinestatemanagent.LastProduct + ".json";
+            txtProductName.Content = "_" + str;
+            productParameters = ProductStream.Load(Internalmachinestatemanagent.LastProduct);
+            RecipeCreate_Modified_Loaded(Internalmachinestatemanagent.LastProduct, "CREATED");
+
+        }
+        //private void MainWindow_ProductReceived(InternalMemoryStateManagement memory)
+        //{
+        //    if (memory.isCreateProduct)
+        //    {
+        //        Internalmachinestatemanagent.LastProduct = memory.LastProduct; 
+        //        Internalmachinestatemanagent.LastReservation = memory.LastReservation;
+        //        InternalMemoryStateManagementConfigStream.Save(Internalmachinestatemanagent);
+        //        string str = MachineGUIDirectroy + @"\Product Files\" + Internalmachinestatemanagent.LastProduct + ".json";
+        //        txtProductName.Content = str;
+        //        RecipeCreate_Modified_Loaded(Internalmachinestatemanagent.LastProduct, "CREATED");
+        //    }
+        //}
         private void MenuEditProduct_Click(object sender, RoutedEventArgs e)
         {
-
                 if (productParameters == null)
                 {
                     productParameters = new ProductParameters();
                 }
-                //EditProduct editForm = new EditProduct(Internalmachinestatemanagent.LastProduct, productParameters, machineParameters, Internalmachinestatemanagent, Internalmachinestatemanagent.LastProduct);
+             
                 EditProduct editForm = new EditProduct(Internalmachinestatemanagent.LastProduct);
                 editForm.ShowDialog();
                 productParameters = ProductStream.Load(Internalmachinestatemanagent.LastProduct);
@@ -1441,6 +1634,8 @@ namespace MachineNewGUI
                         textboxLog.Text = logEntry + "\n" + textboxLog.Text; // Append new log at the top
                         textboxLog.CaretIndex = 0;  // Move caret to the start
                         textboxLog.ScrollToHome();  // Ensure scrollbar stays at the top
+                        Log.WriteToFile(logEntry);
+
                     });
 
         }

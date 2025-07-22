@@ -1,0 +1,6 @@
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\bin\x86\Release\Getech.IO.dll
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\bin\x86\Release\Getech.IO.pdb
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\x86\Release\Getech.IO.csproj.AssemblyReference.cache
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\x86\Release\Getech.IO.csproj.CoreCompileInputs.cache
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\x86\Release\Getech.IO.dll
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\x86\Release\Getech.IO.pdb

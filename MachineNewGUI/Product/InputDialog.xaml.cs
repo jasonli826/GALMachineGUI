@@ -23,15 +23,24 @@ namespace MachineNewGUI.Product
     /// </summary>
     public partial class InputDialog : Window
     {
-        public event Action<InternalMemoryStateManagement> ProductCreated;
         private string MachineGUIDirectroy = ConfigurationManager.AppSettings["Directory"].ToString();
         public InputDialog()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(txtAnswer.Text.Trim()))
+            {
+                txtAnswer.Text = "NewProduct";
+            }
         }
+        public InputDialog(string question, string defaultAnswer = "")
+        {
+            InitializeComponent();
+            lblQuestion.Content = question;
+            txtAnswer.Text = defaultAnswer;
+        }
+
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
-            // this.Close();
             string directoryPath = MachineGUIDirectroy + @"/Product Files";
             string productName = txtAnswer.Text.Trim();
 
@@ -46,16 +55,16 @@ namespace MachineNewGUI.Product
                 return;
 
             }
-             
-            var NewProductWindow = new MachineNewGUI.Product.EditProduct(productName); // Use the correct namespace if needed
-         
-            NewProductWindow.InternalMemoryStateManagementReady += (InternalMemoryStateManagementReady) =>
-            {
-                ProductCreated?.Invoke(InternalMemoryStateManagementReady); // Forward to MainWindow
-            };
 
-            NewProductWindow.ShowDialog(); // Or use Show() if you don’t want modal
-            this.Close();
+            //var NewProductWindow = new MachineNewGUI.Product.EditProduct(productName); // Use the correct namespace if needed
+
+            //NewProductWindow.InternalMemoryStateManagementReady += (InternalMemoryStateManagementReady) =>
+            //{
+            //    ProductCreated?.Invoke(InternalMemoryStateManagementReady); // Forward to MainWindow
+            //};
+
+            //NewProductWindow.ShowDialog(); // Or use Show() if you don’t want modal
+            this.DialogResult = true;
         }
  
         private bool isDuplicationProductFile(string productName)
@@ -91,6 +100,10 @@ namespace MachineNewGUI.Product
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        public string Answer
+        {
+            get { return txtAnswer.Text; }
         }
     }
 }

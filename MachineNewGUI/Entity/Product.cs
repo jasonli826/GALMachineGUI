@@ -10,6 +10,10 @@ namespace MachineNewGUI.Entity
     public  class Product
     {
         public ProductParameters ProductParameters { get; set; }
+        public Product() 
+        {
+            ProductParameters = new ProductParameters();
+        }
 
 
  

@@ -1,0 +1,79 @@
+D:\Getech\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+D:\Getech\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+D:\Getech\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+D:\Getech\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+D:\07 Software\Projects\Getech\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+D:\07 Software\Projects\Getech\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+D:\07 Software\Projects\Getech\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+D:\07 Software\Projects\Getech\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+E:\GUI_PROJECTS\CTOT\CTO MACHINE GUI\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+E:\GUI_PROJECTS\CTO\CTO MACHINE GUI\CTO\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+C:\Users\Wu Yu\Desktop\SSDLV\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+C:\Users\Wu Yu\Desktop\SSDLV\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+C:\Users\Wu Yu\Desktop\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.csprojAssemblyReference.cache
+C:\Users\Wu Yu\Desktop\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.CoreCompileInputs.cache
+C:\Users\Wu Yu\Desktop\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+C:\Users\Wu Yu\Desktop\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+C:\Users\Wu Yu\Desktop\SSDLV-copy\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+C:\Users\Wu Yu\Desktop\SSDLV-copy\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+C:\Users\Wu Yu\Desktop\SSDLV-copy\Getech.Log\Getech.Log\obj\Release\Getech.IO.csprojAssemblyReference.cache
+C:\Users\Wu Yu\Desktop\SSDLV-copy\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.CoreCompileInputs.cache
+C:\Users\Wu Yu\Desktop\SSDLV-copy\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+C:\Users\Wu Yu\Desktop\SSDLV-copy\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+D:\Project\SSDLV MACHINE GUI\SSDLV-copy\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV-copy\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+D:\Project\SSDLV MACHINE GUI\SSDLV-copy\Getech.Log\Getech.Log\obj\Release\Getech.IO.csprojAssemblyReference.cache
+D:\Project\SSDLV MACHINE GUI\SSDLV-copy\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.CoreCompileInputs.cache
+D:\Project\SSDLV MACHINE GUI\SSDLV-copy\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV-copy\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.CoreCompileInputs.cache
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+D:\Project\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.csprojAssemblyReference.cache
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.CoreCompileInputs.cache
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+E:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.AssemblyReference.cache
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.CoreCompileInputs.cache
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+D:\Project\SSDLV MACHINE GUI\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+D:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+D:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+D:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.AssemblyReference.cache
+D:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.CoreCompileInputs.cache
+D:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+D:\GUI_PROJECTS\SSDLV\SSDLV MACHINE GUI\SSDLV\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+D:\GUI_PROJECTS\GAL\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+D:\GUI_PROJECTS\GAL\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+D:\GUI_PROJECTS\GAL\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.AssemblyReference.cache
+D:\GUI_PROJECTS\GAL\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.CoreCompileInputs.cache
+D:\GUI_PROJECTS\GAL\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+D:\GUI_PROJECTS\GAL\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.AssemblyReference.cache
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.CoreCompileInputs.cache
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+D:\Project\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL GUI(Lastest)\GAL MACHINE GUI (2)\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\bin\Release\Getech.IO.dll
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL GUI(Lastest)\GAL MACHINE GUI (2)\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\bin\Release\Getech.IO.pdb
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL GUI(Lastest)\GAL MACHINE GUI (2)\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.AssemblyReference.cache
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL GUI(Lastest)\GAL MACHINE GUI (2)\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.csproj.CoreCompileInputs.cache
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL GUI(Lastest)\GAL MACHINE GUI (2)\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.dll
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\GAL GUI(Lastest)\GAL MACHINE GUI (2)\GAL MACHINE GUI\GAL\Getech.Log\Getech.Log\obj\Release\Getech.IO.pdb

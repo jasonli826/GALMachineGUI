@@ -11,6 +11,10 @@ using System.ComponentModel;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
 using JogControl;
+using System.Configuration;
+using Newtonsoft.Json;
+using Formatting = Newtonsoft.Json.Formatting;
+using MachineNewGUI.JsonEncryption;
 
 
 namespace MachineNewGUI.Entity
@@ -209,16 +213,17 @@ namespace MachineNewGUI.Entity
 
     public class ProductStream
     {
-        public static string strFolder = @"C:/GAL/Product Files/";
+        private static string MachineGUIDirectroy = ConfigurationManager.AppSettings["Directory"].ToString();
+        public static string strFolder = MachineGUIDirectroy +@"/Product Files/";
 
-        public static void Save(string ProductName, ProductParameters product)
+        public static void Save(string ProductName, Product product)
         {
             //validation
             if (product == null)
                 return;
 
 
-            string strPath = strFolder + ProductName + ".xml";
+            string strPath = strFolder + ProductName + ".json";
 
             //create folder
             if (!Directory.Exists(System.IO.Path.GetDirectoryName(strPath)))
@@ -228,12 +233,11 @@ namespace MachineNewGUI.Entity
             try
             {
                 using (FileStream fs = new FileStream(strPath, FileMode.Create, FileAccess.Write))
+                using (StreamWriter writer = new StreamWriter(fs))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(ProductParameters));
-
-                    TextWriter writer = new StreamWriter(fs);
-                    serializer.Serialize(writer, product);
-                    writer.Close();
+                    string json = JsonConvert.SerializeObject(product, Formatting.Indented);
+                    json = XorJsonEncryption.Encrypt(json);
+                    writer.Write(json);
                 }
             }
             catch (Exception ex)
@@ -255,33 +259,40 @@ namespace MachineNewGUI.Entity
                 name = "New Product";
             }
 
-            string strPath = strFolder + name + ".xml";
+            string strPath = strFolder + name + ".json";
 
-            ProductParameters product = null;
+            Product Product = null;
             //save if file does not exist
             if ((!Directory.Exists(System.IO.Path.GetDirectoryName(strPath)) || (!File.Exists(strPath))))
             {
 
-                product = new ProductParameters();
+                Product = new Product();
             }
 
             //loading
             try
             {
-                using (FileStream fs = new FileStream(strPath, FileMode.Open, FileAccess.Read))
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(ProductParameters));
+                //using (FileStream fs = new FileStream(strPath, FileMode.Open, FileAccess.Read))
+                //{
+                //    XmlSerializer serializer = new XmlSerializer(typeof(ProductParameters));
 
-                    TextReader reader = new StreamReader(fs);
-                    product = (ProductParameters)serializer.Deserialize(reader);
-                    reader.Close();
+                //    TextReader reader = new StreamReader(fs);
+                //    product = (ProductParameters)serializer.Deserialize(reader);
+                //    reader.Close();
+                //}
+                using (FileStream fs = new FileStream(strPath, FileMode.Open, FileAccess.Read))
+                using (StreamReader reader = new StreamReader(fs))
+                {
+                    string json = reader.ReadToEnd();
+                    json = XorJsonEncryption.Decrypt(json);
+                    Product = JsonConvert.DeserializeObject<Product>(json);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Exception loading product file: " + ex.Message);
             }
-            return product;
+            return Product.ProductParameters;
         }
     }
 

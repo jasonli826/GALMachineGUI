@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\App.xaml
-24-955986659
+302037557866
 
-54-1120819045
+65-726632734
 1421391675196
-Controls\Barcode.xaml;Controls\Fiducial.xaml;Controls\GripperPlace.xaml;Controls\InterfaceResult.xaml;Controls\Line.xaml;Controls\List.xaml;Controls\LoadingOverlay.xaml;Controls\ModernMessageDialog.xaml;Controls\Pallet.xaml;Controls\ProductHierarchyView.xaml;Help\About.xaml;MainWindow.xaml;Product\EditProduct.xaml;Product\InputDialog.xaml;Resources\ProductViewHierarchy\Themes.xaml;Resources\Themes.xaml;Resources\Themes1.xaml;Service\MachineSetting.xaml;Service\MachineStateWindow.xaml;Service\TeachUtility.xaml;UserManagement\Login.xaml;UserManagement\ManageUser.xaml;Utilities\IOUtility.xaml;Utilities\MannualUtilities.xaml;
+Controls\Barcode.xaml;Controls\Fiducial.xaml;Controls\GripperPlace.xaml;Controls\InterfaceResult.xaml;Controls\Line.xaml;Controls\List.xaml;Controls\LoadingOverlay.xaml;Controls\ModernMessageDialog.xaml;Controls\Pallet.xaml;Controls\ProductHierarchyView.xaml;Help\About.xaml;MainWindow.xaml;Product\EditProduct.xaml;Product\InputDialog.xaml;Resources\ProductViewHierarchy\Themes.xaml;Resources\ScrollViewer.xaml;Resources\Themes.xaml;Resources\Themes1.xaml;Service\MachineSetting.xaml;Service\MachineStateWindow.xaml;Service\ModBusUtility.xaml;Service\TeachUtility.xaml;UserManagement\Login.xaml;UserManagement\ManageUser.xaml;Utilities\IOUtility.xaml;Utilities\MannualUtilities.xaml;Windows\ErrorDescriptionConfig.xaml;Windows\ErrorMessageWindow.xaml;Windows\HomeProgressWindow.xaml;Windows\ProgressWindow.xaml;
 
 False
 

@@ -1,0 +1,16 @@
+﻿<Window x:Class="MachineNewGUI.ProgressWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ProgressWindow" Height="80" Width="500" WindowStyle="None" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Offset="0" Color="YellowGreen"></GradientStop>
+            <GradientStop Offset="1" Color="Bisque"></GradientStop>
+        </LinearGradientBrush>
+    </Window.Background>
+    <StackPanel Name="StackBar" >
+        <TextBlock Name="TxtBlock" FontSize="20" Foreground="Blue" Margin="5" Text="Downloading System and Product Parameters"></TextBlock>
+        <!--<TextBlock FontSize="20" Foreground="Blue" Margin="5" >Downloading System and Product Parameters</TextBlock>-->
+        <ProgressBar Name="progressBar" Height="20" IsIndeterminate="True" Margin="5" Background="AntiqueWhite" Foreground="Blue"></ProgressBar>
+    </StackPanel>
+</Window>

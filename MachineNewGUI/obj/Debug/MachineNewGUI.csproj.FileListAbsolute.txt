@@ -306,3 +306,14 @@ D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\M
 D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\MachineN.81296A1E.Up2Date
 D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\MachineNewGUI.exe
 D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\MachineNewGUI.pdb
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Windows\HomeProgressWindow.baml
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Windows\ProgressWindow.baml
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Windows\HomeProgressWindow.g.cs
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Windows\ProgressWindow.g.cs
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Service\ModBusUtility.baml
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Service\ModBusUtility.g.cs
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Resources\ScrollViewer.baml
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Windows\ErrorMessageWindow.baml
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Windows\ErrorDescriptionConfig.g.cs
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Windows\ErrorMessageWindow.g.cs
+D:\Project\Projects\MachineGUI\GAL MACHINE GUI 3\NewMachineGUIV2\NewMachineGUI\MachineNewGUI\obj\Debug\Windows\ErrorDescriptionConfig.baml

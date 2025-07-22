@@ -69,7 +69,7 @@ namespace MachineNewGUI
             ConveyorWidth = 400;
         }
 
-        //JunTeng --14012025
+     
         public SingleLightConfig[] LightConfig { get; set; } = null;
         private void ResetTowerLight()
         {

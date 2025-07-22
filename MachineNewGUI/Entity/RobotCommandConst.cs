@@ -16,7 +16,7 @@ namespace MachineNewGUI.Entity
         public const int VInputStatus = 7;
         public const int VOutputStatus = 8;
         public const int VOnOutput = 9;
-
+        public const int VReadInputOutput = 10;
         public const int VReqMode = 11;
         public const int VGetRobotPos = 12;
         public const int VGetRobotAngles = 13;
@@ -50,6 +50,7 @@ namespace MachineNewGUI.Entity
         public const int VMoveToScanner = 117;
 
         public const int VGiveFlipTake = 122;
+        public const int vScanBoard = 124;
         public const int vScanFinger1 = 125;
         public const int vScanFinger2 = 126;
         public const int vScanPallet = 127;
@@ -57,12 +58,21 @@ namespace MachineNewGUI.Entity
         public const int VFullTrayOut = 131;
         public const int VEndEffectorCal = 142;
 
+        public const int VFlushPalletConveyor = 150;
+        public const int VSetPalletToEnd = 151;
+        public const int VSetPalletToExit = 152;
+
+        public const int VCheckSpotJump = 160;
+
         public const int VRinst1 = 200;
         public const int VrChgLocal = 203;
         public const int VrChgArm = 204;
-        public const int VrChgTool = 205;
+        //public const int VrChgTool = 205;
         public const int VrChgTip = 206;
+        
+
         public const int VrTrayLocatorAct = 208;
+        public const int VrGripperFlip = 209;
         public const int VrGripperAct = 210;
         public const int VrVacumOnOff = 211;
         public const int VrOnFlipper = 212;
@@ -77,8 +87,9 @@ namespace MachineNewGUI.Entity
         public const int VrJumpBarcode = 404;
         public const int VrMoveDeltaAxis = 405;
         public const int VrJumpPalletBcd = 406;
-        public const int VrJumpFlipperFingerBcd = 408;
-        public const int VrJumpFixtureBcd = 409;
+
+        //public const int VrJumpFlipperFingerBcd = 408;
+        //public const int VrJumpFixtureBcd = 409;
 
         public const int VPickBoard = 410;
         public const int VPlaceBoard = 411;
@@ -112,6 +123,7 @@ namespace MachineNewGUI.Entity
         public const int VPlaceLabel = 532;
         public const int VSecsGemMode = 540;
         public const int VLabelPosition = 542;
-        
+
+        public const int VLightConfiguration = 690;
     }
 }
